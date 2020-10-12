@@ -9,6 +9,7 @@ import {BackOfficeComponent} from './back-office/back-office.component';
 import {NavComponent} from './nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     FrontOfficeComponent,
     BackOfficeComponent,
     NavComponent,
+    SideBarComponent,
   ],
   imports: [
     BrowserModule,

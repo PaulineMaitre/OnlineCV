@@ -10,8 +10,8 @@ export class FrontOfficeComponent implements OnInit {
 
   constructor() { }
   User: User = {
-    firstName: 'Fabien',
-    lastname: 'SOLDÉ'
+    firstname: 'Pauline',
+    lastname: 'Maitre'
   };
 
   ngOnInit(): void {
