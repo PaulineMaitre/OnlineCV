@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../models/User';
 import {FormControl, FormBuilder} from '@angular/forms';
+// import { getUsers } from '../services/user.service';
 
 @Component({
   selector: 'app-back-office',
@@ -20,9 +21,25 @@ export class BackOfficeComponent implements OnInit {
   inHobbies = new FormControl('');
   inInfo = new FormControl('');
 
-  ngOnInit(): void {
-  }
+  // Create new user ==> Add User
 
+  ngOnInit(): void {
+    // this.getUsers();
+  }
+  // getUsers(): void {
+  //   const id = +this.route.snapshot.paramMap.get('id');
+  //   this.userService.getHero(id)
+  //       .subscribe(hero => this.hero = hero);
+  // }
+  //
+  // goBack(): void {
+  //   this.location.back();
+  // }
+  //
+  // save(): void {
+  //   this.heroService.updateHero(this.hero)
+  //       .subscribe(() => this.goBack());
+  // }
   // addUser(user: User) : void {
   //
   // }

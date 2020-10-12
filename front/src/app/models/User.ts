@@ -1,5 +1,14 @@
 export interface User {
-  // Ajouter les champs pour remplir le CV (Education, ..)
   lastname: string;
-  firstname: string;
+  firstName: string;
+  birthdate: string;
+  address: string;
+  phoneNumber: string;
+  email: string;
+  socialLink: [string];
+  education: [string];
+  experience: [string];
+  skills: [string];
+  projects: [string];
+  hobbies : [string];
 }
