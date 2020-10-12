@@ -10,7 +10,7 @@ export class FrontOfficeComponent implements OnInit {
 
   constructor() { }
   User: User = {
-    firstname: 'Fabien',
+    firstName: 'Fabien',
     lastname: 'SOLDÉ'
   };
 
