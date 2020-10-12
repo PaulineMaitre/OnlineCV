@@ -6,9 +6,6 @@ import {FormControl, FormBuilder} from '@angular/forms';
   selector: 'app-back-office',
   templateUrl: './back-office.component.html',
   styleUrls: ['./back-office.component.css'],
-  // template: `
-  //   Favorite Color: <input type="text" [formControl]="favoriteColorControl">
-  // `
 })
 export class BackOfficeComponent implements OnInit {
 
@@ -17,6 +14,12 @@ export class BackOfficeComponent implements OnInit {
     // private formBuilder: FormBuilder,
   ) { }
   inName = new FormControl('');
+  inSocial = new FormControl('');
+  inSkills = new FormControl('');
+  inProjects = new FormControl('');
+  inHobbies = new FormControl('');
+  inInfo = new FormControl('');
+
   ngOnInit(): void {
   }
 
