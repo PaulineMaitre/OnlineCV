@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3076a888-29d6-4707-9983-15f84047b443" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/api/demo.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webapp-standalone/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp-standalone/demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webapp-standalone/src/main/java/io/takima/demo/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp-standalone/src/main/java/io/takima/demo/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webapp-standalone/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../webapp-standalone/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/back-view/back-view.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/back-view/back-view.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/back-view/back-view.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/back-view/back-view.component.ts" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +63,7 @@
     <favorites_list name="webapp-front-and-back" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1ihj5iasnbGMgqe392gAMlIgOsW" />
@@ -122,6 +125,7 @@
       <workItem from="1602366537790" duration="201000" />
       <workItem from="1602416697440" duration="2846000" />
       <workItem from="1602486978838" duration="1941000" />
+      <workItem from="1602597785033" duration="132000" />
     </task>
     <servers />
   </component>

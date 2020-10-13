@@ -9,7 +9,6 @@ import {BackOfficeComponent} from './back-office/back-office.component';
 import {NavComponent} from './nav/nav.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import { BackViewComponent } from './back-view/back-view.component';
 import {MatSliderModule} from '@angular/material/slider';
 import { MainListComponent } from './back-office/main-list/main-list.component';
 import { SideListComponent } from './back-office/side-list/side-list.component';
@@ -22,7 +21,6 @@ import { EditComponent } from './back-office/edit/edit.component';
     BackOfficeComponent,
     MainListComponent,
     NavComponent,
-    BackViewComponent,
     MainListComponent,
     SideListComponent,
     EditComponent,
