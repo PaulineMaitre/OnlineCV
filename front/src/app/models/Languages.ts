@@ -1,5 +1,5 @@
 export interface Languages {
-    name: string;
+    name?: string;
     logo: string;
-    link: string;
+    level: number;
 }

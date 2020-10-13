@@ -11,6 +11,7 @@ export class FrontOfficeComponent implements OnInit {
 
   constructor(private userService: UserService) { }
   user: User;
+
   ngOnInit(): void {
     this.user = this.userService.getUser()
   }

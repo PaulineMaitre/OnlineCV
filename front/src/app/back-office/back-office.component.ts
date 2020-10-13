@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../models/User';
-import {FormControl, FormBuilder} from '@angular/forms';
+import {FormControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 // import { getUsers } from '../services/user.service';
 
 @Component({
@@ -10,42 +10,60 @@ import {FormControl, FormBuilder} from '@angular/forms';
 })
 export class BackOfficeComponent implements OnInit {
 
-  constructor(
-    // private cartService: CartService,
-    // private formBuilder: FormBuilder,
-  ) { }
-  inName = new FormControl('');
-  inSocial = new FormControl('');
-  inSkills = new FormControl('');
-  inProjects = new FormControl('');
-  inHobbies = new FormControl('');
-  inInfo = new FormControl('');
+  // inName = new FormControl('');
 
-  // Create new user ==> Add User
+  userForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.createForm();
+  }
+
+  createForm() {
+    this.userForm = this.fb.group({
+      inLastname: ['', Validators.required],
+      inFirstname: ['', Validators.required],
+      inSkills: ['', Validators.required],
+      inSocial: ['', Validators.required],
+      inInfo: ['', Validators.required],
+      inHobbies: ['', Validators.required],
+    });
+  }
+
+
+  // New = new User()
 
   ngOnInit(): void {
     // this.getUsers();
   }
-  // getUsers(): void {
-  //   const id = +this.route.snapshot.paramMap.get('id');
-  //   this.userService.getHero(id)
-  //       .subscribe(hero => this.hero = hero);
-  // }
-  //
-  // goBack(): void {
-  //   this.location.back();
-  // }
-  //
-  // save(): void {
-  //   this.heroService.updateHero(this.hero)
-  //       .subscribe(() => this.goBack());
-  // }
-  // addUser(user: User) : void {
-  //
-  // }
 
-  // getUser(): void {
-  //   this.userService.getUsers()
-  //     .subscribe(users => this.users = users);
-  // }
+  saveUser() {
+    if (this.userForm.dirty && this.userForm.valid) {
+      alert(
+          `Name: ${this.userForm.value.inLastname} Email: ${this.userForm.value.inFirstname}`
+      );
+    }
+
+
+    // getUsers(): void {
+    //   const id = +this.route.snapshot.paramMap.get('id');
+    //   this.userService.getHero(id)
+    //       .subscribe(hero => this.hero = hero);
+    // }
+    //
+    // goBack(): void {
+    //   this.location.back();
+    // }
+    //
+    // save(): void {
+    //   this.heroService.updateHero(this.hero)
+    //       .subscribe(() => this.goBack());
+    // }
+    // addUser(firstName: string, lastName: string) : void {
+    //   console.log(`Adding: ${firstName} ${lastName} to the database (Faut faire la fonction pour ça)`);
+    // }
+    // getUser(): void {
+    //   this.userService.getUsers()
+    //     .subscribe(users => this.users = users);
+    // }
+  }
 }
