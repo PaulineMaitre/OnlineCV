@@ -43,7 +43,6 @@ export class BackOfficeComponent implements OnInit {
       );
     }
 
-
     // getUsers(): void {
     //   const id = +this.route.snapshot.paramMap.get('id');
     //   this.userService.getHero(id)

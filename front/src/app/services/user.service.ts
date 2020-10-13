@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {timeout} from 'rxjs/operators';
@@ -118,7 +119,6 @@ export class UserService {
       frame: [educationFrame, experienceFrame]
     };
     return user;
-
   }
 
   addUser(user: User): Observable<User> {
