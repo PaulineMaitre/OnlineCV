@@ -35,7 +35,7 @@ export class UserService {
       experience: ['EPF Projets Sceaux - Junior Entreprise', 'Servier - Stage engagement citoyen'],
       skills: ['HTML', 'CSS'],
       projects: ['Foude - développement d\'une application mobile de restauration à domicile', 'JEE'],
-      hobbies : ['Equitation', 'Natation']
+      hobbies : ['Equitation', 'Natation'],
     };
     return user;
   }
