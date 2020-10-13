@@ -1,5 +1,5 @@
 export interface Networks {
-    name?: string;
-    link?: string;
+    name: string;
+    link: string;
     logo: string;
 }
