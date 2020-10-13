@@ -19,7 +19,7 @@ data class User(
         @Column(name = "email") var email: String?,
         @Column(name = "social_network")@OneToMany var socialNetwork: List<Socials>?,
         @Column(name = "languages")@OneToMany var languages: List<Languages>?,
-        @Column(name = "competences")@OneToMany var competences: List<Competences>?,
+        @Column(name = "skills")@OneToMany var skills: List<Skill>?,
         @Column(name = "frame_content")@OneToMany var frameContent: List<FrameContent>?) {
     constructor() : this(null, null, null, null, null,null,null,null,null,null,null, null)
 }

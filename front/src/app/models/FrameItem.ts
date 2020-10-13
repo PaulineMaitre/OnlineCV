@@ -3,3 +3,12 @@ export interface FrameItem {
     logo: string;
     content: string;
 }
+
+
+
+
+
+
+
+
+

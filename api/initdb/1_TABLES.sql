@@ -6,10 +6,10 @@ create table users
     first_name   TEXT not null,
     last_name    TEXT not null,
     phone_number TEXT not null,
-    birth_date   DATE not null,
-    address      TEXT not null,
+    birth_date   DATE,
+    address      TEXT,
     email        TEXT not null,
-    bio          TEXT not null
+    bio          TEXT
 );
 
 create table socials
@@ -19,7 +19,7 @@ create table socials
         primary key (id),
     social_name TEXT   not null,
     social_link TEXT   not null,
-    social_logo TEXT   not null,
+    social_logo TEXT,
     user_id     bigint not null,
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
@@ -30,30 +30,30 @@ create table languages
     constraint languages_pk
         primary key (id),
     language_name  TEXT   not null,
-    language_level TEXT    not null,
-    language_flag  TEXT   not null,
+    language_level TEXT,
+    language_flag  TEXT,
     user_id        bigint not null,
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
-create table competences
+create table skill
 (
     id                    bigint auto_increment,
-    constraint competences_pk
+    constraint skill_pk
         primary key (id),
-    competences_name      TEXT   not null,
-    competences_logo_link TEXT   not null,
-    competences_level     TEXT   not null,
+    skill_name      TEXT   not null,
+    skill_logo_link TEXT,
+    skill_level     TEXT,
     user_id               bigint not null,
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
 
 create table frame_content
 (
-    id                 bigint auto_increment,
+id                 bigint auto_increment,
     constraint frame_content_pk
         primary key (id),
     frame_title        TEXT   not null,
-    frame_logo_url     TEXT   not null,
+    frame_logo_url     TEXT,
     user_id            bigint not null,
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
@@ -64,7 +64,7 @@ create table content_item
     constraint content_item_pk
         primary key (id),
     item_title    TEXT   not null,
-    item_logo_url TEXT   not null,
+    item_logo_url TEXT,
     item_content  TEXT   not null,
     frame_content_id       bigint not null,
     FOREIGN KEY (frame_content_id) REFERENCES frame_content (id)
