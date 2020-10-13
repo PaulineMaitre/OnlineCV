@@ -17,9 +17,9 @@ data class User(
         @Column(name = "address") var address: String?,
         @Column(name = "bio") var bio: String?,
         @Column(name = "email") var email: String?,
-        @Column(name = "social_network")@OneToMany var socialNetwork: List<Socials>?,
-        @Column(name = "languages")@OneToMany var languages: List<Languages>?,
-        @Column(name = "skills")@OneToMany var skills: List<Skill>?,
-        @Column(name = "frame_content")@OneToMany var frameContent: List<FrameContent>?) {
+        @Column(name = "socials")@OneToMany(mappedBy = "user") var socialNetwork: List<Socials>?,
+        @Column(name = "languages")@OneToMany(mappedBy = "user") var languages: List<Languages>?,
+        @Column(name = "skills")@OneToMany(mappedBy = "user") var skills: List<Skill>?,
+        @Column(name = "frame_content")@OneToMany(mappedBy = "user") var frameContent: List<FrameContent>?) {
     constructor() : this(null, null, null, null, null,null,null,null,null,null,null, null)
 }

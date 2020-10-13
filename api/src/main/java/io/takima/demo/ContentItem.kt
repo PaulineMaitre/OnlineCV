@@ -1,5 +1,6 @@
 package io.takima.demo
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import javax.persistence.*
 
 /**
@@ -13,6 +14,7 @@ data class ContentItem(
         @Column(name = "item_logo_url") var itemLogoURL: String?,
         @Column(name = "item_content") var itemContent: String?,
         @ManyToOne
+        @JsonIgnore
         var frameContent: FrameContent?) {
     constructor() : this(null, null, null, null, null)
 }

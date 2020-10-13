@@ -16,13 +16,26 @@ public class UserController {
         this.userDAO = userDAO;
     }
 
-    @GetMapping()
+    /*@GetMapping()
     public List<User> getUsers() {
         Iterable<User> it = this.userDAO.findAll();
         List<User> users = new ArrayList<>();
         it.forEach(e -> users.add(e));
 
         return users;
+    }*/
+
+    @GetMapping("/{id}")
+    public User getUserById(@PathVariable Long id) {
+        User user = userDAO.findById(id).get();
+        return user;
+    }
+
+    @PutMapping()
+    public void updateUser(@RequestBody User user) {
+        if (userDAO.existsById(user.getId())) {
+            this.userDAO.save(user);
+        }
     }
 
     @PostMapping()
