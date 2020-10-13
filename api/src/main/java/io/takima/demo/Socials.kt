@@ -1,5 +1,6 @@
 package io.takima.demo
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import javax.persistence.*
 
 /**
@@ -13,6 +14,7 @@ data class Socials(
         @Column(name = "social_link") var socialLink: String?,
         @Column(name = "social_logo") var socialLogo: String?,
         @ManyToOne
+        @JsonIgnore
         var user: User?) {
     constructor() : this(null, null, null, null, null)
 }
