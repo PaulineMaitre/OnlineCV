@@ -10,6 +10,7 @@ import {NavComponent} from './nav/nav.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { BackViewComponent } from './back-view/back-view.component';
+import {MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BackViewComponent } from './back-view/back-view.component';
     AppRoutingModule,
     HttpClientModule,
     DragDropModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

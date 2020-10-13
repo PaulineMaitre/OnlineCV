@@ -16,7 +16,7 @@
             <p>Mail :
                 <label class="center-block">
                     <input class="form-control" type="email" placeholder="Your current email address"
-                           [formControl]="inFirstname" #inMail>
+                           [formControl]="inFirstname" #inMail cdkDrag>
                 </label>
             </p>
             <p>Ajout d'une compétence :
@@ -48,7 +48,7 @@
 
 <button type="button" class="btn btn-primary">Créer un CV !</button>
 
-
+<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
 
 
 
