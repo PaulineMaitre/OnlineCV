@@ -1,5 +1,5 @@
 export interface FrameItem {
-    title?: string;
+    title: string;
     logo: string;
     content: string;
 }
