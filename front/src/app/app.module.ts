@@ -9,7 +9,6 @@ import {BackOfficeComponent} from './back-office/back-office.component';
 import {NavComponent} from './nav/nav.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import { BackViewComponent } from './back-view/back-view.component';
 import {MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
@@ -17,8 +16,7 @@ import {MatSliderModule} from '@angular/material/slider';
     AppComponent,
     FrontOfficeComponent,
     BackOfficeComponent,
-    NavComponent,
-    BackViewComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

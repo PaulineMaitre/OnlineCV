@@ -1,42 +1,63 @@
-<div class="headerCV row">
-    <img class="profilePicture col-md-2 col-lg-2" src="../../assets/avatar_woman.png">
-    <h1 class="col-md-10 col-lg-10 bdr">{{user.firstName}} {{user.lastName}}</h1>
+<div class="headerCV row margins">
+    <img class="col-md-1 col-lg-1" src="../../assets/profile_picture_Pauline.png">
+    <div class="col-md-11 col-lg-11">
+        <h1>{{user.firstName}} {{user.lastName}}</h1>
+        <h2>{{user.bio}}</h2>
+    </div>
 </div>
-<div class="row">
-    <div class="sideBar col-md-4 col-lg-4">
-        <div class="row">
-        <h2 class="sectionTitle rounded col-md-7 col-lg-7">About Me</h2>
+<div class="row margins">
+    <div class="col-md-4 col-lg-4">
+        <h3 class="sectionTitle rounded">About Me</h3>
             <p class="bdr">{{user.address}}<br>
             {{user.email}}<br>
             {{user.phoneNumber}}<br>
             {{user.birthdate}}</p>
-            <p *ngFor="let link of user.socialLink">
-                <a href={{link}}>{{link}}</a>
+            <p *ngFor="let socialNetwork of user.socialLink">
+                <img class="icon bdr" src={{socialNetwork.logo}}>
+                <a href={{socialNetwork.link}}>{{socialNetwork.name}}</a>
             </p>
-        </div>
-        <div class="row">
-        <h2 class="sectionTitle rounded col-md-7 col-lg-7">Skill</h2>
-            <p class="bdr">Anglais TOEIC 990 (inch)<br>Espagnol B2</p>
-        </div>
-        <div class="row">
+        <h3 class="sectionTitle rounded">Languages</h3>
+            <p *ngFor="let language of user.languages">
+                <img class="icon bdr" src={{language.logo}}>
+                <span class="bdr">{{language.name}}</span>
+                <span class="bdr">{{language.level}}</span>
+            </p>
+        <h2 class="sectionTitle rounded">Skills</h2>
+        <p *ngFor="let skill of user.skills">
+            <img class="icon bdr col-lg-3" src={{skill.logo}}>
+            <span class="bdr col-lg-3">{{skill.name}}</span>
+            <span class="bdr col-lg-2">{{skill.level}}</span>
+        <span class="progress col-lg-4">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow={{skill.level}} aria-valuemin="0" aria-valuemax="5" style="width: 50%"></div>
+        </span>
+        </p>
+        <!--<div class="row">
         <h2 class="sectionTitle rounded col-md-7 col-lg-7">Hobbies</h2>
             <p class="col-md-12 col-lg-12" *ngFor="let hobby of user.hobbies">
                 <span class="bdr">{{hobby}}</span>
             </p>
-        </div>
+        </div>-->
     </div>
-    <div class="mainSection col-md-8 col-lg-8">
-        <h2 class="sectionTitle rounded col-md-7 col-lg-7">Experience</h2>
-            <p *ngFor="let experience of user.experience">
-                <span>{{experience}}</span>
-            </p>
-        <h2 class="sectionTitle rounded col-md-8 col-lg-8">Education</h2>
+    <div class="col-md-8 col-lg-8">
+        <div *ngFor="let frameContent of user.frame">
+            <img class="titleIcon bdr" src={{frameContent.logo}}>
+            <div class="sectionTitle rounded">{{frameContent.title}}</div>
+                <div *ngFor="let frameItem of frameContent.frameItem">
+                    <p><span class="period">{{frameItem.period}}</span><br>
+                    {{frameItem.location}}<br>
+                    <img class="icon bdr" src={{frameItem.logo}}>
+                    {{frameItem.title}}<br>
+                    {{frameItem.content}}</p>
+                </div>
+
+        </div>
+        <!--<h2 class="sectionTitle rounded col-md-8 col-lg-8">Education</h2>
             <p *ngFor="let school of user.education">
                 <span>{{school}}</span>
             </p>
         <h2 class="sectionTitle rounded col-md-8 col-lg-8">Projects</h2>
             <p *ngFor="let project of user.projects">
                 <span>{{project}}</span>
-            </p>
+            </p>-->
     </div>
 </div>
