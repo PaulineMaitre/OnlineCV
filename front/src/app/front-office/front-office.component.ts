@@ -11,7 +11,9 @@ export class FrontOfficeComponent implements OnInit {
   constructor() { }
   User: User = {
     firstName: 'Fabien',
-    lastname: 'SOLDÉ'
+    lastName: 'SOLDÉ',
+    email: 'fabien.solde@epfedu.fr',
+    phoneNumber: '0760472543'
   };
 
   ngOnInit(): void {

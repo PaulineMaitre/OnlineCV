@@ -7,8 +7,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FrontOfficeComponent} from './front-office/front-office.component';
 import {BackOfficeComponent} from './back-office/back-office.component';
 import {NavComponent} from './nav/nav.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { BackViewComponent } from './back-view/back-view.component';
 
 @NgModule({
   declarations: [
@@ -16,14 +17,14 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     FrontOfficeComponent,
     BackOfficeComponent,
     NavComponent,
+    BackViewComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    DragDropModule ,
-    ReactiveFormsModule,
-    BrowserAnimationsModule
+    DragDropModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

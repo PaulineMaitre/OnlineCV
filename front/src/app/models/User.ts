@@ -1,14 +1,18 @@
+import {FrameContent} from './FrameContent';
+
 export interface User {
-  lastname: string;
   firstName: string;
-  birthdate: string;
-  address: string;
-  phoneNumber: string;
+  lastName: string;
+  birthdate?: string;
+  bio?: string;
+  address?: string;
   email: string;
-  socialLink: [string];
-  education: [string];
-  experience: [string];
-  skills: [string];
-  projects: [string];
-  hobbies : [string];
+  phoneNumber: string;
+  socialLink?: [string];
+  education?: [string];
+  experience?: [string];
+  skills?: [string];
+  projects?: [string];
+  hobbies?: [string];
+  frameContent?: [FrameContent];
 }
