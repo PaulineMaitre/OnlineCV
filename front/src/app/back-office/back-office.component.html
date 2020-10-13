@@ -16,7 +16,7 @@
             <p>Mail :
                 <label class="center-block">
                     <input class="form-control" type="email" placeholder="Your current email address"
-                           [formControl]="inFirstname" #inMail cdkDrag>
+                           [formControl]="inFirstname" #inMail>
                 </label>
             </p>
             <p>Ajout d'une compétence :
@@ -46,11 +46,7 @@
     </form>
 </div>
 
-<button type="button" class="btn btn-primary">Créer un CV !</button>
-
-<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
-
-
+<button type="button" class="btn btn-primary" routerLink="/back/edit">Créer un CV !</button>
 
 <p>Form value: {{ userForm.value | json }}</p>
 <p>Form status: {{ userForm.status | json }}</p>

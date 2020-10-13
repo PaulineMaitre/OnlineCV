@@ -10,13 +10,20 @@ import {NavComponent} from './nav/nav.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatSliderModule} from '@angular/material/slider';
+import { MainListComponent } from './back-office/main-list/main-list.component';
+import { SideListComponent } from './back-office/side-list/side-list.component';
+import { EditComponent } from './back-office/edit/edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FrontOfficeComponent,
     BackOfficeComponent,
-    NavComponent
+    MainListComponent,
+    NavComponent,
+    MainListComponent,
+    SideListComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,
