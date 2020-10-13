@@ -1,0 +1,9 @@
+<h3 class="sectionTitle rounded">About Me</h3>
+<p>{{user.address}}<br>
+    {{user.email}}<br>
+    {{user.phoneNumber}}<br>
+    {{user.birthdate}}</p>
+<p *ngFor="let socialNetwork of user.socialLink">
+    <img class="icon" src={{socialNetwork.logo}}>
+    <a href={{socialNetwork.link}}>{{socialNetwork.name}}</a>
+</p>

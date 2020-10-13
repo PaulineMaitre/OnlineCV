@@ -1,0 +1,17 @@
+.sectionTitle {
+    background-color: cornflowerblue;
+    color: white;
+    font-size: x-large;
+}
+.icon {
+    width: 2em;
+    height: 2em;
+}
+
+a {
+    /*color: lavender;*/
+    text-decoration: none;
+}
+p, a {
+    color: lavender;
+}

@@ -1,13 +1,14 @@
-<div class="headerCV row margins">
-    <img class="col-md-1 col-lg-1" src="../../assets/profile_picture_Pauline.png">
+    <app-cv-header></app-cv-header>
+    <!--<img class="col-md-1 col-lg-1" src="../../assets/profile_picture_Pauline.png">
     <div class="col-md-11 col-lg-11">
         <h1>{{user.firstName}} {{user.lastName}}</h1>
         <h2>{{user.bio}}</h2>
-    </div>
-</div>
+    </div>-->
+
 <div class="row margins">
     <div class="col-md-4 col-lg-4">
-        <h3 class="sectionTitle rounded">About Me</h3>
+        <app-about-me></app-about-me>
+        <!--<h3 class="sectionTitle rounded">About Me</h3>
             <p class="bdr">{{user.address}}<br>
             {{user.email}}<br>
             {{user.phoneNumber}}<br>
@@ -15,7 +16,7 @@
             <p *ngFor="let socialNetwork of user.socialLink">
                 <img class="icon bdr" src={{socialNetwork.logo}}>
                 <a href={{socialNetwork.link}}>{{socialNetwork.name}}</a>
-            </p>
+            </p>-->
         <h3 class="sectionTitle rounded">Languages</h3>
             <p *ngFor="let language of user.languages">
                 <img class="icon bdr" src={{language.logo}}>
@@ -24,40 +25,27 @@
             </p>
         <h2 class="sectionTitle rounded">Skills</h2>
         <p *ngFor="let skill of user.skills">
-            <img class="icon bdr col-lg-3" src={{skill.logo}}>
-            <span class="bdr col-lg-3">{{skill.name}}</span>
-            <span class="bdr col-lg-2">{{skill.level}}</span>
-        <span class="progress col-lg-4">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow={{skill.level}} aria-valuemin="0" aria-valuemax="5" style="width: 50%"></div>
+            <img class="icon bdr" src={{skill.logo}}>
+            <span class="bdr">{{skill.name}}</span>
+            <span class="bdr">{{skill.level}}</span>
+        <span class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 75%"></div>
         </span>
         </p>
-        <!--<div class="row">
-        <h2 class="sectionTitle rounded col-md-7 col-lg-7">Hobbies</h2>
-            <p class="col-md-12 col-lg-12" *ngFor="let hobby of user.hobbies">
-                <span class="bdr">{{hobby}}</span>
-            </p>
-        </div>-->
     </div>
     <div class="col-md-8 col-lg-8">
         <div *ngFor="let frameContent of user.frame">
-            <img class="titleIcon bdr" src={{frameContent.logo}}>
-            <div class="sectionTitle rounded">{{frameContent.title}}</div>
-                <div *ngFor="let frameItem of frameContent.frameItem">
-                    <p><span class="period">{{frameItem.period}}</span><br>
-                    {{frameItem.location}}<br>
-                    <img class="icon bdr" src={{frameItem.logo}}>
-                    {{frameItem.title}}<br>
-                    {{frameItem.content}}</p>
-                </div>
-
+            <div class="sectionTitle rounded">
+                <img class="titleIcon bdr" src={{frameContent.logo}}>
+                <span>{{frameContent.title}}</span>
+            </div>
+            <div *ngFor="let frameItem of frameContent.frameItem">
+                <p><span class="period">{{frameItem.period}}</span><br>
+                {{frameItem.location}}<br>
+                <img class="icon bdr" src={{frameItem.logo}}>
+                {{frameItem.title}}<br>
+                {{frameItem.content}}</p>
+            </div>
         </div>
-        <!--<h2 class="sectionTitle rounded col-md-8 col-lg-8">Education</h2>
-            <p *ngFor="let school of user.education">
-                <span>{{school}}</span>
-            </p>
-        <h2 class="sectionTitle rounded col-md-8 col-lg-8">Projects</h2>
-            <p *ngFor="let project of user.projects">
-                <span>{{project}}</span>
-            </p>-->
     </div>
 </div>

@@ -13,6 +13,8 @@ import {MatSliderModule} from '@angular/material/slider';
 import { MainListComponent } from './back-office/main-list/main-list.component';
 import { SideListComponent } from './back-office/side-list/side-list.component';
 import { EditComponent } from './back-office/edit/edit.component';
+import { AboutMeComponent } from './front-office/about-me/about-me.component';
+import { CvHeaderComponent } from './front-office/cv-header/cv-header.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { EditComponent } from './back-office/edit/edit.component';
     MainListComponent,
     SideListComponent,
     EditComponent,
+    AboutMeComponent,
+    CvHeaderComponent,
   ],
   imports: [
     BrowserModule,

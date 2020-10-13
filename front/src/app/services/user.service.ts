@@ -27,7 +27,7 @@ export class UserService {
     return this.http.get<User[]>(`${this.url}/users`).pipe(timeout(10000));
   }*/
   //
-  public getUser(): User {
+  public getUserTest(): User {
     // SOCIAL NETWORKS
     const linkedin : Network = {
       name: 'LinkedIn',
