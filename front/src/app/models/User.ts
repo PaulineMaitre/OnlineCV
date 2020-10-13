@@ -1,6 +1,7 @@
 import {FrameContent} from './FrameContent';
 import {Network} from './Network';
 import {Skill} from './Skill';
+import {Language} from './Language';
 
 export interface User {
   firstName: string;
@@ -12,6 +13,7 @@ export interface User {
   email: string;
   socialLink?: Network[];
   skills: Skill[];
+  languages: Language[]
   frame?: FrameContent[];
 }
 
