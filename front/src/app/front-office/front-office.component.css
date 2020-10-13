@@ -1,15 +1,11 @@
-/*.profilePicture {
-    width: 5em;
-    height: 5em;
-}*/
-/*.sideBar {
-    border: solid aqua;
+
+.margins {
+    //border: solid aqua;
+    margin: 15px;
 }
-.mainSection {
-    border: solid aqua;
-}*/
 
 .headerCV {
+    margin-left: 100px;
     margin-bottom: 20px;
 }
 .sectionTitle {
@@ -17,15 +13,27 @@
     color: white;
     font-size: x-large;
 }
+.titleIcon {
+    width: 3em;
+    height: 3em;
+}
+.icon {
+    width: 2em;
+    height: 2em;
+}
+.period {
+    font-style: italic;
+    font-size: large;
+}
 
 h1 {
     color: lightcoral;
-    margin-top: 70px;
+    margin-top: 20px;
 }
-/*h2 {
+h2 {
     color: white;
-    font-size: x-large;
-*/
+    font-size: large;
+}
 a {
     /*color: lavender;*/
     text-decoration: none;
@@ -33,6 +41,7 @@ a {
 p, a {
     color: lavender;
 }
+
 
 /*.bdr {
     border: solid darkred;
