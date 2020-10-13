@@ -1,0 +1,9 @@
+<h3 class="badge col-md-4 col-lg-4">Skills</h3>
+<p *ngFor="let skill of user.skills">
+    <img class="icon bdr" src={{skill.logo}}>
+    <span class="bdr">{{skill.name}}</span>
+    <span class="bdr">{{skill.level}}</span>
+    <span class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 75%"></div>
+        </span>
+</p>

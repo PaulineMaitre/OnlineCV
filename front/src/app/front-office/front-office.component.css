@@ -1,9 +1,4 @@
 
-.margins {
-    //border: solid aqua;
-    margin: 15px;
-}
-
 .headerCV {
     margin-left: 100px;
     margin-bottom: 20px;
@@ -15,7 +10,7 @@
     margin: 10px;
 }*/
 .sectionTitle {
-    background-color: cornflowerblue;
+    background-color: #73F0E3;
     color: white;
     font-size: x-large;
 }
@@ -30,6 +25,15 @@
 .period {
     font-style: italic;
     font-size: large;
+}
+.space {
+    margin-left: 15px;
+}
+
+.badge {
+    font-size: 1em;
+    color: white;
+    background-color: #A34553;
 }
 
 h1 {

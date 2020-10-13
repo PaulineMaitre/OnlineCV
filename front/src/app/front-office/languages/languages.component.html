@@ -1,0 +1,7 @@
+<h3 class="badge col-md-4 col-lg-4">Languages</h3>
+<p>{{user.firstName}}</p>
+<p *ngFor="let language of user.languages">
+    <img class="icon bdr" src={{language.logo}}>
+    <span class="bdr">{{language.name}}</span>
+    <span class="bdr">{{language.level}}</span>
+</p>

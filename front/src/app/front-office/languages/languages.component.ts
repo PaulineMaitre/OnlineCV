@@ -3,11 +3,11 @@ import {UserService} from '../../services/user.service';
 import {User} from '../../models/User';
 
 @Component({
-  selector: 'app-cv-header',
-  templateUrl: './cv-header.component.html',
-  styleUrls: ['./cv-header.component.css']
+  selector: 'app-languages',
+  templateUrl: './languages.component.html',
+  styleUrls: ['./languages.component.css']
 })
-export class CvHeaderComponent implements OnInit {
+export class LanguagesComponent implements OnInit {
 
   constructor(private userService: UserService) { }
   user: User;

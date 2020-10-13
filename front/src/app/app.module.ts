@@ -15,6 +15,8 @@ import { SideListComponent } from './back-office/side-list/side-list.component';
 import { EditComponent } from './back-office/edit/edit.component';
 import { AboutMeComponent } from './front-office/about-me/about-me.component';
 import { CvHeaderComponent } from './front-office/cv-header/cv-header.component';
+import { LanguagesComponent } from './front-office/languages/languages.component';
+import { SkillsComponent } from './front-office/skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { CvHeaderComponent } from './front-office/cv-header/cv-header.component'
     EditComponent,
     AboutMeComponent,
     CvHeaderComponent,
+    LanguagesComponent,
+    SkillsComponent,
   ],
   imports: [
     BrowserModule,
