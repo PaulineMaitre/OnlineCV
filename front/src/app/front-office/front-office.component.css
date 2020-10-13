@@ -1,0 +1,39 @@
+/*.profilePicture {
+    width: 5em;
+    height: 5em;
+}*/
+/*.sideBar {
+    border: solid aqua;
+}
+.mainSection {
+    border: solid aqua;
+}*/
+
+.headerCV {
+    margin-bottom: 20px;
+}
+.sectionTitle {
+    background-color: cornflowerblue;
+    color: white;
+    font-size: x-large;
+}
+
+h1 {
+    color: lightcoral;
+    margin-top: 70px;
+}
+/*h2 {
+    color: white;
+    font-size: x-large;
+*/
+a {
+    /*color: lavender;*/
+    text-decoration: none;
+}
+p, a {
+    color: lavender;
+}
+
+/*.bdr {
+    border: solid darkred;
+}*/

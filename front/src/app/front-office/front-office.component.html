@@ -1,25 +1,42 @@
-<p>front-office works!</p>
-<div class="row">
-    <p class="col-md-3">PHOTO ICI</p>
-    <h1 class="col-md-9">{{user.firstName}} {{user.lastName}}</h1>
+<div class="headerCV row">
+    <img class="profilePicture col-md-2 col-lg-2" src="../../assets/avatar_woman.png">
+    <h1 class="col-md-10 col-lg-10 bdr">{{user.firstName}} {{user.lastName}}</h1>
 </div>
 <div class="row">
-    <div class="col-md-4">
-        <h2>About Me</h2>
-        <p>{{user.address}}</p>
-        <p>{{user.email}}</p>
-        <p>{{user.phoneNumber}}</p>
-        <p>{{user.birthdate}}</p>
-        <p>lien github</p>
-        <h2>Skills</h2>
-        <p>Anglais TOEIC 990 (inch)</p>
-        <p>Espagnol B2</p>
-        <h2>Hobbies</h2>
-        <p>Natation</p>
+    <div class="sideBar col-md-4 col-lg-4">
+        <div class="row">
+        <h2 class="sectionTitle rounded col-md-7 col-lg-7">About Me</h2>
+            <p class="bdr">{{user.address}}<br>
+            {{user.email}}<br>
+            {{user.phoneNumber}}<br>
+            {{user.birthdate}}</p>
+            <p *ngFor="let link of user.socialLink">
+                <a href={{link}}>{{link}}</a>
+            </p>
+        </div>
+        <div class="row">
+        <h2 class="sectionTitle rounded col-md-7 col-lg-7">Skills</h2>
+            <p class="bdr">Anglais TOEIC 990 (inch)<br>Espagnol B2</p>
+        </div>
+        <div class="row">
+        <h2 class="sectionTitle rounded col-md-7 col-lg-7">Hobbies</h2>
+            <p class="col-md-12 col-lg-12" *ngFor="let hobby of user.hobbies">
+                <span class="bdr">{{hobby}}</span>
+            </p>
+        </div>
     </div>
-    <div class="col-lg-8">
-        <h2>Experience</h2>
-        <h2>Education</h2>
-        <h2>Projects</h2>
+    <div class="mainSection col-md-8 col-lg-8">
+        <h2 class="sectionTitle rounded col-md-7 col-lg-7">Experience</h2>
+            <p *ngFor="let experience of user.experience">
+                <span>{{experience}}</span>
+            </p>
+        <h2 class="sectionTitle rounded col-md-8 col-lg-8">Education</h2>
+            <p *ngFor="let school of user.education">
+                <span>{{school}}</span>
+            </p>
+        <h2 class="sectionTitle rounded col-md-8 col-lg-8">Projects</h2>
+            <p *ngFor="let project of user.projects">
+                <span>{{project}}</span>
+            </p>
     </div>
 </div>
