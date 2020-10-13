@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from '../services/user.service';
 import {User} from '../models/User';
 
 @Component({
@@ -8,17 +9,11 @@ import {User} from '../models/User';
 })
 export class FrontOfficeComponent implements OnInit {
 
-  constructor() { }
-  User: User = {
-    firstName: 'Fabien',
-    lastName: 'SOLDÉ',
-    email: 'fabien.solde@epfedu.fr',
-    phoneNumber: '0760472543'
-  };
+  constructor(private userService: UserService) { }
+  user: User;
 
   ngOnInit(): void {
+    this.user = this.userService.getUser()
   }
-
-
 
 }
