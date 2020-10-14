@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../models/User';
 import {FormControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UserService} from '../services/user.service';
 // import { getUsers } from '../services/user.service';
 
 @Component({
@@ -11,10 +12,10 @@ import {FormControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class BackOfficeComponent implements OnInit {
 
   // inName = new FormControl('');
-
   userForm: FormGroup;
+  user: User;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private userService: UserService) {
     this.createForm();
   }
 
@@ -22,6 +23,7 @@ export class BackOfficeComponent implements OnInit {
     this.userForm = this.fb.group({
       inLastname: ['', Validators.required],
       inFirstname: ['', Validators.required],
+      inMail: ['', Validators.required],
       inSkills: ['', Validators.required],
       inSocial: ['', Validators.required],
       inInfo: ['', Validators.required],
@@ -29,37 +31,29 @@ export class BackOfficeComponent implements OnInit {
     });
   }
 
-
   // New = new User()
 
   ngOnInit(): void {
-    // this.getUsers();
+    // this.user = this.userService.getUserById().subscribe(user => this.user = user);
   }
 
-  saveUser() {
+  saveUser(): void {
+    console.log(this.userForm.value);
     if (this.userForm.dirty && this.userForm.valid) {
       alert(
-          `Name: ${this.userForm.value.inLastname} Email: ${this.userForm.value.inFirstname}`
+          `Formulaire complet !
+On va te trouver un travail ${this.userForm.get('inFirstname').value} ${this.userForm.get('inLastname').value} !`
       );
     }
+    else {
+      alert('Il te manque des cases !');
+    }
 
-    // getUsers(): void {
-    //   const id = +this.route.snapshot.paramMap.get('id');
-    //   this.userService.getHero(id)
-    //       .subscribe(hero => this.hero = hero);
-    // }
-    //
-    // goBack(): void {
-    //   this.location.back();
-    // }
-    //
     // save(): void {
     //   this.heroService.updateHero(this.hero)
     //       .subscribe(() => this.goBack());
     // }
-    // addUser(firstName: string, lastName: string) : void {
-    //   console.log(`Adding: ${firstName} ${lastName} to the database (Faut faire la fonction pour ça)`);
-    // }
+
     // getUser(): void {
     //   this.userService.getUsers()
     //     .subscribe(users => this.users = users);

@@ -23,11 +23,11 @@ export class UserService {
     this.url = environment.url;
   }
   // TODO : à modifier !
-  /*getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.url}/users`).pipe(timeout(10000));
-  }*/
+  getUserById(): Observable<User> {
+    return this.http.get<User>(`${this.url}/users/1`).pipe(timeout(10000));
+  }
   //
-  public getUser(): User {
+  public getUserTest(): User {
     // SOCIAL NETWORKS
     const linkedin : Network = {
       name: 'LinkedIn',

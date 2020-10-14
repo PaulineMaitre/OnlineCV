@@ -1,55 +1,59 @@
-<div class="card">
-    <form [formGroup]="userForm" novalidate>
-        <div class="form-group">
+<div class="content">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form-group">
             <p>Nom :
                 <label class="center-block">
                     <input class="form-control" type="text" placeholder="DUPONT"
-                           [formControl]="inLastname" #inLastname formControlName="inLastname">
+                           formControlName="inLastname">
                 </label>
             </p>
             <p>Prénom :
                 <label class="center-block">
                     <input class="form-control" type="text" placeholder="Jean"
-                           [formControl]="inFirstname" #inFirstname>
+                           formControlName="inFirstname" #inFirstname>
                 </label>
             </p>
             <p>Mail :
                 <label class="center-block">
                     <input class="form-control" type="email" placeholder="Your current email address"
-                           [formControl]="inFirstname" #inMail>
+                           formControlName="inMail" #inMail>
                 </label>
             </p>
             <p>Ajout d'une compétence :
                 <label class="center-block">
                     <input class="form-control" type="text" placeholder="Angular !"
-                           [formControl]="inSkills" #inSkills>
+                           formControlName="inSkills" #inSkills>
                 </label>
             </p>
             <p>Ajout d'un lien vers un réseau :
                 <label class="center-block">
                     <input class="form-control" type="text" placeholder="URL de profil"
-                           [formControl]="inSocial" #inSocial>
+                           formControlName="inSocial" #inSocial>
                 </label>
             </p>
 
             <p>Décrivez vous en quelques phrases :
                 <label class="center-block">
-                    <input class="form-control" type="text" [formControl]="inInfo" #inInfo>
+                    <input class="form-control" type="text" formControlName="inInfo" #inInfo>
                 </label>
             </p>
             <p>Ajout d'un Hobbie :
                 <label class="center-block">
-                    <input class="form-control" type="text" [formControl]="inHobbies" #inHobbies>
+                    <input class="form-control" type="text" formControlName="inHobbies" #inHobbies>
                 </label>
             </p>
-        </div>
     </form>
+
+
+    <button type="button" class="btn btn-primary" routerLink="/back/edit">Créer un CV !</button>
+
+
+    <p>Debug HTML :</p>
+    <p>Form value: {{ userForm.value | json }}</p>
+    <p>Form status: {{ userForm.status | json }}</p>
+
+    <button type="button" class="btn btn-primary" (click)="saveUser()">Test formulaire</button>
+
 </div>
-
-<button type="button" class="btn btn-primary" routerLink="/back/edit">Créer un CV !</button>
-
-<p>Form value: {{ userForm.value | json }}</p>
-<p>Form status: {{ userForm.status | json }}</p>
 
 <!--<div *ngIf="userForm.controls['inName'].invalid && (userForm.controls['inName'].dirty || userForm.controls['inName'].touched)" class="alert alert-danger">-->
 <!--    <div *ngIf="userForm.controls['inName'].errors.required">-->
