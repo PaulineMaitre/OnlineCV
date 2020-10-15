@@ -48,15 +48,16 @@ On va te trouver un travail ${this.userForm.get('inFirstname').value} ${this.use
     else {
       alert('Il te manque des cases !');
     }
-
-    // save(): void {
-    //   this.heroService.updateHero(this.hero)
-    //       .subscribe(() => this.goBack());
-    // }
-
-    // getUser(): void {
-    //   this.userService.getUsers()
-    //     .subscribe(users => this.users = users);
-    // }
   }
+
+  // save(): void {
+  //   this.heroService.updateHero(this.hero)
+  //       .subscribe(() => this.goBack());
+  // }
+
+  // getUser(): void {
+  //   this.userService.getUsers()
+  //     .subscribe(users => this.users = users);
+  // }
+
 }

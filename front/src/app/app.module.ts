@@ -13,6 +13,9 @@ import {MatSliderModule} from '@angular/material/slider';
 import { MainListComponent } from './back-office/main-list/main-list.component';
 import { SideListComponent } from './back-office/side-list/side-list.component';
 import { EditComponent } from './back-office/edit/edit.component';
+import { FrameItemFormComponent } from './back-office/frame-item-form/frame-item-form.component';
+import { FrameContentFormComponent } from './back-office/frame-content-form/frame-content-form.component';
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -24,15 +27,18 @@ import { EditComponent } from './back-office/edit/edit.component';
     MainListComponent,
     SideListComponent,
     EditComponent,
+    FrameItemFormComponent,
+    FrameContentFormComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    DragDropModule,
-    ReactiveFormsModule,
-    MatSliderModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        DragDropModule,
+        ReactiveFormsModule,
+        MatSliderModule,
+        MatDividerModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
