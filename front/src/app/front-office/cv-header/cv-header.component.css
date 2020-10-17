@@ -1,6 +1,7 @@
 h1 {
-    color: #A34553;
-    margin-top: 20px;
+    color: #323232;
+    margin-top: 60px;
+    font-weight: bold;
 }
 h2 {
     color: white;
@@ -13,4 +14,5 @@ h2 {
 }
 button {
     margin-top: 20px;
+    margin-left: 5px;
 }
