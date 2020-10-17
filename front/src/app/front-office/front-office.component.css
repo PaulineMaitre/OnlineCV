@@ -44,8 +44,12 @@ h2 {
     color: white;
     font-size: large;
 }
-p, a {
+p {
     color: lavender;
+}
+a {
+    color: lavender;
+    text-decoration: none;
 }
 
 
