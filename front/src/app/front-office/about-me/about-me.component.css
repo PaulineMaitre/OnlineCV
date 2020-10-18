@@ -1,0 +1,19 @@
+.sectionTitle {
+    background-color: cornflowerblue;
+    color: white;
+    font-size: x-large;
+}
+.icon {
+    width: 2em;
+    height: 2em;
+}
+.badge {
+    font-size: 1em;
+    color: white;
+    background-color: #A34553;
+}
+
+/*a {
+    color: black;
+    text-decoration: none;
+}*/
