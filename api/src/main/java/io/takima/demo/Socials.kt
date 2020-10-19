@@ -10,9 +10,9 @@ import javax.persistence.*
 data class Socials(
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Id var id: Long?,
-        @Column(name = "social_name") var socialName: String?,
-        @Column(name = "social_link") var socialLink: String?,
-        @Column(name = "social_logo") var socialLogo: String?,
+        @Column(name = "social_name") var name: String?,
+        @Column(name = "social_link") var link: String?,
+        @Column(name = "social_logo") var logo: String?,
         @ManyToOne
         @JsonIgnore
         var user: User?) {

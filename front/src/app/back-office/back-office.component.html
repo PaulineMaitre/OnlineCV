@@ -1,4 +1,10 @@
 <div class="card">
+    <tr>
+        <ul><input [formControl]="user.firstName" placeholder="name"/></ul>
+        <ul>{{ user.lastName }}</ul>
+        <ul>{{ user.skills[1].name }}</ul>
+        <ul><button (click)="updateUser()">Update User</button></ul>
+    </tr>
     <form [formGroup]="userForm" novalidate>
         <div class="form-group">
             <p>Nom :

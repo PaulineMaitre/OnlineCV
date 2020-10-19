@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../models/User';
 import {FormControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-// import { getUsers } from '../services/user.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-back-office',
@@ -11,10 +11,10 @@ import {FormControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class BackOfficeComponent implements OnInit {
 
   // inName = new FormControl('');
-
+  user: User;
   userForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private userService: UserService) {
     this.createForm();
   }
 
@@ -33,36 +33,20 @@ export class BackOfficeComponent implements OnInit {
   // New = new User()
 
   ngOnInit(): void {
-    // this.getUsers();
+    this.userService.getUserById().subscribe(data => {
+      this.user = data;
+    });
   }
-
+  updateUser(): void {
+    this.user.logo = 'Raphael';
+    console.log(this.user.logo);
+    this.userService.putUpdateUser(this.user).subscribe();
+  }
   saveUser() {
     if (this.userForm.dirty && this.userForm.valid) {
       alert(
           `Name: ${this.userForm.value.inLastname} Email: ${this.userForm.value.inFirstname}`
       );
     }
-
-    // getUsers(): void {
-    //   const id = +this.route.snapshot.paramMap.get('id');
-    //   this.userService.getHero(id)
-    //       .subscribe(hero => this.hero = hero);
-    // }
-    //
-    // goBack(): void {
-    //   this.location.back();
-    // }
-    //
-    // save(): void {
-    //   this.heroService.updateHero(this.hero)
-    //       .subscribe(() => this.goBack());
-    // }
-    // addUser(firstName: string, lastName: string) : void {
-    //   console.log(`Adding: ${firstName} ${lastName} to the database (Faut faire la fonction pour ça)`);
-    // }
-    // getUser(): void {
-    //   this.userService.getUsers()
-    //     .subscribe(users => this.users = users);
-    // }
   }
 }

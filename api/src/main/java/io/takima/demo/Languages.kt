@@ -10,9 +10,9 @@ import javax.persistence.*
 data class Languages(
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Id var id: Long?,
-        @Column(name = "language_name") var languageName: String?,
-        @Column(name = "language_level") var languageLevel: String?,
-        @Column(name = "language_flag") var languageFlag: String?,
+        @Column(name = "language_name") var name: String?,
+        @Column(name = "language_level") var logo: String?,
+        @Column(name = "language_flag") var level: String?,
         @ManyToOne
         @JsonIgnore
         var user: User?){
