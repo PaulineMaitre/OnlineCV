@@ -15,7 +15,11 @@ import { SideListComponent } from './back-office/side-list/side-list.component';
 import { EditComponent } from './back-office/edit/edit.component';
 import { FrameItemFormComponent } from './back-office/frame-item-form/frame-item-form.component';
 import { FrameContentFormComponent } from './back-office/frame-content-form/frame-content-form.component';
-import {MatDividerModule} from "@angular/material/divider";
+import {MatDividerModule} from '@angular/material/divider';
+import { AboutMeComponent } from './front-office/about-me/about-me.component';
+import { CvHeaderComponent } from './front-office/cv-header/cv-header.component';
+import { LanguagesComponent } from './front-office/languages/languages.component';
+import { SkillsComponent } from './front-office/skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +31,15 @@ import {MatDividerModule} from "@angular/material/divider";
     MainListComponent,
     SideListComponent,
     EditComponent,
+<<<<<<< HEAD
     FrameItemFormComponent,
     FrameContentFormComponent,
+=======
+    AboutMeComponent,
+    CvHeaderComponent,
+    LanguagesComponent,
+    SkillsComponent,
+>>>>>>> ccb020a7ca403505bde2009cb6c329e2d8a68dbc
   ],
     imports: [
         BrowserModule,
