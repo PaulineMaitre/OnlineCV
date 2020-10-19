@@ -1,21 +1,22 @@
 
-.margins {
-    //border: solid aqua;
-    margin: 15px;
-}
-
 .headerCV {
     margin-left: 100px;
     margin-bottom: 20px;
 }
+.frameItem {
+    background-color: lightcoral;
+}
+/*.period, .location, .icon, .frameTitle, .frameContent {
+    margin: 10px;
+}*/
 .sectionTitle {
-    background-color: cornflowerblue;
+    background-color: #73F0E3;
     color: white;
     font-size: x-large;
 }
 .titleIcon {
-    width: 3em;
-    height: 3em;
+    width: 1em;
+    height: 1em;
 }
 .icon {
     width: 2em;
@@ -24,6 +25,15 @@
 .period {
     font-style: italic;
     font-size: large;
+}
+.space {
+    margin-left: 15px;
+}
+
+.badge {
+    font-size: 1em;
+    color: white;
+    background-color: #A34553;
 }
 
 h1 {
@@ -34,12 +44,12 @@ h2 {
     color: white;
     font-size: large;
 }
-a {
-    /*color: lavender;*/
-    text-decoration: none;
-}
-p, a {
+p {
     color: lavender;
+}
+a {
+    color: lavender;
+    text-decoration: none;
 }
 
 
