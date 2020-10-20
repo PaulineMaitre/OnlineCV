@@ -11,8 +11,8 @@ data class Languages(
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Id var id: Long?,
         @Column(name = "language_name") var name: String?,
-        @Column(name = "language_level") var logo: String?,
-        @Column(name = "language_flag") var level: String?,
+        @Column(name = "language_level") var level: String?,
+        @Column(name = "language_flag") var logo: String?,
         @ManyToOne
         @JsonIgnore
         var user: User?){

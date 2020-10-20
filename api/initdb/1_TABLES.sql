@@ -55,7 +55,7 @@ create table frame_content
         primary key (id),
     frame_title    TEXT   not null,
     frame_logo_url TEXT,
-    frame_order    TEXT,
+    frame_order    TEXT not null,
     user_id        bigint not null,
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
@@ -68,7 +68,7 @@ create table content_item
     item_title       TEXT   not null,
     item_logo_url    TEXT,
     item_content     TEXT   not null,
-    item_period      TEXT,
+    item_period      TEXT   not null,
     item_location    TEXT,
     frame_content_id bigint not null,
     FOREIGN KEY (frame_content_id) REFERENCES frame_content (id)

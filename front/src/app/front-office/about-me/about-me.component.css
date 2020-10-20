@@ -13,7 +13,7 @@
     background-color: #A34553;
 }
 
-/*a {
-    color: black;
+a, a:hover {
     text-decoration: none;
-}*/
+    color: white;
+}
