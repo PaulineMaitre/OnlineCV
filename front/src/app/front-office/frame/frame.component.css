@@ -1,0 +1,13 @@
+.titleIcon {
+    width: 1em;
+    height: 1em;
+}
+.space {
+    margin-left: 15px;
+}
+
+.badge {
+    font-size: 1em;
+    color: white;
+    background-color: #A34553;
+}

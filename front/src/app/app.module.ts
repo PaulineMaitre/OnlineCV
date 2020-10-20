@@ -17,6 +17,8 @@ import { AboutMeComponent } from './front-office/about-me/about-me.component';
 import { CvHeaderComponent } from './front-office/cv-header/cv-header.component';
 import { LanguagesComponent } from './front-office/languages/languages.component';
 import { SkillsComponent } from './front-office/skills/skills.component';
+import { FrameComponent } from './front-office/frame/frame.component';
+import { FrameItemComponent } from './front-office/frame/frame-item/frame-item.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { SkillsComponent } from './front-office/skills/skills.component';
     CvHeaderComponent,
     LanguagesComponent,
     SkillsComponent,
+    FrameComponent,
+    FrameItemComponent,
   ],
   imports: [
     BrowserModule,

@@ -38,8 +38,8 @@ export class BackOfficeComponent implements OnInit {
     });
   }
   updateUser(): void {
-    this.user.logo = 'Raphael';
-    console.log(this.user.logo);
+    this.user.picture = 'Raphael';
+    console.log(this.user.picture);
     this.userService.putUpdateUser(this.user).subscribe();
   }
   saveUser() {
