@@ -10,7 +10,7 @@ export interface User {
   birthDate?: string;
   phoneNumber: string;
   bio?: string;
-  logo?: string;
+  picture?: string;
   address?: string;
   email: string;
   socialLink?: Network[];

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {UserService} from '../../services/user.service';
 import {User} from '../../models/User';
 
@@ -9,11 +9,10 @@ import {User} from '../../models/User';
 })
 export class LanguagesComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
-  user: User;
+  constructor() { }
+  @Input() user: User;
 
   ngOnInit(): void {
-    this.user = this.userService.getUserTest();
   }
 
 }
