@@ -7,7 +7,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FrontOfficeComponent} from './front-office/front-office.component';
 import {BackOfficeComponent} from './back-office/back-office.component';
 import {NavComponent} from './nav/nav.component';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatSliderModule} from '@angular/material/slider';
 import { MainListComponent } from './back-office/main-list/main-list.component';
@@ -20,6 +19,8 @@ import { AboutMeComponent } from './front-office/about-me/about-me.component';
 import { CvHeaderComponent } from './front-office/cv-header/cv-header.component';
 import { LanguagesComponent } from './front-office/languages/languages.component';
 import { SkillsComponent } from './front-office/skills/skills.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -31,15 +32,12 @@ import { SkillsComponent } from './front-office/skills/skills.component';
     MainListComponent,
     SideListComponent,
     EditComponent,
-<<<<<<< HEAD
     FrameItemFormComponent,
     FrameContentFormComponent,
-=======
     AboutMeComponent,
     CvHeaderComponent,
     LanguagesComponent,
     SkillsComponent,
->>>>>>> ccb020a7ca403505bde2009cb6c329e2d8a68dbc
   ],
     imports: [
         BrowserModule,
@@ -48,7 +46,9 @@ import { SkillsComponent } from './front-office/skills/skills.component';
         DragDropModule,
         ReactiveFormsModule,
         MatSliderModule,
-        MatDividerModule
+        MatDividerModule,
+        MatFormFieldModule,
+        MatIconModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,7 @@
 <div class="content">
-    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form-group">
+
+    <form [formGroup]="userForm" novalidate class="form-group">
+        <div class="form-group">
             <p>Nom :
                 <label class="center-block">
                     <input class="form-control" type="text" placeholder="DUPONT"
@@ -18,6 +20,12 @@
                            formControlName="inMail" #inMail>
                 </label>
             </p>
+            <p>Numéro de téléphone :
+                <label class="center-block">
+                    <input class="form-control" type="tel" placeholder="06 45 28 46 45"
+                           formControlName="inphone" #inphone>
+                </label>
+            </p>
             <p>Ajout d'une compétence :
                 <label class="center-block">
                     <input class="form-control" type="text" placeholder="Angular !"
@@ -30,56 +38,50 @@
                            formControlName="inSocial" #inSocial>
                 </label>
             </p>
-
-            <p>Décrivez vous en quelques phrases :
-                <label class="center-block">
-                    <input class="form-control" type="text" formControlName="inInfo" #inInfo>
-                </label>
-            </p>
             <p>Ajout d'un Hobbie :
                 <label class="center-block">
                     <input class="form-control" type="text" formControlName="inHobbies" #inHobbies>
                 </label>
             </p>
-    </form>
+            <p>
+                <label class="center-block">Décrivez vous en quelques phrases :
+                    <textarea class="form-control" type="text" formControlName="inBio" #inBio cols="40" rows="5"></textarea>
+<!--                    <input class="form-control" type="text" formControlName="inBio" #inBio>-->
+                </label>
+            </p>
 
+
+        </div>
+    </form>
 
     <button type="button" class="btn btn-primary" routerLink="/back/edit">Créer un CV !</button>
 
 
-    <p>Debug HTML :</p>
-    <p>Form value: {{ userForm.value | json }}</p>
-    <p>Form status: {{ userForm.status | json }}</p>
-
-    <button type="button" class="btn btn-primary" (click)="saveUser()">Test formulaire</button>
+    <!--            <p>Debug HTML :</p>-->
+                <p>Form value: {{ userForm.value | json }}</p>
+                <p>Form status: {{ userForm.status | json }}</p>
+    {{ user.lastName }}<br><br>
+    <button type="button" class="btn btn-primary" (click)="updateUserFromForm()">Test formulaire</button>
 
 </div>
 
-<!--<div *ngIf="userForm.controls['inName'].invalid && (userForm.controls['inName'].dirty || userForm.controls['inName'].touched)" class="alert alert-danger">-->
-<!--    <div *ngIf="userForm.controls['inName'].errors.required">-->
-<!--        Name is required.-->
-<!--    </div>-->
-<!--</div>-->
 
 
-<!--&lt;!&ndash;<button (click)="addUser(inFirstname.value, inLastname.value);&ndash;&gt;-->
-<!--&lt;!&ndash;    inFirstname.value, inLastname.value"></button>&ndash;&gt;-->
 
 
-<!--<form [formGroup]="userForm" (submit)="saveUser()">-->
-<!--    <label for="name">Name</label>-->
-<!--    <input formControlName="name" id="name" #name="ngControl" />-->
-<!--    <div *ngIf="name.touched && name.hasError('required')">Required</div>-->
-
-<!--    <label for="email">Email</label>-->
-<!--    <input formControlName="email" id="email" #email="ngControl" />-->
-<!--    <div *ngIf="email.touched && email.hasError('email')">Invalid</div>-->
-
-<!--    <label for="profile">Profile Description</label>-->
-<!--    <input formControlName="email" id="profile" #profile="ngControl" />-->
-<!--    <div *ngIf="profile.touched && profile.hasError('required')">Invalid</div>-->
-
-<!--    <button type="submit" [disabled]="!userForm.valid">Submit</button>-->
-<!--</form>-->
 
 
+<!--    <mat-form-field appearance="legacy">-->
+<!--        <mat-label>Legacy form field</mat-label>-->
+<!--        <input matInput placeholder="Placeholder">-->
+<!--        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+<!--        <mat-hint>Hint</mat-hint>-->
+<!--    </mat-form-field>-->
+
+
+<!--            <tr>-->
+<!--                <ul><input formControlName="inLastname" placeholder="name"/></ul>-->
+<!--                <ul>{{ user.lastName }}</ul>-->
+<!--                <ul>{{ user.skills[1].name }}</ul>-->
+<!--                <ul><button (click)="updateUserFromForm()">Update User</button></ul>-->
+<!--            </tr>-->
