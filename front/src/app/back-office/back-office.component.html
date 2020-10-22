@@ -1,68 +1,82 @@
 <div class="content" *ngIf="user">
+    <div class="card">
+        <form [formGroup]="userForm" novalidate class="form-group grid-container">
+            <div class="firstName">
+                <p>Prénom :<br>
+                    <label class="center-block">
+                        <input class="form-control" type="text" placeholder="Jean"
+                               formControlName="inFirstname" #inFirstname>
+                    </label>
+                </p>
+            </div>
+            <div class="lastName">
+                <p>Nom :<br>
+                    <label class="center-block">
+                        <input class="form-control" type="text" placeholder="DUPONT"
+                               formControlName="inLastname">
+                    </label>
+                </p>
+            </div>
+            <div class="Mail">
+                <p>Mail :<br>
+                    <label class="center-block">
+                        <input class="form-control" type="email" placeholder="Your current email address"
+                               formControlName="inMail" #inMail>
+                    </label>
+                </p>
+            </div>
+            <div class="Tel">
+                <p>Numéro de téléphone :<br>
+                    <label class="center-block">
+                        <input class="form-control" type="tel" placeholder="06 45 28 46 45"
+                               formControlName="inphone" #inphone>
+                    </label>
+                </p>
+            </div>
+            <div class="Bio">
+                <p>
+                    <label class="center-block">Décrivez vous en quelques phrases :<br>
+                        <textarea class="form-control" type="text" formControlName="inBio" #inBio cols="40" rows="5"></textarea>
+                        <!--                    <input class="form-control" type="text" formControlName="inBio" #inBio>-->
+                    </label>
+                </p>
+            </div>
+            <div class="Hobbie">
+                <p>Ajout d'un Hobbie :<br>
+                    <label class="center-block">
+                        <input class="form-control" type="text" placeholder="Tennis !"
+                               formControlName="inHobbies" #inHobbies>
+                    </label>
+                </p>
+            </div>
+            <div class="Social">
+                <p>Ajout d'un lien vers un réseau :<br>
+                    <label class="center-block">
+                        <input class="form-control" type="text" placeholder="URL de profil"
+                               formControlName="inSocial" #inSocial>
+                    </label>
+                </p>
 
-    <form [formGroup]="userForm" novalidate class="form-group">
-        <div class="form-group">
-            <p>Nom :
-                <label class="center-block">
-                    <input class="form-control" type="text" placeholder="DUPONT"
-                           formControlName="inLastname">
-                </label>
-            </p>
-            <p>Prénom :
-                <label class="center-block">
-                    <input class="form-control" type="text" placeholder="Jean"
-                           formControlName="inFirstname" #inFirstname>
-                </label>
-            </p>
-            <p>Mail :
-                <label class="center-block">
-                    <input class="form-control" type="email" placeholder="Your current email address"
-                           formControlName="inMail" #inMail>
-                </label>
-            </p>
-            <p>Numéro de téléphone :
-                <label class="center-block">
-                    <input class="form-control" type="tel" placeholder="06 45 28 46 45"
-                           formControlName="inphone" #inphone>
-                </label>
-            </p>
-            <p>Ajout d'une compétence :
-                <label class="center-block">
-                    <input class="form-control" type="text" placeholder="Angular !"
-                           formControlName="inSkills" #inSkills>
-                </label>
-            </p>
-            <p>Ajout d'un lien vers un réseau :
-                <label class="center-block">
-                    <input class="form-control" type="text" placeholder="URL de profil"
-                           formControlName="inSocial" #inSocial>
-                </label>
-            </p>
-            <p>Ajout d'un Hobbie :
-                <label class="center-block">
-                    <input class="form-control" type="text" formControlName="inHobbies" #inHobbies>
-                </label>
-            </p>
-            <p>
-                <label class="center-block">Décrivez vous en quelques phrases :
-                    <textarea class="form-control" type="text" formControlName="inBio" #inBio cols="40" rows="5"></textarea>
-<!--                    <input class="form-control" type="text" formControlName="inBio" #inBio>-->
-                </label>
-            </p>
+            </div>
+            <div class="Skill">
+                <p>Ajout d'une compétence :<br>
+                    <label class="center-block">
+                        <input class="form-control" type="text" placeholder="Angular !"
+                               formControlName="inSkills" #inSkills>
+                    </label>
+                </p>
+            </div>
+        </form>
+
+        <button type="button" class="btn btn-primary" routerLink="/back/edit">Créer un CV !</button>
 
 
-        </div>
-    </form>
-
-    <button type="button" class="btn btn-primary" routerLink="/back/edit">Créer un CV !</button>
-
-
-    <!--            <p>Debug HTML :</p>-->
-                <p>Form value: {{ userForm.value | json }}</p>
-                <p>Form status: {{ userForm.status | json }}</p>
-    <span>{{ user.lastName }}</span><br><br>
-    <button type="button" class="btn btn-primary" (click)="updateUserFromForm()">Test formulaire</button>
-
+        <!--            <p>Debug HTML :</p>-->
+        <p>Form value: {{ userForm.value | json }}</p>
+        <p>Form status: {{ userForm.status | json }}</p>
+        <span>{{ user.lastName }}</span><br><br>
+        <button type="button" class="btn btn-primary" (click)="updateUserFromForm()">Test formulaire</button>
+    </div>
 </div>
 
 

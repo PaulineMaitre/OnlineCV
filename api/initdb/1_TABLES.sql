@@ -44,7 +44,7 @@ create table skill
     skill_name      TEXT   not null,
     skill_logo_link TEXT,
     skill_level     TEXT,
-    user_id         bigint not null,
+    user_id         bigint  not null,
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
 

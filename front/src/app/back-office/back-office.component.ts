@@ -63,7 +63,7 @@ export class BackOfficeComponent implements OnInit {
     }
     this.userService.createNetwork(this.newSocial).subscribe();*/
     this.newSkill = {
-      id:this.user.skills.length++,
+      id:1,
       // name:this.userForm.get('inSkills').value,
       name: 'superskill',
       logo:'',
@@ -71,6 +71,7 @@ export class BackOfficeComponent implements OnInit {
       user: this.user.id};
     this.userService.createSkill(this.newSkill).subscribe();
     console.log(`Fields created`);
+    console.log(this.user.skills[0].id);
   }
 
 //   saveUser() {

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {catchError, map, tap} from 'rxjs/operators';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {timeout} from 'rxjs/operators';
 import {User} from '../models/User';
@@ -17,6 +17,14 @@ import {Language} from '../models/Language';
 export class UserService {
 
     private url: string;
+    options: {
+        headers?: HttpHeaders | {[header: string]: string | string[]},
+        observe?: 'body',
+        params?: HttpParams|{[param: string]: string | string[]},
+        reportProgress?: boolean,
+        responseType?: 'json',
+        withCredentials?: boolean,
+    }
 
     constructor(private http: HttpClient) {
         this.url = environment.url;
@@ -52,7 +60,7 @@ export class UserService {
     }
 
     createSkill(skill: Skill): Observable<any> {
-        return this.http.post(`${this.url}/skill/create`, skill).pipe(tap(_ => timeout(1000)));
+        return this.http.post(`${this.url}/skill/create`, skill, this.options).pipe(tap(_ => timeout(1000)));
     }
 
     deleteSkill(id: number): Observable<any> {
