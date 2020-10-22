@@ -3,4 +3,5 @@ export interface Skill {
     name: string;
     logo: string;
     level: number;
+    user:number;
 }

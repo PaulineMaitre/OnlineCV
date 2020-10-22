@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content" *ngIf="user">
 
     <form [formGroup]="userForm" novalidate class="form-group">
         <div class="form-group">
@@ -60,7 +60,7 @@
     <!--            <p>Debug HTML :</p>-->
                 <p>Form value: {{ userForm.value | json }}</p>
                 <p>Form status: {{ userForm.status | json }}</p>
-    {{ user.lastName }}<br><br>
+    <span>{{ user.lastName }}</span><br><br>
     <button type="button" class="btn btn-primary" (click)="updateUserFromForm()">Test formulaire</button>
 
 </div>

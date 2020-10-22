@@ -6,4 +6,5 @@ export interface FrameContent {
     order: number;
     logo: string;
     frameItem: FrameItem[];
+    user:number;
 }

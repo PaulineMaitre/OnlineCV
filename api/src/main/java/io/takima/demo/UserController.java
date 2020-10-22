@@ -31,14 +31,14 @@ public class UserController {
         return user;
     }
 
-    @PutMapping()
+    @PutMapping("/")
     public void updateUser(@RequestBody User user) {
         if (userDAO.existsById(user.getId())) {
             this.userDAO.save(user);
         }
     }
 
-    @PostMapping()
+    @PostMapping("/create")
     public User addUser(@RequestBody User user) {
         return this.userDAO.save(user);
     }

@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
  *
  */
 @Repository
-public interface ContentDAO extends CrudRepository<ContentItem, Long> {
+public interface SocialsDAO extends CrudRepository<Socials, Long> {
 
 }

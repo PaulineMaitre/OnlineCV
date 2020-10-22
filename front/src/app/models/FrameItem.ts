@@ -6,4 +6,5 @@ export interface FrameItem {
     order: number;
     logo: string;
     content: string;
+    frame:number;
 }
