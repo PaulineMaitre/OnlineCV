@@ -9,15 +9,15 @@ INSERT INTO defaultdb.users
 //
 
 INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_id)
-VALUES (1, 'Python', '../assets/logo_python.png', 3, 1);
+VALUES (1, 'Python', '../assets/logo_python.png', 70, 1);
 INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_id)
-VALUES (2, 'PHP', '../assets/logo_php.png', 2, 1);
+VALUES (2, 'PHP', '../assets/logo_php.png', 45, 1);
 INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_id)
-VALUES (3, 'HTML', '../assets/logo_html.png', 4, 1);
+VALUES (3, 'HTML', '../assets/logo_html.png', 80, 1);
 INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_id)
-VALUES (4, 'CSS', '../assets/logo_css.png', 4, 1);
+VALUES (4, 'CSS', '../assets/logo_css.png', 85, 1);
 INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_id)
-VALUES (5, 'Java', '../assets/logo_java.png', 4, 1);
+VALUES (5, 'Java', '../assets/logo_java.png', 85, 1);
 
 INSERT INTO defaultdb.socials (id, social_name, social_link, social_logo, user_id)
 VALUES (1, 'LinkedIn','https://www.linkedin.com/in/paulinemaitre/','../assets/logo_linkedin.png', 1);
