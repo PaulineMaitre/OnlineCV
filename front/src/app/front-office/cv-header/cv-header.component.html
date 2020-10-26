@@ -1,4 +1,4 @@
-<div class="headerCV row">
+<div *ngIf="user" class="headerCV row">
     <img class="col-sm-1 col-md-2 col-lg-2" src="../../assets/profile_picture_Pauline.png" alt="profilePicture">
     <div class="col-sm-10 col-md-8 col-lg-8">
         <h1>{{user.firstName}} {{user.lastName}}</h1>

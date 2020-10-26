@@ -7,7 +7,7 @@ export interface User {
   id: number;
   firstName: string;
   lastName: string;
-  birthDate?: string;
+  birthDate?: Date;
   phoneNumber: string;
   bio?: string;
   picture?: string;

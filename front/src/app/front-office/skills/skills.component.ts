@@ -14,5 +14,9 @@ export class SkillsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  skillLevelToPercent(skillLevel: number): number {
+    return skillLevel * 20;
+  }
+
 
 }

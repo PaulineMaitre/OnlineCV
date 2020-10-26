@@ -1,6 +1,11 @@
 <h3 class="badge col-md-4 col-lg-4">Languages</h3>
-<p *ngFor="let language of user.languages">
-    <img class="icon bdr" src={{language.logo}}>
-    <span class="space">{{language.name}}</span>
-    <span class="space">{{language.level}}</span>
-</p>
+
+<div class="row" *ngFor="let language of user.languages">
+    <div class="col-md-1 col-sm-6"><img class="icon bdr" src={{language.logo}}></div>
+    <div class="col-md-2 col-sm-6"><p class="space">{{language.name}}</p></div>
+    <div class="col-md-6 col-sm-12">
+        <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" [style.width]="languageLevelToPercent(language.level)+ '%'" aria-valuemin="0" aria-valuemax="5"></div>
+        </div>
+    </div>
+</div>

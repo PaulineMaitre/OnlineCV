@@ -14,5 +14,10 @@ export class AboutMeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  formatBirthDate(birthDate: Date): string {
+    const date = new Date(birthDate);
+    const stringBirthDate = date.getDate() + '/' + (date.getMonth() + 1 )+ '/' + date.getFullYear();
+    return stringBirthDate;
+  }
 
 }

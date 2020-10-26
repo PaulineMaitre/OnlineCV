@@ -2,7 +2,7 @@
 <p>{{user.address}}<br>
     {{user.email}}<br>
     {{user.phoneNumber}}<br>
-    <span *ngIf="user.birthDate">{{user.birthDate}}</span></p>
+    <span *ngIf="user.birthDate">{{formatBirthDate(user.birthDate)}}</span></p>
 <p *ngFor="let socialNetwork of user.socialLink">
     <img class="icon" src={{socialNetwork.logo}}>
     <a href={{socialNetwork.link}}>
