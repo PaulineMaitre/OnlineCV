@@ -17,5 +17,4 @@ export class FrontOfficeComponent implements OnInit {
       this.user = data;
     });
   }
-
 }

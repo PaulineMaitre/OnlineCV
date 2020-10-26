@@ -15,3 +15,8 @@
 .space {
     margin-left: 15px;
 }
+
+.progress.active .progress-bar {
+    -webkit-transition: none !important;
+    transition: none !important;
+}

@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UserService} from '../../../services/user.service';
-import {User} from '../../../models/User';
+import {UserService} from '../../../../services/user.service';
+import {User} from '../../../../models/User';
+import {Skill} from '../../../../models/Skill';
 
 @Component({
   selector: 'app-skills',
@@ -10,7 +11,8 @@ import {User} from '../../../models/User';
 export class SkillsComponent implements OnInit {
 
   constructor() { }
-  @Input() user: User;
+  @Input() skills: Skill;
+  @Input() languages: Skill;
 
   ngOnInit(): void {
   }

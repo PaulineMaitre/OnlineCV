@@ -1,11 +1,2 @@
 <app-cv-header [user]="user"></app-cv-header>
-<div *ngIf="user" class="row space">
-    <div class="col-md-5 col-lg-5">
-        <app-about-me [user]="user"></app-about-me>
-        <app-languages [user]="user"></app-languages>
-        <app-skills [user]="user"></app-skills>
-    </div>
-    <div class="col-md-7 col-lg-7">
-        <app-frame [user]="user"></app-frame>
-    </div>
-</div>
+<app-cv-content [user]="user"></app-cv-content>

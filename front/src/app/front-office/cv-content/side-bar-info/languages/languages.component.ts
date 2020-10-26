@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UserService} from '../../../services/user.service';
-import {User} from '../../../models/User';
+import {Language} from '../../../../models/Language';
+
+declare var $: any;
 
 @Component({
   selector: 'app-languages',
@@ -10,12 +11,13 @@ import {User} from '../../../models/User';
 export class LanguagesComponent implements OnInit {
 
   constructor() { }
-  @Input() user: User;
+  @Input() languages: Language;
 
   ngOnInit(): void {
   }
   languageLevelToPercent(languageLevel: number): number {
     return languageLevel * 20;
   }
+
 
 }

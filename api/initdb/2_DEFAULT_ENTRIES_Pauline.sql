@@ -17,6 +17,10 @@ INSERT INTO defaultdb.socials (id, social_name, social_link, social_logo, user_i
 VALUES (1, 'LinkedIn','https://www.linkedin.com/in/paulinemaitre/','../assets/logo_linkedin.png', 1);
 INSERT INTO defaultdb.socials (id, social_name, social_link, social_logo, user_id)
 VALUES (2, 'Github','https://www.github.com/PaulineMaitre','../assets/logo_github.png', 1);
+INSERT INTO defaultdb.socials (id, social_name, social_link, social_logo, user_id)
+VALUES (3, 'GitLab','https://gitlab.com/PaulineMaitre','../assets/logo_gitlab.png', 1);
+INSERT INTO defaultdb.socials (id, social_name, social_link, social_logo, user_id)
+VALUES (4, 'Instagram','https://www.instagram.com/_pauline_m_','../assets/logo_instagram.png', 1);
 
 INSERT INTO defaultdb.languages (id, language_name, language_flag, language_level, user_id)
 VALUES (1, 'French', '../assets/french_flag.png', 5, 1);

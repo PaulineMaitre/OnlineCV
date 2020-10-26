@@ -1,1 +1,8 @@
-<p>cv-content works!</p>
+<div class="row space">
+    <div class="col-md-5 col-lg-5">
+        <app-side-bar-info [user]="user"></app-side-bar-info>
+    </div>
+    <div class="col-md-7 col-lg-7">
+        <app-frame [frame]="user.frame"></app-frame>
+    </div>
+</div>

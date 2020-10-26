@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {User} from '../../models/User';
+import {User} from '../../../models/User';
+import {FrameContent} from '../../../models/FrameContent';
 
 @Component({
   selector: 'app-frame',
@@ -9,7 +10,7 @@ import {User} from '../../models/User';
 export class FrameComponent implements OnInit {
 
   constructor() { }
-  @Input() user: User;
+  @Input() frame: FrameContent;
   ngOnInit(): void {
   }
 
