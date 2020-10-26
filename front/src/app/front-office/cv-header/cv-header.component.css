@@ -1,11 +1,15 @@
 h1 {
     color: #323232;
-    margin-top: 60px;
+    margin-top: 3%;
     font-weight: bold;
 }
 h2 {
     color: white;
     font-size: large;
+}
+.profilePicture {
+    margin-left: 10%;
+    width: 60%;
 }
 
 .headerCV {
@@ -13,6 +17,12 @@ h2 {
     margin-bottom: 20px;
 }
 a {
-    margin-top: 20px;
+    margin-top: 5%;
     margin-left: 5px;
 }
+.icon {
+    width: 2em;
+    height: 2em;
+    margin: 0.5em;
+}
+

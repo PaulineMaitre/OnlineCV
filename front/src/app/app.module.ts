@@ -13,12 +13,13 @@ import {MatSliderModule} from '@angular/material/slider';
 import { MainListComponent } from './back-office/main-list/main-list.component';
 import { SideListComponent } from './back-office/side-list/side-list.component';
 import { EditComponent } from './back-office/edit/edit.component';
-import { AboutMeComponent } from './front-office/about-me/about-me.component';
+import { AboutMeComponent } from './front-office/cv-content/about-me/about-me.component';
 import { CvHeaderComponent } from './front-office/cv-header/cv-header.component';
-import { LanguagesComponent } from './front-office/languages/languages.component';
-import { SkillsComponent } from './front-office/skills/skills.component';
+import { LanguagesComponent } from './front-office/cv-content/languages/languages.component';
+import { SkillsComponent } from './front-office/cv-content/skills/skills.component';
 import { FrameComponent } from './front-office/frame/frame.component';
 import { FrameItemComponent } from './front-office/frame/frame-item/frame-item.component';
+import { CvContentComponent } from './front-office/cv-content/cv-content.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { FrameItemComponent } from './front-office/frame/frame-item/frame-item.c
     SkillsComponent,
     FrameComponent,
     FrameItemComponent,
+    CvContentComponent,
   ],
   imports: [
     BrowserModule,
