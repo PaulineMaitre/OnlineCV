@@ -34,6 +34,8 @@ public class UserController {
     @PutMapping("/")
     public void updateUser(@RequestBody User user) {
         if (userDAO.existsById(user.getId())) {
+            // TODO : demander Lucas
+
             this.userDAO.save(user);
         }
     }

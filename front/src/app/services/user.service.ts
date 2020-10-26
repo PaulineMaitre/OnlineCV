@@ -38,7 +38,7 @@ export class UserService {
 
     updateUser(user: User): Observable<any> {
         return this.http.put(`${this.url}/users/`, user).pipe(tap(_ =>
-            console.log(`Mais pas ici ! :( updated hero id=${user.firstName}`),
+            console.log(`Updated hero id=${user.firstName}`),
             timeout(1000)));
     }
 

@@ -1,4 +1,6 @@
-export interface FrameItem {
+import {defaultsDeep} from 'lodash';
+
+export class FrameItem {
     id: number;
     title: string;
     period: string;
@@ -7,4 +9,8 @@ export interface FrameItem {
     logo: string;
     content: string;
     frame:number;
+
+    constructor(frameItem? : Partial<FrameItem>) {
+        defaultsDeep(this, frameItem);
+    }
 }

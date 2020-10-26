@@ -47,31 +47,42 @@ export class BackOfficeComponent implements OnInit {
   }
 
   updateUserFromForm(): void {
-   /* this.user.logo = 'Raphael';
+    this.user.logo = 'Raphael';
     this.user.firstName = this.userForm.get('inFirstname').value;
     this.user.lastName = this.userForm.get('inLastname').value;
     this.user.email = this.userForm.get('inMail').value;
     this.user.bio = this.userForm.get('inBio').value;
     this.user.phoneNumber = this.userForm.get('inphone').value;
-    this.userService.updateUser(this.user).subscribe();
-    console.log(`Form updated : User is now ${this.user.firstName} ${this.user.lastName}`);*/
-    /*this.newSocial = {
-      id:this.user.skills.length++,
-      name: this.userForm.get('inSocial').value,
+    // TODO : Ajouter la liste d'objet : socialLink = LISTE
+    this.user.socialLink.push( new Network({
+      name: 'Tata',
       link: '',
       logo: '',
-    }
-    this.userService.createNetwork(this.newSocial).subscribe();*/
-    this.newSkill = {
-      id:1,
-      // name:this.userForm.get('inSkills').value,
-      name: 'superskill',
-      logo:'',
-      level:5,
-      user: this.user.id};
-    this.userService.createSkill(this.newSkill).subscribe();
-    console.log(`Fields created`);
-    console.log(this.user.skills[0].id);
+    }));
+    this.user.skills.push( new Skill({
+      name: 'Toto',
+      level: 3,
+      logo: '',
+    }));
+    this.userService.updateUser(this.user).subscribe();
+    console.log(`Form updated : User is now ${this.user.firstName} ${this.user.lastName}`);
+
+
+    // this.userService.createNetwork(this.newSocial).subscribe();
+    // TODO : Ajouter constructor DefaultDeep
+    /*if (this.userForm.valid) {
+      this.newSkill = {
+        id:1,
+        // name:this.userForm.get('inSkills').value,
+        name: 'superskill',
+        logo:'',
+        level:5,
+        user: this.user.id};
+      this.userService.createSkill(this.newSkill).subscribe();
+      console.log(`Fields created`);
+      console.log(this.user.skills[0].id);
+    }*/
+
   }
 
 //   saveUser() {
