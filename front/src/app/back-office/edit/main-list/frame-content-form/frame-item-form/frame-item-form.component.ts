@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {User} from '../../models/User';
-import {UserService} from '../../services/user.service';
+import {User} from '../../../../../models/User';
+import {UserService} from '../../../../../services/user.service';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
