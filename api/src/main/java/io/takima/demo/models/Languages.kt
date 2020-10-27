@@ -1,4 +1,4 @@
-package io.takima.demo
+package io.takima.demo.models
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import javax.persistence.*
