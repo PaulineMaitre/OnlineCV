@@ -71,7 +71,7 @@ create table content_item
     item_order       INT,
     item_period      TEXT,
     item_location    TEXT,
-    frame_content_id bigint not null,
+    frame_content_id bigint ,
     FOREIGN KEY (frame_content_id) REFERENCES frame_content (id)
 );
 

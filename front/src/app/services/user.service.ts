@@ -30,16 +30,17 @@ export class UserService {
         this.url = environment.url;
     }
 
-    // TODO : à modifier !
-    /** Requests for user */
+    /** Requests for users with API */
+
+    getUsers(): Observable<User[]> {
+      return this.http.get<User[]>(`${this.url}/users`).pipe(timeout(10000));
+    }
     getUserById(id: number): Observable<any> {
-        return this.http.get<User>(`${this.url}/users/${id}`).pipe(tap(_ => console.log('user sent to front')), timeout(1000));
+        return this.http.get<User>(`${this.url}/users/${id}`).pipe(tap(_ => timeout(1000)));
     }
 
     updateUser(user: User): Observable<any> {
-        return this.http.put(`${this.url}/users/`, user).pipe(tap(_ =>
-            console.log(`Updated hero id=${user.firstName}`),
-            timeout(1000)));
+        return this.http.put(`${this.url}/users/`, user).pipe(tap(_ => timeout(1000)));
     }
 
     createUser(user: User): Observable<any> {
@@ -50,99 +51,8 @@ export class UserService {
         return this.http.delete(`${this.url}/users/${id}`).pipe(timeout(10000));
     }
 
-    /** Requests for user */
-    getSkillById(id: number): Observable<any> {
-        return this.http.get<Skill>(`${this.url}/skill/${id}`).pipe(tap(_ => timeout(1000)));
-    }
+    /** Local test user */
 
-    updateSkill(skill: Skill): Observable<any> {
-        return this.http.put(`${this.url}/skill/`, skill).pipe(tap(_ => timeout(1000)));
-    }
-
-    createSkill(skill: Skill): Observable<any> {
-        return this.http.post(`${this.url}/skill/create`, skill, this.options).pipe(tap(_ => timeout(1000)));
-    }
-
-    deleteSkill(id: number): Observable<any> {
-        return this.http.delete(`${this.url}/skill/${id}`).pipe(timeout(10000));
-    }
-
-    /** Requests for social */
-    getNetworkById(id: number): Observable<any> {
-        return this.http.get<Network>(`${this.url}/social/${id}`).pipe(tap(_ => timeout(1000)));
-    }
-
-    updateNetwork(network: Network): Observable<any> {
-        return this.http.put(`${this.url}/social/`, network).pipe(tap(_ => timeout(1000)));
-    }
-
-    createNetwork(network: Network): Observable<any> {
-        return this.http.post(`${this.url}/social/create`, network).pipe(tap(_ => timeout(1000)));
-    }
-
-    deleteNetwork(id: number): Observable<any> {
-        return this.http.delete(`${this.url}/social/${id}`).pipe(timeout(10000));
-    }
-
-    /** Requests for language */
-    getLanguageById(id: number): Observable<any> {
-        return this.http.get<Language>(`${this.url}/language/${id}`).pipe(tap(_ => timeout(1000)));
-    }
-
-    updateLanguage(language: Language): Observable<any> {
-        return this.http.put(`${this.url}/language/`, language).pipe(tap(_ => timeout(1000)));
-    }
-
-    createLanguage(language: Language): Observable<any> {
-        return this.http.post(`${this.url}/language/create`, language).pipe(tap(_ => timeout(1000)));
-    }
-
-    deleteLanguage(id: number): Observable<any> {
-        return this.http.delete(`${this.url}/language/${id}`).pipe(timeout(10000));
-    }
-
-    /** Requests for frame */
-    getFrameById(id: number): Observable<any> {
-        return this.http.get<FrameContent>(`${this.url}/frame/${id}`).pipe(tap(_ => timeout(1000)));
-    }
-
-    updateFrame(frame: FrameContent): Observable<any> {
-        return this.http.put(`${this.url}/frame/`, frame).pipe(tap(_ => timeout(1000)));
-    }
-
-    createFrame(frame: FrameContent): Observable<any> {
-        return this.http.post(`${this.url}/frame/create`, frame).pipe(tap(_ => timeout(1000)));
-    }
-
-    deleteFrame(id: number): Observable<any> {
-        return this.http.delete(`${this.url}/frame/${id}`).pipe(timeout(10000));
-    }
-
-    /** Requests for item */
-    getItemById(id: number): Observable<any> {
-        return this.http.get<FrameItem>(`${this.url}/item/${id}`).pipe(tap(_ => timeout(1000)));
-    }
-
-    updateItem(item: FrameItem): Observable<any> {
-        return this.http.put(`${this.url}/item/`, item).pipe(tap(_ => timeout(1000)));
-    }
-
-    createItemContent(item: FrameItem): Observable<any> {
-        return this.http.post(`${this.url}/item/create`, item).pipe(tap(_ => timeout(1000)));
-    }
-
-    deleteItem(id: number): Observable<any> {
-        return this.http.delete(`${this.url}/item/${id}`).pipe(timeout(10000));
-    }
-
-    /*addUser(user: User): Observable<User> {
-      return this.http.post<any>(`${this.url}/users`, user).pipe(timeout(10000));
-    }*/
-    /*getUsers(): Observable<User[]> {
-      return this.http.get<User[]>(`${this.url}/users`).pipe(timeout(10000));
-    }*/
-
-    //
     public getUserTest(): User {
         // SOCIAL NETWORKS
         const linkedin: Network = {

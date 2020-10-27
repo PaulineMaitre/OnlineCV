@@ -13,7 +13,7 @@ data class FrameContent(
         @Column(name = "frame_title") var title: String?,
         @Column(name = "frame_logo_url") var logo: String?,
         @Column(name = "frame_order") var order: Int?,
-        @Column(name = "frame_content_item")@OneToMany(mappedBy = "frameContent") var frameItem: List<ContentItem>?,
+        @Column(name = "frame_content_item")@OneToMany(mappedBy = "frameContent", cascade = [CascadeType.ALL]) var frameItem: List<ContentItem>?,
         @ManyToOne
         @JsonIgnore
         var user: User?) {
