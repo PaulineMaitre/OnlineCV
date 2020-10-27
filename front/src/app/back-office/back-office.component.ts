@@ -17,28 +17,29 @@ export class BackOfficeComponent implements OnInit {
     userForm: FormGroup;
     user: User;
 
-    constructor(private fb: FormBuilder, private userService: UserService) {
-        this.createForm();
-    }
+    constructor(private fb: FormBuilder, private userService: UserService) {}
 
     ngOnInit(): void {
         this.getUser();
-        setTimeout(() => {
-        }, 2000);
+        setTimeout(() => {}, 2000);
+        this.createForm();
     }
 
-    createForm() {
+    createForm() : void {
         // Mettre des validators ?
+        // .fb.group = new FormGroup
         this.userForm = this.fb.group({
-            inLastname: [''],
-            inFirstname: [''],
-            inMail: [''],
+            inFirstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+            inLastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+            inMail: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
             inSkills: [''],
             inSocial: [''],
             inBio: [''],
             inHobbies: [''],
             inphone: [''],
         });
+        this.userForm.addControl('inLastname', new FormControl('', Validators.required));
+        this.userForm.controls.inLastname.setValidators([Validators.required]);
     }
 
     getUser(): void {
@@ -56,7 +57,7 @@ export class BackOfficeComponent implements OnInit {
         this.user.phoneNumber = this.userForm.get('inphone').value;
         // TODO : Ajouter la liste d'objet : socialLink = LISTE
         this.user.socialLink.push(new Network({
-            name: 'Tata',
+            name: this.userForm.get('inSocial').value,
             link: '',
             logo: '',
         }));
@@ -66,12 +67,12 @@ export class BackOfficeComponent implements OnInit {
             logo: '',
         }));
         this.user.frame.push(new FrameContent({
-            title: '',
-            logo:'',
-            frameItem: [new FrameItem({
-                title:'item name',
-                content:'content of the item',
-            })],
+                title: '',
+                logo:'',
+                frameItem: [new FrameItem({
+                    title:'item name',
+                    content:'content of the item',
+                })],
             }
         ));
         this.userService.updateUser(this.user).subscribe();

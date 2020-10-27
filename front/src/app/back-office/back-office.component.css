@@ -6,6 +6,7 @@
 }
 
 .card {
+    padding: 1em 0 1em 0;
     width: 40em;
     display: inline-block;
     background-color: #757575;
@@ -33,3 +34,12 @@
 .Hobbie { grid-area: Hobbie; }
 .Social { grid-area: Social; }
 .Skill { grid-area: Skill; }
+
+.alert {
+    padding: .375rem .75rem!important;
+    /*background-color: red;*/
+}
+
+.error {
+    font-size: smaller;
+}
