@@ -1,6 +1,6 @@
 INSERT INTO defaultdb.users
     (id, first_name, last_name, phone_number, birth_date, address, email, bio)
-    VALUES (1, 'Pauline', 'Maitre', '+33 6 15 11 44 71','1998-03-13','20 allée des ifs, 78510 Triel Sur Seine, France', 'pauline.maitre@epfedu.fr','French engineering student looking for a final year internship');
+    VALUES (3, 'Pauline', 'Maitre', '+33 6 15 11 44 71','1998-03-13','20 allée des ifs, 78510 Triel Sur Seine, France', 'pauline.maitre@epfedu.fr','French engineering student looking for a final year internship');
 //
       socialLink: [linkedin, github],
       skills: [angularSkill, springSkill],
