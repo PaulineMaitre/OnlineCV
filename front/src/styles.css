@@ -3,8 +3,12 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Raleway', "Trebuchet MS", Roboto, "Helvetica Neue", sans-serif; }
 
-body {background-color: #323232}
+body {
+    background-color: #323232;
+    color: lavender;
+}
 
 p, a {
     color: lavender;
 }
+

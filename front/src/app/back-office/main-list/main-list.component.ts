@@ -10,8 +10,6 @@ export class MainListComponent implements OnInit {
 
   containers = [
     'Episode I - The Phantom Menace',
-    'Episode II - Attack of the Clones',
-    'Episode III - Revenge of the Sith',
   ];
 
   toAdd = [    'Episode IV - A New Hope',

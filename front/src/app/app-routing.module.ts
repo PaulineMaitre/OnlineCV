@@ -1,4 +1,4 @@
-import {Input, NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {BackOfficeComponent} from './back-office/back-office.component';
 import {AppComponent} from './app.component';
@@ -19,4 +19,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
+
 }
