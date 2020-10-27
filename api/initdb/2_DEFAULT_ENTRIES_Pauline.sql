@@ -40,13 +40,28 @@ VALUES (1, 'EPF Ecole d\'ingénieurs', '../assets/logo_epf.png', 'Since septembe
 INSERT INTO defaultdb.content_item (id, item_title, item_logo_url, item_period, item_location, item_content, frame_content_id)
 VALUES (2, 'Universidad Pontificia Comillas', './assets/logo_comillas.png', 'September to December 2019', 'Madrid - Spain',
         'Erasmus semester studying IT', 1);
+/*INSERT INTO defaultdb.content_item (id, item_title, item_logo_url, item_period, item_location, item_content, frame_content_id)
+VALUES (3, 'EPF Ecole d\'ingénieurs', '../assets/logo_epf.png', 'Since september 2016', 'Sceaux - France',
+        'Majoring in Engineering and Digital Technologies', 1);
+INSERT INTO defaultdb.content_item (id, item_title, item_logo_url, item_period, item_location, item_content, frame_content_id)
+VALUES (4, 'Universidad Pontificia Comillas', './assets/logo_comillas.png', 'September to December 2019', 'Madrid - Spain',
+        'Erasmus semester studying IT', 1);*/
 
 INSERT INTO defaultdb.content_item (id, item_title, item_logo_url, item_period, item_location, item_content, frame_content_id)
-VALUES (3, 'Deloitte', '../assets/logo_deloitte.png', 'September 2020 to January 2021 ', 'La Défense - France',
+VALUES (5, 'Deloitte', '../assets/logo_deloitte.png', 'September 2020 to January 2021 ', 'La Défense - France',
         'Development of a Smart Dashboard to gather HR KPI related to homeworking', 2);
 INSERT INTO defaultdb.content_item (id, item_title, item_logo_url, item_period, item_location, item_content, frame_content_id)
-VALUES (4, 'Junior Entreprise EPF Projets', '../assets/logo_epf_projets.png', 'Since January 2019', 'Sceaux - France',
+VALUES (6, 'Junior Entreprise EPF Projets', '../assets/logo_epf_projets.png', 'Since January 2019', 'Sceaux - France',
         'Member of the IT division and project manager', 2);
 INSERT INTO defaultdb.content_item (id, item_title, item_logo_url, item_period, item_location, item_content, frame_content_id)
-VALUES (5, 'Servier', '../assets/logo_servier.png', 'June & July 2018', 'Suresnes - France',
+VALUES (7, 'Servier', '../assets/logo_servier.png', 'June & July 2018', 'Suresnes - France',
         'CSR Reporting', 2);
+/*INSERT INTO defaultdb.content_item (id, item_title, item_logo_url, item_period, item_location, item_content, frame_content_id)
+VALUES (8, 'Deloitte', '../assets/logo_deloitte.png', 'September 2020 to January 2021 ', 'La Défense - France',
+        'Development of a Smart Dashboard to gather HR KPI related to homeworking', 2);
+INSERT INTO defaultdb.content_item (id, item_title, item_logo_url, item_period, item_location, item_content, frame_content_id)
+VALUES (9, 'Junior Entreprise EPF Projets', '../assets/logo_epf_projets.png', 'Since January 2019', 'Sceaux - France',
+        'Member of the IT division and project manager', 2);
+INSERT INTO defaultdb.content_item (id, item_title, item_logo_url, item_period, item_location, item_content, frame_content_id)
+VALUES (10, 'Servier', '../assets/logo_servier.png', 'June & July 2018', 'Suresnes - France',
+        'CSR Reporting', 2);*/

@@ -21,6 +21,7 @@ import { FrameComponent } from './front-office/cv-content/frame/frame.component'
 import { FrameItemComponent } from './front-office/cv-content/frame/frame-item/frame-item.component';
 import { CvContentComponent } from './front-office/cv-content/cv-content.component';
 import { SideBarInfoComponent } from './front-office/cv-content/side-bar-info/side-bar-info.component';
+import { ContactMeComponent } from './front-office/contact-me/contact-me.component';
 
 @NgModule({
   declarations: [
@@ -40,15 +41,17 @@ import { SideBarInfoComponent } from './front-office/cv-content/side-bar-info/si
     FrameItemComponent,
     CvContentComponent,
     SideBarInfoComponent,
+    ContactMeComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    DragDropModule,
-    ReactiveFormsModule,
-    MatSliderModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        DragDropModule,
+        ReactiveFormsModule,
+        MatSliderModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

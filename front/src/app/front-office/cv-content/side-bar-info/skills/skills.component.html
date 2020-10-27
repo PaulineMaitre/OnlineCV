@@ -1,5 +1,3 @@
-<!--<h3 class="badge col-md-4 col-lg-4">Skills</h3>-->
-
 <div class="row" *ngFor="let skill of skills">
     <div class="col-md-1 col-sm-6"><img class="icon" src={{skill.logo}}></div>
     <div class="col-md-2 col-sm-6"><p class="space">{{skill.name}}</p></div>
@@ -10,3 +8,7 @@
         </div>
     </div>
 </div>
+<div class="progress">
+    <div class="progress-bar bg-warning" role="progressbar" [style.width]="test + '%'" aria-valuemin="0" aria-valuemax="5"></div>
+</div>
+

@@ -1,8 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Language} from '../../../../models/Language';
 
-declare var $: any;
-
 @Component({
   selector: 'app-languages',
   templateUrl: './languages.component.html',
