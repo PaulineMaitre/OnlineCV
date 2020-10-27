@@ -9,7 +9,7 @@ import {Language} from '../../../../models/Language';
 export class LanguagesComponent implements OnInit {
 
   constructor() { }
-  @Input() languages: Language;
+  @Input() languages: Language[];
 
   ngOnInit(): void {
   }

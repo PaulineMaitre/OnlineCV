@@ -17,11 +17,8 @@ export class SkillsComponent implements OnInit {
   constructor() {
   }
 
-  @Input() skills: Skill;
-  @Input() languages: Skill;
+  @Input() skills: Skill[];
   @Input() test: number;
-
-
 
   ngOnInit(): void {
     this.fillProgressBar(50000, 0)

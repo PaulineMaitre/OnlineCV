@@ -1,16 +1,6 @@
-.sectionTitle {
-    background-color: cornflowerblue;
-    color: white;
-    font-size: x-large;
-}
 .icon {
     width: 2em;
     height: 2em;
-}
-.badge {
-    font-size: 1em;
-    color: white;
-    background-color: #A34553;
 }
 .space {
     margin-left: 15px;
