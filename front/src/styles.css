@@ -4,7 +4,9 @@ body {
     font-family: 'Fira Sans', 'Raleway', "Trebuchet MS", Roboto, "Helvetica Neue", sans-serif;
     min-height: 100%;
     background-color: #323232
+    /*color: lavender;*/
 }
 p, a {
     color: lavender;
 }
+

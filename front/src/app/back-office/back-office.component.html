@@ -1,87 +1,101 @@
-<div class="card">
-    <tr>
-        <ul><input [formControl]="user.firstName" placeholder="name"/></ul>
-        <ul>{{ user.lastName }}</ul>
-        <ul>{{ user.skills[1].name }}</ul>
-        <ul><button (click)="updateUser()">Update User</button></ul>
-    </tr>
-    <form [formGroup]="userForm" novalidate>
-        <div class="form-group">
-            <p>Nom :
-                <label class="center-block">
-                    <input class="form-control" type="text" placeholder="DUPONT"
-                           [formControl]="inLastname" #inLastname formControlName="inLastname">
-                </label>
-            </p>
-            <p>Prénom :
-                <label class="center-block">
-                    <input class="form-control" type="text" placeholder="Jean"
-                           [formControl]="inFirstname" #inFirstname>
-                </label>
-            </p>
-            <p>Mail :
-                <label class="center-block">
-                    <input class="form-control" type="email" placeholder="Your current email address"
-                           [formControl]="inFirstname" #inMail>
-                </label>
-            </p>
-            <p>Ajout d'une compétence :
-                <label class="center-block">
-                    <input class="form-control" type="text" placeholder="Angular !"
-                           [formControl]="inSkills" #inSkills>
-                </label>
-            </p>
-            <p>Ajout d'un lien vers un réseau :
-                <label class="center-block">
-                    <input class="form-control" type="text" placeholder="URL de profil"
-                           [formControl]="inSocial" #inSocial>
-                </label>
-            </p>
+<div class="content" *ngIf="user">
+    <div class="card">
+        <form [formGroup]="userForm" novalidate class="form-group grid-container">
+            <div class="firstName">
+                <p>Prénom :<br>
+                    <label class="center-block">
+                        <input class="form-control" type="text" placeholder="Jean"
+                               formControlName="inFirstname" #inFirstname>
+                    </label>
+                </p>
+            </div>
+            <div class="lastName">
+                <p>Nom :<br>
+                    <label class="center-block">
+                        <input class="form-control" type="text" placeholder="DUPONT"
+                               formControlName="inLastname">
+                    </label>
+                </p>
+            </div>
+            <div class="Mail">
+                <p>Mail :<br>
+                    <label class="center-block">
+                        <input class="form-control" type="email" placeholder="Your current email address"
+                               formControlName="inMail" #inMail>
+                    </label>
+                </p>
+            </div>
+            <div class="Tel">
+                <p>Numéro de téléphone :<br>
+                    <label class="center-block">
+                        <input class="form-control" type="tel" placeholder="06 45 28 46 45"
+                               formControlName="inphone" #inphone>
+                    </label>
+                </p>
+            </div>
+            <div class="Bio">
+                <p>
+                    <label class="center-block">Décrivez vous en quelques phrases :<br>
+                        <textarea class="form-control" type="text" formControlName="inBio" #inBio cols="40" rows="5"></textarea>
+                        <!--                    <input class="form-control" type="text" formControlName="inBio" #inBio>-->
+                    </label>
+                </p>
+            </div>
+            <div class="Hobbie">
+                <p>Ajout d'un Hobbie :<br>
+                    <label class="center-block">
+                        <input class="form-control" type="text" placeholder="Tennis !"
+                               formControlName="inHobbies" #inHobbies>
+                    </label>
+                </p>
+            </div>
+            <div class="Social">
+                <p>Ajout d'un lien vers un réseau :<br>
+                    <label class="center-block">
+                        <input class="form-control" type="text" placeholder="URL de profil"
+                               formControlName="inSocial" #inSocial>
+                    </label>
+                </p>
 
-            <p>Décrivez vous en quelques phrases :
-                <label class="center-block">
-                    <input class="form-control" type="text" [formControl]="inInfo" #inInfo>
-                </label>
-            </p>
-            <p>Ajout d'un Hobbie :
-                <label class="center-block">
-                    <input class="form-control" type="text" [formControl]="inHobbies" #inHobbies>
-                </label>
-            </p>
-        </div>
-    </form>
+            </div>
+            <div class="Skill">
+                <p>Ajout d'une compétence :<br>
+                    <label class="center-block">
+                        <input class="form-control" type="text" placeholder="Angular !"
+                               formControlName="inSkills" #inSkills>
+                    </label>
+                </p>
+            </div>
+        </form>
+
+        <button type="button" class="btn btn-primary" routerLink="/back/edit">Créer un CV !</button>
+
+
+        <!--            <p>Debug HTML :</p>-->
+        <p>Form value: {{ userForm.value | json }}</p>
+        <p>Form status: {{ userForm.status | json }}</p>
+        <span>{{ user.lastName }}</span><br><br>
+        <button type="button" class="btn btn-primary" (click)="updateUserFromForm()">Test formulaire</button>
+    </div>
 </div>
 
-<button type="button" class="btn btn-primary" routerLink="/back/edit">Créer un CV !</button>
-
-<p>Form value: {{ userForm.value | json }}</p>
-<p>Form status: {{ userForm.status | json }}</p>
-
-<!--<div *ngIf="userForm.controls['inName'].invalid && (userForm.controls['inName'].dirty || userForm.controls['inName'].touched)" class="alert alert-danger">-->
-<!--    <div *ngIf="userForm.controls['inName'].errors.required">-->
-<!--        Name is required.-->
-<!--    </div>-->
-<!--</div>-->
 
 
-<!--&lt;!&ndash;<button (click)="addUser(inFirstname.value, inLastname.value);&ndash;&gt;-->
-<!--&lt;!&ndash;    inFirstname.value, inLastname.value"></button>&ndash;&gt;-->
 
 
-<!--<form [formGroup]="userForm" (submit)="saveUser()">-->
-<!--    <label for="name">Name</label>-->
-<!--    <input formControlName="name" id="name" #name="ngControl" />-->
-<!--    <div *ngIf="name.touched && name.hasError('required')">Required</div>-->
-
-<!--    <label for="email">Email</label>-->
-<!--    <input formControlName="email" id="email" #email="ngControl" />-->
-<!--    <div *ngIf="email.touched && email.hasError('email')">Invalid</div>-->
-
-<!--    <label for="profile">Profile Description</label>-->
-<!--    <input formControlName="email" id="profile" #profile="ngControl" />-->
-<!--    <div *ngIf="profile.touched && profile.hasError('required')">Invalid</div>-->
-
-<!--    <button type="submit" [disabled]="!userForm.valid">Submit</button>-->
-<!--</form>-->
 
 
+<!--    <mat-form-field appearance="legacy">-->
+<!--        <mat-label>Legacy form field</mat-label>-->
+<!--        <input matInput placeholder="Placeholder">-->
+<!--        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+<!--        <mat-hint>Hint</mat-hint>-->
+<!--    </mat-form-field>-->
+
+
+<!--            <tr>-->
+<!--                <ul><input formControlName="inLastname" placeholder="name"/></ul>-->
+<!--                <ul>{{ user.lastName }}</ul>-->
+<!--                <ul>{{ user.skills[1].name }}</ul>-->
+<!--                <ul><button (click)="updateUserFromForm()">Update User</button></ul>-->
+<!--            </tr>-->

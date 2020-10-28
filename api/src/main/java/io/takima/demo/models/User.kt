@@ -1,4 +1,4 @@
-package io.takima.demo
+package io.takima.demo.models
 
 import java.util.*
 import javax.persistence.*
@@ -23,15 +23,15 @@ data class User(
         var socialLink: List<Socials>?,
 
         @Column(name = "languages")
-        @OneToMany(mappedBy = "user")
+        @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL])
         var languages: List<Languages>?,
 
         @Column(name = "skills")
-        @OneToMany(mappedBy = "user")
+        @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL])
         var skills: List<Skill>?,
 
         @Column(name = "frame_content")
-        @OneToMany(mappedBy = "user")
+        @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL]) //.ALL ==> .DELETE ? TODO : Rechercher doc !
         var frame: List<FrameContent>?) {
     constructor() : this(null,null, null, null, null, null,null,null,null,null,null,null, null)
 }

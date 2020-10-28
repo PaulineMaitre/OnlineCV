@@ -7,11 +7,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FrontOfficeComponent} from './front-office/front-office.component';
 import {BackOfficeComponent} from './back-office/back-office.component';
 import {NavComponent} from './nav/nav.component';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatSliderModule} from '@angular/material/slider';
-import { MainListComponent } from './back-office/main-list/main-list.component';
-import { SideListComponent } from './back-office/side-list/side-list.component';
+import { MainListComponent } from './back-office/edit/main-list/main-list.component';
+import { SideListComponent } from './back-office/edit/side-list/side-list.component';
 import { EditComponent } from './back-office/edit/edit.component';
 import { AboutMeComponent } from './front-office/cv-content/side-bar-info/about-me/about-me.component';
 import { CvHeaderComponent } from './front-office/cv-header/cv-header.component';
@@ -22,6 +21,9 @@ import { FrameItemComponent } from './front-office/cv-content/frame/frame-item/f
 import { CvContentComponent } from './front-office/cv-content/cv-content.component';
 import { SideBarInfoComponent } from './front-office/cv-content/side-bar-info/side-bar-info.component';
 import { ContactMeComponent } from './front-office/contact-me/contact-me.component';
+import {FrameContentFormComponent} from './back-office/edit/main-list/frame-content-form/frame-content-form.component';
+import {FrameItemFormComponent} from './back-office/edit/main-list/frame-content-form/frame-item-form/frame-item-form.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { ContactMeComponent } from './front-office/contact-me/contact-me.compone
     CvContentComponent,
     SideBarInfoComponent,
     ContactMeComponent,
+    FrameContentFormComponent,
+    FrameItemFormComponent,
   ],
     imports: [
         BrowserModule,
@@ -50,7 +54,8 @@ import { ContactMeComponent } from './front-office/contact-me/contact-me.compone
         DragDropModule,
         ReactiveFormsModule,
         MatSliderModule,
-        FormsModule
+        FormsModule,
+        MatDividerModule
     ],
   providers: [],
   bootstrap: [AppComponent]

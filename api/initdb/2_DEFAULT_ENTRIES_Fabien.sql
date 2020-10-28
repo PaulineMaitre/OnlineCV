@@ -1,6 +1,6 @@
 INSERT INTO defaultdb.users
     (id, first_name, last_name, phone_number, birth_date, address, email, bio)
-    VALUES (1, 'Fabien', 'SOLDE', '+33 7 88 15 26 20','1997-02-05','7 rue lakanal 92330 Sceaux france', 'fabien.solde@epfedu.fr','Bonjour je suis fabien, un élève sympathique de l\'epf qui cherche un stage dans le numérique à l\'étranger en période de covid. Je sais que c\'est pas la meilleure période mais bon, il faut bien s\'amuser des fois! ');
+    VALUES (2, 'Fabien', 'SOLDE', '+33 7 88 15 26 20','1997-02-05','7 rue lakanal 92330 Sceaux france', 'fabien.solde@epfedu.fr','Bonjour je suis fabien, un élève sympathique de l\'epf qui cherche un stage dans le numérique à l\'étranger en période de covid. Je sais que c\'est pas la meilleure période mais bon, il faut bien s\'amuser des fois! ');
 
 INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_id)
 VALUES (1, 'Web : HTML','google.fr','advanced', 1);

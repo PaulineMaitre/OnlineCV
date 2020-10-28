@@ -1,0 +1,25 @@
+<div class="frame-content-form">
+    <div class="Titre">
+        <label class="center-block center">
+            <input class="form-control" type="text" placeholder="Education"
+                   formControlName="title">
+        </label>
+    </div>
+    <div class="Logo">
+        <label class="center-block">
+            <input class="form-control" type="text" placeholder="EPF.png"
+                   formControlName="logo" #logo>
+        </label>
+    </div>
+</div>
+
+
+<div class="item-content" cdkDropList (cdkDropListDropped)="drop($event)">
+    <div id="contentInside" *ngFor="let container of containers; let i = index" cdkDrag>
+        <ng-template [ngIf]="containers.length != 0">
+            <mat-divider class="p-3"></mat-divider>
+        </ng-template>
+        <app-frame-item-form></app-frame-item-form>
+    </div>
+    <button class="btn btn-primary" (click)='add()'>Add</button>
+</div>

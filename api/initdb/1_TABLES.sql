@@ -21,7 +21,7 @@ create table socials
     social_name TEXT   not null,
     social_link TEXT   not null,
     social_logo TEXT,
-    user_id     bigint not null,
+    user_id     bigint,
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
 
@@ -33,7 +33,7 @@ create table languages
     language_name  TEXT   not null,
     language_level TEXT,
     language_flag  TEXT,
-    user_id        bigint not null,
+    user_id        bigint,
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
 create table skill
@@ -44,7 +44,7 @@ create table skill
     skill_name      TEXT   not null,
     skill_logo_link TEXT,
     skill_level     TEXT,
-    user_id         bigint not null,
+    user_id         bigint,
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
 
@@ -55,8 +55,8 @@ create table frame_content
         primary key (id),
     frame_title    TEXT   not null,
     frame_logo_url TEXT,
-    frame_order    TEXT not null,
-    user_id        bigint not null,
+    frame_order    INT,
+    user_id        bigint,
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
 
@@ -68,9 +68,10 @@ create table content_item
     item_title       TEXT   not null,
     item_logo_url    TEXT,
     item_content     TEXT   not null,
-    item_period      TEXT   not null,
+    item_order       INT,
+    item_period      TEXT,
     item_location    TEXT,
-    frame_content_id bigint not null,
+    frame_content_id bigint ,
     FOREIGN KEY (frame_content_id) REFERENCES frame_content (id)
 );
 

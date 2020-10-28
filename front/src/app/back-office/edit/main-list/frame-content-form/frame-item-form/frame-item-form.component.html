@@ -1,0 +1,41 @@
+<form [formGroup]="frameItemForm" class="form-group frame-form">
+    <div class="grid-container">
+        <div class="Date">
+            <label class="center-block">
+                <input class="form-control" type="text" placeholder="12/06/2020 - 12/11/2020"
+                       formControlName="period" #period>
+            </label>
+        </div>
+        <div class="Location">
+            <label class="center-block">
+                <input class="form-control" type="email" placeholder="Paris"
+                       formControlName="location" #location>
+            </label>
+        </div>
+        <div class="Logo">
+            <label class="center-block">
+                <input class="form-control" type="text" placeholder="EPF.png"
+                       formControlName="logo" #logo>
+            </label>
+        </div>
+        <div class="Titre">
+            <label class="center-block center">
+                <input class="form-control" type="text" placeholder="EPF École d'ingénieurs"
+                       formControlName="title">
+            </label>
+        </div>
+
+        <div class="Content">
+            <label class="center-block">
+                <input class="form-control" type="text" placeholder="Semestre d'ingé"
+                       formControlName="content" #content>
+            </label>
+        </div>
+        <div class="Plus">
+            <button type="button" class="btn btn-primary" (click)="saveFrame()">sauvegarder</button>
+        </div>
+    </div>
+</form>
+
+
+

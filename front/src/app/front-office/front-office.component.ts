@@ -13,7 +13,8 @@ export class FrontOfficeComponent implements OnInit {
   user: User;
 
   ngOnInit(): void {
-    this.userService.getUserById().subscribe(data => {
+    //this.userService.getUserById().subscribe(data => {
+    this.userService.getUserById(3).subscribe(data => {
       this.user = data;
     });
   }
