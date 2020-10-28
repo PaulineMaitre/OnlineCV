@@ -1,0 +1,11 @@
+.icon {
+    width: 2em;
+    height: 2em;
+}
+.space {
+    margin-left: 15px;
+}
+.progress-bar {
+    -webkit-transition: width 2.5s ease;
+    transition: width .2s ease;
+}

@@ -8,7 +8,7 @@ export class User {
   id: number;
   firstName: string;
   lastName: string;
-  birthDate?: string;
+  birthDate?: Date;
   phoneNumber: string;
   logo?: string;
   address?: string;

@@ -1,0 +1,7 @@
+<div *ngFor="let frameItem of content.frameItem">
+    <p><span class="period">{{frameItem.period}}</span> <span class="location" *ngIf="frameItem.location">  | {{frameItem.location}}</span><br>
+        <img class="icon bdr" src={{frameItem.logo}}>
+        <span class="space company">{{frameItem.title}}</span><br>
+        {{frameItem.content}}</p>
+</div>
+

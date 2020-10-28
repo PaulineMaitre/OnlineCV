@@ -1,0 +1,7 @@
+<h3 class="badge col-md-4 col-lg-4">About Me</h3>
+<p>{{user.address}}<br>
+    {{user.email}}<br>
+    {{user.phoneNumber}}<br>
+    <span *ngIf="user.birthDate">{{formatBirthDate(user.birthDate)}}</span>
+</p>
+

@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UserService} from '../../services/user.service';
-import {User} from '../../models/User';
+import {User} from '../../../../models/User';
 
 @Component({
   selector: 'app-about-me',
@@ -13,6 +12,10 @@ export class AboutMeComponent implements OnInit {
   @Input() user: User;
 
   ngOnInit(): void {
+  }
+  formatBirthDate(birthDate: Date): string {
+    const date = new Date(birthDate);
+    return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
   }
 
 }

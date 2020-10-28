@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from '../services/user.service';
 import {User} from '../models/User';
 
@@ -13,10 +13,9 @@ export class FrontOfficeComponent implements OnInit {
   user: User;
 
   ngOnInit(): void {
-    // this.user = this.userService.getUser();
-    this.userService.getUserById(1).subscribe(data => {
+    //this.userService.getUserById().subscribe(data => {
+    this.userService.getUserById(3).subscribe(data => {
       this.user = data;
     });
   }
-
 }
