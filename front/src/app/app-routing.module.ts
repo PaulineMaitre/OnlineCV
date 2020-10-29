@@ -5,13 +5,15 @@ import {AppComponent} from './app.component';
 import {FrontOfficeComponent} from './front-office/front-office.component';
 import {MainListComponent} from './back-office/edit/main-list/main-list.component';
 import {EditComponent} from './back-office/edit/edit.component';
+import {HomeComponent} from './home/home.component';
 
 
 // TODO : Ajouter les routes Front/autre
 const routes: Routes = [
   {path: 'back', component: BackOfficeComponent},
   {path: 'back/edit', component: EditComponent},
-  {path: '', component: FrontOfficeComponent},
+  {path: '', component: HomeComponent},
+  {path: ':id', component: FrontOfficeComponent},
 ];
 
 @NgModule({

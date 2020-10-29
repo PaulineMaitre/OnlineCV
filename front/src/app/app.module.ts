@@ -24,6 +24,7 @@ import { ContactMeComponent } from './front-office/contact-me/contact-me.compone
 import {FrameContentFormComponent} from './back-office/edit/main-list/frame-content-form/frame-content-form.component';
 import {FrameItemFormComponent} from './back-office/edit/main-list/frame-content-form/frame-item-form/frame-item-form.component';
 import {MatDividerModule} from '@angular/material/divider';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import {MatDividerModule} from '@angular/material/divider';
     ContactMeComponent,
     FrameContentFormComponent,
     FrameItemFormComponent,
+    HomeComponent,
   ],
     imports: [
         BrowserModule,
