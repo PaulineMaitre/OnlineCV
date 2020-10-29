@@ -1,0 +1,20 @@
+<div class="{{classForm}} form-group">
+    <p>{{Title}}<br>
+        <label class="center-block">
+            <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
+            <input class="form-control"
+                   [ngClass]="{'alert alert-danger' : (userForm.get('inFirstname').errors && (userForm.get('inFirstname').touched || userForm.get('inFirstname').dirty))}"
+                   type="text" placeholder="Jean"
+                   formControlName="inFirstname" #inFirstname>
+            <span class="help-block" *ngIf="((userForm.get('inFirstname').touched || userForm.get('inFirstname').dirty) && userForm.get('inFirstname').errors)">
+                            <span class="error" *ngIf="userForm.get('inFirstname').errors.required">
+                                Prénom obligatoire
+                            </span>
+                            <span class="error" *ngIf="userForm.get('inFirstname').errors.minlength ||
+                                userForm.get('inFirstname').errors.maxlength">
+                                Doit contenir entre <br>2 et 25 caractères
+                            </span>
+                        </span>
+        </label>
+    </p>
+</div>

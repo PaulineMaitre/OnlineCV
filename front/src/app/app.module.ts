@@ -21,6 +21,7 @@ import { FrameItemComponent } from './front-office/frame/frame-item/frame-item.c
 import {FrameContentFormComponent} from './back-office/edit/main-list/frame-content-form/frame-content-form.component';
 import {FrameItemFormComponent} from './back-office/edit/main-list/frame-content-form/frame-item-form/frame-item-form.component';
 import {MatDividerModule} from '@angular/material/divider';
+import { InputFormComponent } from './back-office/input-form/input-form.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {MatDividerModule} from '@angular/material/divider';
     FrameItemComponent,
     FrameContentFormComponent,
     FrameItemFormComponent,
+    InputFormComponent,
   ],
   imports: [
     BrowserModule,

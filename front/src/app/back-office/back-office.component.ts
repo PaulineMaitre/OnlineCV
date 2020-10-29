@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from '../models/User';
-import {FormControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../services/user.service';
 import {Skill} from '../models/Skill';
 import {Network} from '../models/Network';
@@ -32,15 +32,17 @@ export class BackOfficeComponent implements OnInit {
             inFirstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
             inLastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
             inMail: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-            inSkills: [''],
-            inSocial: [''],
+            inPhone: ['', [Validators.required, Validators.pattern('^[0-9 %+]+')]],
+            inDate: [''],
+            inAddress: ['', [Validators.required]],
             inBio: [''],
-            inHobbies: [''],
-            inphone: [''],
+
         });
-        this.userForm.addControl('inLastname', new FormControl('', Validators.required));
-        this.userForm.controls.inLastname.setValidators([Validators.required]);
     }
+
+    // inputChildMap(): {
+    //
+    // }
 
     getUser(): void {
         this.userService.getUserById(1).subscribe(data => {
@@ -54,13 +56,15 @@ export class BackOfficeComponent implements OnInit {
         this.user.lastName = this.userForm.get('inLastname').value;
         this.user.email = this.userForm.get('inMail').value;
         this.user.bio = this.userForm.get('inBio').value;
-        this.user.phoneNumber = this.userForm.get('inphone').value;
+        this.user.phoneNumber = this.userForm.get('inPhone').value;
+        this.user.birthDate = this.userForm.get('inDate').value;
+        this.user.address = this.userForm.get('inAddress').value;
         // TODO : Ajouter la liste d'objet : socialLink = LISTE
-        this.user.socialLink.push(new Network({
-            name: this.userForm.get('inSocial').value,
-            link: '',
-            logo: '',
-        }));
+        // this.user.socialLink.push(new Network({
+        //     name: this.userForm.get('inSocial').value,
+        //     link: '',
+        //     logo: '',
+        // }));
         this.user.skills.push(new Skill({
             name: 'Toto',
             level: 3,
@@ -76,6 +80,5 @@ export class BackOfficeComponent implements OnInit {
             }
         ));
         this.userService.updateUser(this.user).subscribe();
-
     }
 }

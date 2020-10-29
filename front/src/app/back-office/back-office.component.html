@@ -1,8 +1,9 @@
 <div class="content" *ngIf="user">
     <div class="card">
         <form [formGroup]="userForm" novalidate class="form-group grid-container">
+<!--            <app-input-form [inputForm]="[]"></app-input-form>-->
             <div class="firstName form-group">
-                <p>Prénom :<br>
+                <p>Prénom* :<br>
                     <label class="center-block">
                         <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
                         <input class="form-control"
@@ -22,7 +23,7 @@
                 </p>
             </div>
             <div class="lastName form-group">
-                <p>Nom :<br>
+                <p>Nom* :<br>
                     <label class="center-block">
                         <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
                         <input class="form-control"
@@ -43,16 +44,8 @@
                 </p>
             </div>
 
-<!--            <div class="lastName">-->
-<!--                <p>Nom :<br>-->
-<!--                    <label class="center-block">-->
-<!--                        <input class="form-control" type="text" placeholder="DUPONT"-->
-<!--                               formControlName="inLastname">-->
-<!--                    </label>-->
-<!--                </p>-->
-<!--            </div>-->
             <div class="Mail form-group">
-                <p>Mail :<br>
+                <p>Mail* :<br>
                     <label class="center-block">
                         <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
                         <input class="form-control" name="email" ngModel [email]="true"
@@ -70,19 +63,22 @@
                     </label>
                 </p>
             </div>
-<!--            <div class="Mail">-->
-<!--                <p>Mail :<br>-->
-<!--                    <label class="center-block">-->
-<!--                        <input class="form-control" type="email" placeholder="Your current email address"-->
-<!--                               formControlName="inMail" #inMail>-->
-<!--                    </label>-->
-<!--                </p>-->
-<!--            </div>-->
-            <div class="Tel">
-                <p>Numéro de téléphone :<br>
+            <div class="Tel form-group">
+                <p>Numéro de téléphone* :<br>
                     <label class="center-block">
-                        <input class="form-control" type="tel" placeholder="06 45 28 46 45"
-                               formControlName="inphone" #inphone>
+                        <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
+                        <input class="form-control"
+                               [ngClass]="{'alert alert-danger' : (userForm.get('inPhone').errors && (userForm.get('inPhone').touched || userForm.get('inPhone').dirty))}"
+                               type="text" placeholder="06 45 28 46 45"
+                               formControlName="inPhone" #inPhone>
+                        <span class="help-block" *ngIf="((userForm.get('inPhone').touched || userForm.get('inPhone').dirty) && userForm.get('inPhone').errors)">
+                            <span class="error" *ngIf="userForm.get('inPhone').errors.required">
+                                Numéro de téléphone obligatoire
+                            </span>
+                            <span class="error" *ngIf="userForm.get('inPhone').errors.pattern">
+                                Ne doit contenir que des chiffres
+                            </span>
+                        </span>
                     </label>
                 </p>
             </div>
@@ -94,28 +90,19 @@
                     </label>
                 </p>
             </div>
-            <div class="Hobbie">
-                <p>Ajout d'un Hobbie :<br>
+            <div class="birthdate">
+                <p>Date de naissance :<br>
                     <label class="center-block">
-                        <input class="form-control" type="text" placeholder="Tennis !"
-                               formControlName="inHobbies" #inHobbies>
+                        <input class="form-control" type="string" placeholder="19/08/1998"
+                               formControlName="inDate" #inDate>
                     </label>
                 </p>
             </div>
-            <div class="Social">
-                <p>Ajout d'un lien vers un réseau :<br>
+            <div class="Address">
+                <p>Adresse :<br>
                     <label class="center-block">
-                        <input class="form-control" type="text" placeholder="URL de profil"
-                               formControlName="inSocial" #inSocial>
-                    </label>
-                </p>
-
-            </div>
-            <div class="Skill">
-                <p>Ajout d'une compétence :<br>
-                    <label class="center-block">
-                        <input class="form-control" type="text" placeholder="Angular !"
-                               formControlName="inSkills" #inSkills>
+                        <input class="form-control" type="string" placeholder="Paris"
+                               formControlName="inAddress" #inAddress>
                     </label>
                 </p>
             </div>
