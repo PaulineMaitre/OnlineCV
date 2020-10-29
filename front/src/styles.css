@@ -1,13 +1,11 @@
-/*!* You can add global styles to this file, and also import other style files *!*/
-
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Raleway', "Trebuchet MS", Roboto, "Helvetica Neue", sans-serif; }
-
 body {
-    background-color: #323232;
-    color: lavender;
+    margin: 0;
+    font-family: 'Fira Sans', 'Raleway', "Trebuchet MS", Roboto, "Helvetica Neue", sans-serif;
+    min-height: 100%;
+    background-color: #323232
+    /*color: lavender;*/
 }
-
 p, a {
     color: lavender;
 }

@@ -1,0 +1,29 @@
+h1 {
+    color: #323232;
+    margin-top: 1%;
+    font-family: 'Permanent Marker', cursive;
+}
+/*.bdr {
+    border: solid darkred;
+}*/
+.contactMeForm {
+    padding-top: 1%;
+    background-color: #A34553;
+    min-height: 100vh;
+}
+label, .btn {
+    font-size: x-large;
+    font-family: 'Permanent Marker', cursive;
+}
+.center {
+    text-align: center;
+}
+label {
+    color: #323232;
+}
+.btn {
+    color: #A34553;
+}
+.container {
+    justify-items: center;
+}

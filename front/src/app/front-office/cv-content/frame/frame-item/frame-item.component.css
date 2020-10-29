@@ -1,0 +1,17 @@
+.icon {
+    width: 2em;
+    height: 2em;
+}
+.period, .location {
+    font-size: x-large;
+    font-family: 'Bebas Neue', cursive;
+    color: #a45f69;
+}
+.company {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+}
+.space {
+    margin-left: 15px;
+}
+

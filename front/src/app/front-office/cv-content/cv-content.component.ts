@@ -2,14 +2,15 @@ import {Component, Input, OnInit} from '@angular/core';
 import {User} from '../../models/User';
 
 @Component({
-  selector: 'app-frame',
-  templateUrl: './frame.component.html',
-  styleUrls: ['./frame.component.css']
+  selector: 'app-cv-content',
+  templateUrl: './cv-content.component.html',
+  styleUrls: ['./cv-content.component.css']
 })
-export class FrameComponent implements OnInit {
+export class CvContentComponent implements OnInit {
 
   constructor() { }
   @Input() user: User;
+
   ngOnInit(): void {
   }
 

@@ -1,24 +1,3 @@
 <app-cv-header [user]="user"></app-cv-header>
-<div class="row space">
-    <div class="col-md-4 col-lg-4">
-        <app-about-me [user]="user"></app-about-me>
-        <app-languages [user]="user"></app-languages>
-        <app-skills [user]="user"></app-skills>
-    </div>
-    <div class="col-md-8 col-lg-8">
-        <app-frame [user]="user"></app-frame>
-        <!--<div *ngFor="let frameContent of user.frame">
-            <h3 class="badge col-md-3 col-lg-3">
-                <img class="titleIcon bdr" src={{frameContent.logo}}>
-                <span class="space">{{frameContent.title}}</span>
-            </h3>
-            <div *ngFor="let frameItem of frameContent.frameItem">
-                <p><span class="period">{{frameItem.period}}</span><br>
-                {{frameItem.location}}<br>
-                <img class="icon bdr" src={{frameItem.logo}}>
-                {{frameItem.title}}<br>
-                {{frameItem.content}}</p>
-            </div>
-        </div>-->
-    </div>
-</div>
+<app-cv-content [user]="user"></app-cv-content>
+<app-contact-me></app-contact-me>
