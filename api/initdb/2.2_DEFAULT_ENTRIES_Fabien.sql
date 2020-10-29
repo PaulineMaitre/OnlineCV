@@ -7,9 +7,9 @@ VALUES (6, 'HTML', '../assets/logo_html.png', 5, 2);
 INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_id)
 VALUES (7, 'CSS', '../assets/logo_css.png', 4, 2);
 INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_id)
-VALUES (8, 'JS', '../assets/logo_css.png', 3, 2);
+VALUES (8, 'JS', '../assets/logo_javascript.png', 3, 2);
 INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_id)
-VALUES (9, 'Angular', '../assets/logo_css.png', 2, 2);
+VALUES (9, 'Angular', '../assets/logo_angular.png', 2, 2);
 INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_id)
 VALUES (10, 'Spring', '../assets/logo_spring.png', 1, 2);
 
