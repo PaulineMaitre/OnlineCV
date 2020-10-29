@@ -1,12 +1,16 @@
+<app-home-header></app-home-header>
 <div class="row">
-<div class="col-md-6 bdr col-lg-6 col-sm-12">
-    <h1 class="">Consult existing resumes</h1>
-    <a *ngFor="let user of users"
-       routerLink="/{{user.id}}">
-            <p>{{user.firstName}} {{user.lastName}}</p>
-    </a>
-</div>
-<div class="col-md-6 bdr col-lg-6 col-sm-12">
-    <h1>Create your own resume</h1>
-</div>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <h1 class="">Consult existing resumes</h1>
+        <a *ngFor="let user of users" class="names"
+           routerLink="/{{user.id}}">
+                <p>{{user.firstName}} {{user.lastName}}</p>
+        </a>
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <h1>Create your own resume</h1>
+        <a routerLink="/back" >
+            <img class="col-md-8 col-lg-8 col-sm-12" src='../assets/cv_sample.PNG' alt="Link to create your own resume">
+        </a>
+    </div>
 </div>

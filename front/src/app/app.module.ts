@@ -25,6 +25,7 @@ import {FrameContentFormComponent} from './back-office/edit/main-list/frame-cont
 import {FrameItemFormComponent} from './back-office/edit/main-list/frame-content-form/frame-item-form/frame-item-form.component';
 import {MatDividerModule} from '@angular/material/divider';
 import { HomeComponent } from './home/home.component';
+import { HomeHeaderComponent } from './home/home-header/home-header.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { HomeComponent } from './home/home.component';
     FrameContentFormComponent,
     FrameItemFormComponent,
     HomeComponent,
+    HomeHeaderComponent,
   ],
     imports: [
         BrowserModule,

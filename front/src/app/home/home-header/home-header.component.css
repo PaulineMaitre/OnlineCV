@@ -1,0 +1,10 @@
+.header {
+    padding: 4%;
+    background-color: #A34553;
+    margin-bottom: 10px;
+}
+h1 {
+    color: #323232;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 4em;
+}

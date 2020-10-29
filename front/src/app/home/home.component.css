@@ -1,3 +1,20 @@
 .bdr {
     border: solid darkred;
 }
+h1 {
+    color: #A34553;
+    margin-top: 2%;
+    margin-bottom: 7%;
+    font-family: 'Permanent Marker', cursive;
+}
+.row {
+    margin: 5%;
+}
+a:hover {
+    text-decoration: none;
+}
+.names {
+    font-size: x-large;
+    font-family: 'Bebas Neue', cursive;
+    color: #a45f69;
+}
