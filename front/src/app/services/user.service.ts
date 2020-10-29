@@ -33,7 +33,7 @@ export class UserService {
     /** Requests for users with API */
 
     getUsers(): Observable<User[]> {
-      return this.http.get<User[]>(`${this.url}/users`).pipe(timeout(10000));
+      return this.http.get<User[]>(`${this.url}/users/`).pipe(timeout(10000));
     }
     getUserById(id: number): Observable<any> {
         return this.http.get<User>(`${this.url}/users/${id}`).pipe(tap(_ => timeout(1000)));

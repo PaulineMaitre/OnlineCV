@@ -1,6 +1,6 @@
 <div class="row" *ngFor="let language of languages">
     <div class="col-md-1 col-sm-6"><img class="icon" src={{language.logo}}></div>
-    <div class="col-md-2 col-sm-6"><p class="space">{{language.name}}</p></div>
+    <div class="col-md-3 col-sm-6"><p class="space">{{language.name}}</p></div>
     <div class="col-md-5 col-sm-12">
         <div class="progress active">
             <div class="progress-bar bg-warning" role="progressbar" [style.width]="languageLevelToPercent(language.level)+ '%'" aria-valuemin="0" aria-valuemax="5"></div>

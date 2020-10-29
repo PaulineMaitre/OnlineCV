@@ -7,6 +7,8 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Properties;
 
@@ -32,6 +34,14 @@ public class UserController {
 
         return users;
     }*/
+    @GetMapping()
+    public List<User> getUsers() {
+        Iterable<User> it = this.userDAO.findAll();
+        List<User> users = new ArrayList<>();
+        it.forEach(e -> users.add(e));
+
+        return users;
+    }
 
     @GetMapping("/{id}")
     public User getUserById(@PathVariable Long id) {
