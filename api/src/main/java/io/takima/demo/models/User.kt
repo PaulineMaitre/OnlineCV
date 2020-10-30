@@ -14,10 +14,10 @@ data class User(
         @Column(name = "last_name") var lastName: String?,
         @Column(name = "birth_date") var birthDate: Date?,
         @Column(name = "phone_number") var phoneNumber: String?,
-        @Column(name = "profile_picture") var logo: String?,
         @Column(name = "address") var address: String?,
         @Column(name = "bio") var bio: String?,
         @Column(name = "email") var email: String?,
+        @Column(name = "picture") var picture: String?,
         @Column(name = "socials")
         @OneToMany(mappedBy = "user")
         var socialLink: List<Socials>?,
@@ -33,5 +33,5 @@ data class User(
         @Column(name = "frame_content")
         @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL]) //.ALL ==> .DELETE ? TODO : Rechercher doc !
         var frame: List<FrameContent>?) {
-    constructor() : this(null,null, null, null, null, null,null,null,null,null,null,null, null)
+    constructor() : this(null,null, null, null, null,null,null,null,null,null,null, null, null)
 }

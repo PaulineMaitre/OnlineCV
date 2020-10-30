@@ -48,7 +48,7 @@ export class BackOfficeComponent implements OnInit {
     }
 
     updateUserFromForm(): void {
-        this.user.logo = 'Raphael';
+        this.user.picture = 'Raphael';
         this.user.firstName = this.userForm.get('inFirstname').value;
         this.user.lastName = this.userForm.get('inLastname').value;
         this.user.email = this.userForm.get('inMail').value;

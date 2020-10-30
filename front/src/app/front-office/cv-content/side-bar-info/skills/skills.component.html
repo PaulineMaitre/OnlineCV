@@ -4,7 +4,7 @@
 
     <div class="col-md-5 col-sm-12">
         <div class="progress">
-            <div class="progress-bar bg-warning" role="progressbar" [style.width]="skillLevelToPercent(skill.level)+ '%'" aria-valuemin="0" aria-valuemax="5"></div>
+            <div *ngIf="skill.level" class="progress-bar bg-warning" role="progressbar" [style.width]="skillLevelToPercent(skill.level)+ '%'" aria-valuemin="0" aria-valuemax="5"></div>
         </div>
     </div>
 </div>
