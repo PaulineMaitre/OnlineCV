@@ -3,6 +3,6 @@
         <app-side-bar-info [user]="user"></app-side-bar-info>
     </div>
     <div class="col-md-7 col-lg-7">
-        <app-frame [frame]="user.frame"></app-frame>
+        <app-frame *ngIf="user.frame" [frame]="user.frame"></app-frame>
     </div>
 </div>

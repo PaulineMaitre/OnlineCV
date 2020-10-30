@@ -1,6 +1,7 @@
 /* DEFAULT ENTRIES RAPHAEL */
-INSERT INTO defaultdb.users (id, first_name, last_name, phone_number, birth_date, address, email, bio)
-VALUES (1, 'Raphaël', 'Della Seta', '+33 7 88 15 26 20', '1997-02-05', '7 rue lakanal 92330 Sceaux france', 'raphael.dellaseta@epfedu.fr', 'Cherche PFE ');
+INSERT INTO defaultdb.users (id, first_name, last_name, phone_number, birth_date, address, email, picture, bio)
+VALUES (1, 'Raphaël', 'Della Seta', '+33 7 88 15 26 20', '1997-02-05', '7 rue lakanal 92330 Sceaux france',
+        'raphael.dellaseta@epfedu.fr', '../assets/profile_picture_Raphael.jpg', 'Cherche PFE ');
 
 INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_id)
 VALUES (1, 'HTML', '../assets/logo_html.png', 5, 1);
@@ -23,9 +24,9 @@ VALUES (3, 'Github','https://github.com/Raphael-D-S', '../assets/logo_github.png
 
 
 INSERT INTO defaultdb.languages (id, language_name, language_flag,language_level, user_id)
-VALUES (1, 'Français', '../assets/french_flag.png', 5, 1);
+VALUES (1, 'Français', '../assets/french_flag.png', 'Langue maternelle', 1);
 INSERT INTO defaultdb.languages (id, language_name, language_flag,language_level, user_id)
-VALUES (2, 'Anglais', '../assets/english_flag.png', 4, 1);
+VALUES (2, 'Anglais', '../assets/english_flag.png', 'B2', 1);
 
 INSERT INTO defaultdb.frame_content (id, frame_title, frame_logo_url, user_id)
 VALUES (1, 'Education','https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages4.fanpop.com%2Fimage%2Fphotos%2F19500000%2FEPF-Logo-elite-penguin-force-19521086-144-158.jpg&f=1&nofb=1', 1);

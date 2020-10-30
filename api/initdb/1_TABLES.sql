@@ -8,8 +8,8 @@ create table users
     phone_number    TEXT not null,
     birth_date      DATE,
     address         TEXT,
-    profile_picture TEXT,
     email           TEXT not null,
+    picture         TEXT,
     bio             TEXT
 );
 
@@ -43,7 +43,7 @@ create table skill
         primary key (id),
     skill_name      TEXT   not null,
     skill_logo_link TEXT,
-    skill_level     TEXT,
+    skill_level     INT,
     user_id         bigint,
     FOREIGN KEY (user_id) REFERENCES users (id)
 );

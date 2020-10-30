@@ -10,7 +10,7 @@ export class User {
   lastName: string;
   birthDate?: Date;
   phoneNumber: string;
-  logo?: string;
+  picture?: string;
   address?: string;
   bio?: string;
   email: string;

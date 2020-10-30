@@ -13,9 +13,9 @@ export class LanguagesComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  languageLevelToPercent(languageLevel: number): number {
+  /*languageLevelToPercent(languageLevel: number): number {
     return languageLevel * 20;
-  }
+  }*/
 
 
 }
