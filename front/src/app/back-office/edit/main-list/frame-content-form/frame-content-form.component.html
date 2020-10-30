@@ -1,18 +1,25 @@
 <div class="frame-content-form">
     <div class="Titre">
         <label class="center-block center">
-            <input class="form-control" type="text" placeholder="Education"
+<!--            TODO : Ajouter des noms par défaut-->
+            <input class="form-control" type="text" value="Education"
                    formControlName="title">
         </label>
     </div>
-    <div class="Logo">
-        <label class="center-block">
-            <input class="form-control" type="text" placeholder="EPF.png"
-                   formControlName="logo" #logo>
-        </label>
-    </div>
+    <label class="Logo image-upload-container btn btn-bwm">
+        <div class="custom-file">
+            <input type="file" accept="image/*" class="custom-file-input"
+                   id="customFileLang" lang="fr" #imageInput (change)="processFile(imageInput)">
+            <label class="custom-file-label" for="customFileLang">Selectionner une image</label>
+        </div>
+    </label>
+<!--    <div class="Logo">-->
+<!--        <label class="center-block">-->
+<!--            <input class="form-control" type="text" placeholder="EPF.png"-->
+<!--                   formControlName="logo" #logo>-->
+<!--        </label>-->
+<!--    </div>-->
 </div>
-
 
 <div class="item-content" cdkDropList (cdkDropListDropped)="drop($event)">
     <div id="contentInside" *ngFor="let container of containers; let i = index" cdkDrag>
@@ -22,4 +29,6 @@
         <app-frame-item-form></app-frame-item-form>
     </div>
     <button class="btn btn-primary" (click)='add()'>Add</button>
+    <button class="btn btn-primary" (click)='save()'>Save</button>
 </div>
+

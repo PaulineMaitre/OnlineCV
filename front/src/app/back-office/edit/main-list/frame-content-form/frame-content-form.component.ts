@@ -7,6 +7,7 @@ import {UserService} from '../../../../services/user.service';
   templateUrl: './frame-content-form.component.html',
   styleUrls: ['./frame-content-form.component.css']
 })
+
 export class FrameContentFormComponent implements OnInit {
   frameContentForm: FormGroup;
   containers = [
@@ -14,6 +15,8 @@ export class FrameContentFormComponent implements OnInit {
     // 'Episode II - Attack of the Clones',
     // 'Episode III - Revenge of the Sith',
   ];
+  selectedFile: ImageSnippet;
+
 
   constructor(private fb: FormBuilder, private userService: UserService) {
     this.createFrameContentForm();
@@ -25,6 +28,30 @@ export class FrameContentFormComponent implements OnInit {
       title: ['', Validators.required],
       logo: ['', Validators.required],
     });
+  }
+
+  processFile(imageInput: any) {
+    console.log('processing file')
+    // const file: File = imageInput.files[0];
+    // const reader = new FileReader();
+    //
+    // reader.addEventListener('load', (event: any) => {
+    //
+    //   this.selectedFile = new ImageSnippet(event.target.result, file);
+    //
+    //   this.imageService.uploadImage(this.selectedFile.file).subscribe(
+    //       (res) => {
+    //
+    //       },
+    //       (err) => {
+    //
+    //       })
+    // });
+    //
+    // reader.readAsDataURL(file);
+  }
+  save() {
+    console.log('Function save activated')
   }
 
   add() {

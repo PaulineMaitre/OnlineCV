@@ -5,7 +5,7 @@ export class Network {
     name: string;
     link: string;
     logo: string;
-    user:number;
+    user: number;
 
     constructor(network? : Partial<Network>) {
         defaultsDeep(this, network);

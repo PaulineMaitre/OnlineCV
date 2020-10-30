@@ -2,16 +2,17 @@ INSERT INTO defaultdb.users
     (id, first_name, last_name, phone_number, birth_date, address, email, bio)
     VALUES (2, 'Fabien', 'SOLDE', '+33 7 88 15 26 20','1997-02-05','7 rue lakanal 92330 Sceaux france', 'fabien.solde@epfedu.fr','Bonjour je suis fabien, un élève sympathique de l\'epf qui cherche un stage dans le numérique à l\'étranger en période de covid. Je sais que c\'est pas la meilleure période mais bon, il faut bien s\'amuser des fois! ');
 
-INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_id)
-VALUES (1, 'Web : HTML','google.fr','advanced', 2);
-INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_id)
-VALUES (2, 'Web : CSS','google.fr','advanced', 2);
-INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_id)
-VALUES (3, 'Web : JS','google.fr','advanced', 2);
-INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_id)
-VALUES (4, 'Web : Angular','google.fr','advanced', 2);
-INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_id)
-VALUES (5, 'Web : Spring','google.fr','advanced', 2);
+INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link,skill_level, user_id)
+VALUES (1, 'Web : HTML','google.fr', 5, 2);
+INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link,skill_level, user_id)
+VALUES (2, 'Web : CSS','google.fr',3, 2);
+INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link,skill_level, user_id)
+VALUES (3, 'Web : JS','google.fr',5, 2);
+INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link,skill_level, user_id)
+VALUES (4, 'Web : Angular','google.fr',4, 2);
+INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link,skill_level, user_id)
+VALUES (5, 'Web : Spring','google.fr',2, 2);
+
 
 
 INSERT INTO defaultdb.socials (id, social_name, social_link, social_logo, user_id)
@@ -26,6 +27,7 @@ INSERT INTO defaultdb.languages (id, language_name, language_flag,language_level
 VALUES (1, 'Français','https://icons.iconarchive.com/icons/wikipedia/flags/256/FR-France-Flag-icon.png','langue maternelle', 2);
 INSERT INTO defaultdb.languages (id, language_name, language_flag,language_level, user_id)
 VALUES (2, 'Anglais','https://icons.iconarchive.com/icons/icons-land/vista-flags/256/English-Language-Flag-1-icon.png','toeic 950 inchallah', 2);
+
 
 INSERT INTO defaultdb.frame_content (id, frame_title, frame_logo_url, user_id)
 VALUES (1, 'Education','https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages4.fanpop.com%2Fimage%2Fphotos%2F19500000%2FEPF-Logo-elite-penguin-force-19521086-144-158.jpg&f=1&nofb=1', 2);

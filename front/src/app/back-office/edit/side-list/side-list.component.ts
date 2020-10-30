@@ -21,10 +21,6 @@ export class SideListComponent implements OnInit {
     'Episode VIII - The Last Jedi',
     'Episode IX – The Rise of Skywalker']
 
-// frPropo = FrameContent(Experience,[Frameitem('EPF'),Frameitem('Lycée'),Frameitem())
-// frPropo = FrameContent(Formation,[Frameitem('EPF'),Frameitem('Lycée'),Frameitem())
-// frPropo = FrameContent(Projets,[Frameitem('EPF'),Frameitem('Lycée'),Frameitem())
-
   constructor() { }
 
   ngOnInit() { }

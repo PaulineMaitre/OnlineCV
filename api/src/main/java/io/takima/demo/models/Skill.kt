@@ -12,7 +12,7 @@ data class Skill(
         @Id var id: Long?,
         @Column(name = "skill_name") var name: String?,
         @Column(name = "skill_logo_link") var logo: String?,
-        @Column(name = "skill_level") var level: String?,
+        @Column(name = "skill_level") var level: Int?,
         @ManyToOne
         @JsonIgnore
         var user: User?) {

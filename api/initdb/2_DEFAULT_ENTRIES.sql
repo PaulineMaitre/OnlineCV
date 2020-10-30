@@ -4,15 +4,15 @@ INSERT INTO defaultdb.users
             'Bonjour je suis fabien, un élève sympathique de l\'epf qui cherche un stage dans le numérique à l\'étranger en période de covid. Je sais que c\'est pas la meilleure période mais bon, il faut bien s\'amuser des fois! ', 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQr4WyNFRSi6oK0DnMMkrLsGeBLzIAtmHHsVg&usqp=CAU');
 
 INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link,skill_level, user_id)
-VALUES (1, 'Web : HTML','google.fr','advanced', 1);
+VALUES (1, 'Web : HTML','google.fr', 5, 1);
 INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link,skill_level, user_id)
-VALUES (2, 'Web : CSS','google.fr','advanced', 1);
+VALUES (2, 'Web : CSS','google.fr',3, 1);
 INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link,skill_level, user_id)
-VALUES (3, 'Web : JS','google.fr','advanced', 1);
+VALUES (3, 'Web : JS','google.fr',5, 1);
 INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link,skill_level, user_id)
-VALUES (4, 'Web : Angular','google.fr','advanced', 1);
+VALUES (4, 'Web : Angular','google.fr',4, 1);
 INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link,skill_level, user_id)
-VALUES (5, 'Web : Spring','google.fr','advanced', 1);
+VALUES (5, 'Web : Spring','google.fr',2, 1);
 
 
 INSERT INTO defaultdb.socials (id, social_name,social_link,social_logo, user_id)

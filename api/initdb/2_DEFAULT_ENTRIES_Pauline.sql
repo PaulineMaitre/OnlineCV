@@ -22,11 +22,11 @@ INSERT INTO defaultdb.socials (id, social_name, social_link, social_logo, user_i
 VALUES (4, 'Instagram','https://www.instagram.com/_pauline_m_','../assets/logo_instagram.png', 3);
 
 INSERT INTO defaultdb.languages (id, language_name, language_flag, language_level, user_id)
-VALUES (1, 'French', '../assets/french_flag.png', 5, 3);
+VALUES (1, 'French', '../assets/french_flag.png', 'langue maternelle', 3);
 INSERT INTO defaultdb.languages (id, language_name, language_flag, language_level, user_id)
-VALUES (2, 'English','../assets/english_flag.png', 4, 3);
+VALUES (2, 'English','../assets/english_flag.png', 'Plutôt au taquet', 3);
 INSERT INTO defaultdb.languages (id, language_name, language_flag, language_level, user_id)
-VALUES (3, 'Spanish','./assets/spanish_flag.png', 3, 3);
+VALUES (3, 'Spanish','./assets/spanish_flag.png', 'Niveau B1 européen', 3);
 
 INSERT INTO defaultdb.frame_content (id, frame_title, frame_logo_url, frame_order, user_id)
 VALUES (1, 'Education','../assets/diploma.png', 1, 3);

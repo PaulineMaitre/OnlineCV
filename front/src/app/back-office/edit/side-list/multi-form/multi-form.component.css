@@ -9,8 +9,8 @@
     overflow: hidden;
     padding: 5px;
 }
-.contentInside{
-    /*padding: 20px 10px;*/
+#contentInside{
+    padding: 20px 10px;
     border-bottom: solid 1px #ccc;
     color: rgba(0, 0, 0, 0.87);
     display: flex;
@@ -19,14 +19,16 @@
     justify-content: space-between;
     box-sizing: border-box;
     cursor: move;
-    /*background: white;*/
-    /*font-size: 14px;*/
+    background: white;
+    font-size: 14px;
 }
 
-.pad-bot-list > * {
-    margin-bottom: 1em!important;
+.badge {
+    font-size: 1em;
+    color: white;
+    background-color: #A34553;
 }
 
-content > * {
-    width: 100%;
+.center {
+    text-align: center;
 }

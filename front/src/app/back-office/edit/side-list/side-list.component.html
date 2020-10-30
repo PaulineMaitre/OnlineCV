@@ -1,8 +1,5 @@
-<div class="" cdkDropList (cdkDropListDropped)="drop($event)">
-    <div id="contentInside" *ngFor="let container of containers; let i = index" cdkDrag>
-        {{container}}, index = {{i}}
-        <!--        {{container.indexOf(container)}}-->
-    </div>
-    <button class="btn btn-primary" (click)='add()'>Add</button>
+<div class="pad-bot-list">
+    <div class="Skills"><app-multi-form></app-multi-form></div>
+    <div class="Social"><app-multi-form></app-multi-form></div>
+    <div class="Languages"><app-multi-form></app-multi-form></div>
 </div>
-
