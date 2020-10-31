@@ -34,23 +34,26 @@ export class MultiFormComponent implements OnInit {
         'Episode IX – The Rise of Skywalker'
     ]
 
-    @Input() name: string;
+    @Input() content:{
+        name:string,
+        elements:[string],
+        type:string,
+    };
 
     constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
         this.getUser();
         setTimeout(() => {}, 2000);
-        this.createMultiForm()
+      //  this.createMultiForm()
     }
 
     ngOnInit() { }
 
-    createMultiForm() {
+    /*createMultiForm() {
         this.multiForm = this.fb.group({
-            title: [''],
+            name: [''],
             logo: [''],
-            // level: ['', Validators.required],
         });
-    }
+    }*/
     onFileChanged(event) {
         const ext = event.target.files[0].name.match(/\.(.+)$/)[1];
         if(ext.toLocaleLowerCase() ==='jpg' || ext.toLocaleLowerCase() ==='jpeg' || ext.toLocaleLowerCase() ==='png'){
@@ -73,13 +76,13 @@ export class MultiFormComponent implements OnInit {
     }
 
     getUser(): void {
-        this.userService.getUserById(1).subscribe(data => {
+        this.userService.getUserById(4).subscribe(data => {
             this.user = data;
         });
     }
 
     updateUserFromForm(): void {
-        if (this.multiForm.valid) {
+      //  if (this.multiForm.valid) {
             // this.user.firstName = this.user;
             // this.user.lastName = this.multiForm.get('inLastname').value;
             // this.user.birthDate = this.multiForm.get('inDate').value;
@@ -96,7 +99,7 @@ export class MultiFormComponent implements OnInit {
             //     user: this.user.id,
             // }));
             this.user.skills.push(new Skill({
-                name: this.multiForm.get('title').value,
+               // name: this.multiForm.get('title').value,
                 logo: this.selectedLogo.name,
                 level: 3,
                 user: this.user.id,
@@ -124,15 +127,15 @@ export class MultiFormComponent implements OnInit {
             //     }
             // ));
             console.log('Trying to send : ', this.user)
-            console.log('Trying to send skill : ', this.multiForm.get('title').value)
-            console.log('Trying to send skill : ', this.multiForm.get('logo').value)
-            console.log(this.multiForm.value)
+           // console.log('Trying to send skill : ', this.multiForm.get('title').value)
+           // console.log('Trying to send skill : ', this.multiForm.get('logo').value)
+           // console.log(this.multiForm.value)
             this.userService.updateUser(this.user).subscribe();
             // this.router.navigateByUrl('')
-        } else {
+       /* } else {
             console.log('form invalide')
             console.log(this.multiForm.get('title').value)
             console.log(this.multiForm.value)
-        }
+        }*/
     }
 }

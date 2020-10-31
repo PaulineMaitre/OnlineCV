@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import {Network} from '../../../models/Network';
+import {Skill} from '../../../models/Skill';
 
 @Component({
   selector: 'app-list-frame-content-side',
@@ -8,11 +10,14 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 })
 export class SideListComponent implements OnInit {
 
-  names = ['compétences', 'langues', 'réseaux']
+  contentBlock = [
+    {name: 'Réseaux sociaux', elements: ['name','logo','link',], type:'socialLink'},
+    {name: 'Langues', elements: ['name','logo','level',],type:'languages'},
+    {name: 'Compétences',elements: ['name','logo','level',],type:'skills'}
+  ]
   containers = [
     'Episode I - The Phantom Menace',
   ];
-
   toAdd = [
     'Episode II - Attack of the Clones',
     'Episode III - Revenge of the Sith',
@@ -24,7 +29,9 @@ export class SideListComponent implements OnInit {
     'Episode IX – The Rise of Skywalker']
 
   @Input()
-  name: string;
+  names: string;
+  fields: [string];
+  type: string;
 
   constructor() { }
 
