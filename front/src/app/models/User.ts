@@ -18,7 +18,7 @@ export class User {
   socialLink?: Network[];
   skills: Skill[];
   languages: Language[];
-  hobbies: Hobby[]
+  hobbies?: Hobby[]
   frame?: FrameContent[];
 
   constructor(user? : Partial<User>) {

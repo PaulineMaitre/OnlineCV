@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Hobby} from '../../../../models/Hobby';
 
 @Component({
   selector: 'app-hobbies',
@@ -8,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class HobbiesComponent implements OnInit {
 
   constructor() { }
+  @Input() hobbies: Hobby[];
 
   ngOnInit(): void {
+    console.log(this.hobbies);
   }
 
 }

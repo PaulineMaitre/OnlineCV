@@ -1,5 +1,4 @@
 <app-about-me [user]="user"></app-about-me>
-<h3 class="badge col-md-4 col-lg-4">Languages</h3>
 <app-languages [languages]="user.languages"></app-languages>
-<h3 class="badge col-md-4 col-lg-4">Skills</h3>
 <app-skills [skills]="user.skills"></app-skills>
+<app-hobbies *ngIf="user.hobbies" [hobbies]="user.hobbies"></app-hobbies>

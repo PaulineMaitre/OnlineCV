@@ -30,9 +30,9 @@ INSERT INTO defaultdb.language (id, language_name, language_flag, language_level
 VALUES (7, 'Spanish','./assets/spanish_flag.png', 'B2', 3);
 
 INSERT INTO defaultdb.hobby (id, hobby_name, hobby_logo, user_id)
-VALUES (3, 'Horseriding','./assets/horseriding.png', 3);
+VALUES (5, 'Horseriding','./assets/horseriding.png', 3);
 INSERT INTO defaultdb.hobby (id, hobby_name, hobby_logo, user_id)
-VALUES (4, 'Swimming','./assets/swimming.png', 3);
+VALUES (6, 'Swimming','./assets/swimming.png', 3);
 
 INSERT INTO defaultdb.frame_content (id, frame_title, frame_logo_url, frame_order, user_id)
 VALUES (5, 'Education','../assets/diploma.png', 1, 3);
