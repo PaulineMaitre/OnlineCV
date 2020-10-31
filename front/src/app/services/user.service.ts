@@ -10,12 +10,14 @@ import {Skill} from '../models/Skill';
 import {FrameContent} from '../models/FrameContent';
 import {FrameItem} from '../models/FrameItem';
 import {Language} from '../models/Language';
+import {Mail} from '../models/Mail';
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserService {
 
+    mail:Mail;
     private url: string;
     options: {
         headers?: HttpHeaders | {[header: string]: string | string[]},
@@ -49,6 +51,10 @@ export class UserService {
 
     deleteUser(id: number): Observable<any> {
         return this.http.delete(`${this.url}/users/${id}`).pipe(timeout(10000));
+    }
+    sendMail(sender: string, senderContent:string){
+        this.mail={contact:sender,content:senderContent};
+        return this.http.put(`${this.url}/users/mail`, this.mail).pipe(tap(_ => timeout(1000)));
     }
 
 }
