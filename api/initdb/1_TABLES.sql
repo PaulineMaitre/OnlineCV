@@ -10,7 +10,9 @@ create table users
     address         TEXT,
     email           TEXT not null,
     picture         TEXT,
-    bio             TEXT
+    bio             TEXT,
+    cv_title        TEXT,
+    cv_content      BLOB
 );
 
 create table socials

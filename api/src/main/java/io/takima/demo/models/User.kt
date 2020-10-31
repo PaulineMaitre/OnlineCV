@@ -1,5 +1,7 @@
 package io.takima.demo.models
 
+import org.hibernate.type.BlobType
+import java.sql.Blob
 import java.util.*
 import javax.persistence.*
 
@@ -18,6 +20,8 @@ data class User(
         @Column(name = "bio") var bio: String?,
         @Column(name = "email") var email: String?,
         @Column(name = "picture") var picture: String?,
+        //@Column(name = "cv_content") var cv_title: String,
+        //@Column(name = "cv_content") var cv_content: BlobType,
         @Column(name = "socials")
         @OneToMany(mappedBy = "user")
         var socialLink: List<Socials>?,
