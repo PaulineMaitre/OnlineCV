@@ -12,7 +12,6 @@ export class HobbiesComponent implements OnInit {
   @Input() hobbies: Hobby[];
 
   ngOnInit(): void {
-    console.log(this.hobbies);
   }
 
 }

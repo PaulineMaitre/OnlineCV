@@ -5,7 +5,7 @@ export class FrameContent {
     id: number;
     title: string;
     order: number;
-    logo: string;
+    logo?: string;
     frameItem: FrameItem[];
     user:number;
 
