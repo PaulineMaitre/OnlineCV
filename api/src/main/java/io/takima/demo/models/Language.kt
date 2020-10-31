@@ -6,8 +6,8 @@ import javax.persistence.*
 /**
  *
  */
-@Entity(name ="languages")
-data class Languages(
+@Entity(name ="language")
+data class Language(
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Id var id: Long?,
         @Column(name = "language_name") var name: String?,
