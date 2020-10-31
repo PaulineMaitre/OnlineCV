@@ -43,7 +43,7 @@ export class BackOfficeComponent implements OnInit {
     }
 
     getUser(): void {
-        this.userService.getUserById(2).subscribe(data => {
+        this.userService.getUserById(1).subscribe(data => {
             this.user = data;
         });
     }
