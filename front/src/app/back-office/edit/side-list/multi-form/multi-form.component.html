@@ -1,41 +1,18 @@
 <div class="center">
-    <h3 class="badge">Ajoutez des {{name}}</h3>
+    <h3 class="badge">Ajoutez des {{content.name}}</h3>
 </div>
 
 <div class="content">
     <div id="contentInside" *ngFor="let container of containers; let i = index">
-        <div class="frame-content-form">
-            <form [formGroup]="multiForm" novalidate class="form-group">
-                <img rel="icon" class="icon none" src="../../../../../assets/checked.svg"/>
-                <div class="Name">
-                    <label class="center-block center">
-                        <!--            TODO : Ajouter des noms par défaut-->
-                        <input class="form-control" type="text" placeholder="Git"
-                               formControlName="title">
-                    </label>
-                </div>
-                <div class="Logo">
-                    <label class="center-block">
-                        <input class="form-control" type="text" placeholder="EPF.png"
-                               formControlName="logo" #logo id="logo" name="logo">
-                    </label>
+        {{content.name}} n° {{i+1}}
+        <div class="frame-content-form" *ngFor="let element of content.elements">
+            <form novalidate class="form-group">
+                <div [className]="element">
+                    <input class="form-control" type="text" [placeholder]="element">
                 </div>
             </form>
         </div>
-
     </div>
-    <button class="btn btn-primary" (click)='add()'>+</button>
-    <button class="btn btn-primary save" (click)='updateUserFromForm()'>save form</button>
+    <button class="btn btn-primary" style="margin: 0.25em" (click)='add()'>Add</button>
+    <button class="btn btn-primary" style="margin: 0.25em" (click)='updateUserFromForm()'>save form</button>
 </div>
-
-
-<!--                <div class="Logo">-->
-<!--                    <label class="center-block center">-->
-<!--                        &lt;!&ndash;            TODO : Ajouter des noms par défaut&ndash;&gt;-->
-<!--                        <div class="custom-file">-->
-<!--                            <input type="file" accept="image/*" class="custom-file-input"-->
-<!--                                   id="customFile" lang="fr" #imageInput (change)="onFileChanged($event)">-->
-<!--                            <label class="custom-file-label" for="customFile">Selectionner une image</label>-->
-<!--                        </div>-->
-<!--                    </label>-->
-<!--                </div>-->

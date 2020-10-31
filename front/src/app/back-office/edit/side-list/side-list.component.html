@@ -1,5 +1,8 @@
-<div class="pad-bot-list">
-    <div class="Skills"><app-multi-form [name]="names[0]"></app-multi-form></div>
-    <div class="Languages"><app-multi-form [name]="names[1]"></app-multi-form></div>
-    <div class="Social"><app-multi-form [name]="names[2]"></app-multi-form></div>
+<div class="pad-bot-list" forEach>
+
+    <div *ngFor="let contents of contentBlock">
+        <div [className]="contents.names">
+            <app-multi-form [content]="contents"></app-multi-form>
+        </div>
+    </div>
 </div>

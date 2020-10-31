@@ -1,7 +1,7 @@
 .content{
-    width:100%;
-    max-width: 100%;
-    border: solid 1px #ccc;
+    width:80%;
+    max-width: 80%;
+    border: solid 0.05em #ccc;
     min-height: 60px;
     display: block;
     background: white;
@@ -10,16 +10,12 @@
     padding: 5px;
 }
 #contentInside{
-    padding: 20px 10px;
+    padding: 0.3em;
     border-bottom: solid 1px #ccc;
     color: rgba(0, 0, 0, 0.87);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
     box-sizing: border-box;
     cursor: move;
-    background: white;
+    background: #e5b46b;
     font-size: 14px;
 }
 
