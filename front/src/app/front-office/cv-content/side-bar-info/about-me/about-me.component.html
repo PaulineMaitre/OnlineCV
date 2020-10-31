@@ -2,6 +2,6 @@
 <p><span *ngIf="user.address">{{user.address}}<br></span>
     {{user.email}}<br>
     {{user.phoneNumber}}<br>
-    <span *ngIf="user.birthDate">{{formatBirthDate(user.birthDate)}}</span>
+    <span *ngIf="user.birthDate">{{user.birthDate | date: "dd/MM/yyyy"}}</span>
 </p>
 

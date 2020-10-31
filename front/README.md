@@ -13,3 +13,6 @@
 
 ## Démarrer le serveur
 * Pour démarrer le serveur, entrer la commande : `ng serve`
+
+to install :
+npm install ngx-order-pipe --save

@@ -27,6 +27,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { HomeComponent } from './home/home.component';
 import { HomeHeaderComponent } from './home/home-header/home-header.component';
 import { HobbiesComponent } from './front-office/cv-content/side-bar-info/hobbies/hobbies.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { HobbiesComponent } from './front-office/cv-content/side-bar-info/hobbie
         ReactiveFormsModule,
         MatSliderModule,
         FormsModule,
-        MatDividerModule
+        MatDividerModule,
+        OrderModule
     ],
   providers: [],
   bootstrap: [AppComponent]
