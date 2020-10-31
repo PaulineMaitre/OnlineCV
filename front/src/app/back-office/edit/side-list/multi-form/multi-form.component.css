@@ -32,3 +32,23 @@
 .center {
     text-align: center;
 }
+
+.save {
+    margin-left: 1em;
+}
+
+.icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 2em;
+    width: 2em;
+}
+
+.none {
+    display: none;
+}
+
+.content {
+    position: relative;
+}

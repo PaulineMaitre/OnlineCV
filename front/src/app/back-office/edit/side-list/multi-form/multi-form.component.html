@@ -6,6 +6,7 @@
     <div id="contentInside" *ngFor="let container of containers; let i = index">
         <div class="frame-content-form">
             <form [formGroup]="multiForm" novalidate class="form-group">
+                <img rel="icon" class="icon none" src="../../../../../assets/checked.svg"/>
                 <div class="Name">
                     <label class="center-block center">
                         <!--            TODO : Ajouter des noms par défaut-->
@@ -14,13 +15,9 @@
                     </label>
                 </div>
                 <div class="Logo">
-                    <label class="center-block center">
-                        <!--            TODO : Ajouter des noms par défaut-->
-                        <div class="custom-file">
-                            <input type="file" accept="image/*" class="custom-file-input"
-                                   id="customFile" lang="fr" #imageInput (change)="onFileChanged($event)">
-                            <label class="custom-file-label" for="customFile">Selectionner une image</label>
-                        </div>
+                    <label class="center-block">
+                        <input class="form-control" type="text" placeholder="EPF.png"
+                               formControlName="logo" #logo id="logo" name="logo">
                     </label>
                 </div>
             </form>
@@ -28,6 +25,17 @@
 
     </div>
     <button class="btn btn-primary" (click)='add()'>+</button>
-    <button class="btn btn-primary" (click)='updateUserFromForm()'>save form</button>
+    <button class="btn btn-primary save" (click)='updateUserFromForm()'>save form</button>
 </div>
 
+
+<!--                <div class="Logo">-->
+<!--                    <label class="center-block center">-->
+<!--                        &lt;!&ndash;            TODO : Ajouter des noms par défaut&ndash;&gt;-->
+<!--                        <div class="custom-file">-->
+<!--                            <input type="file" accept="image/*" class="custom-file-input"-->
+<!--                                   id="customFile" lang="fr" #imageInput (change)="onFileChanged($event)">-->
+<!--                            <label class="custom-file-label" for="customFile">Selectionner une image</label>-->
+<!--                        </div>-->
+<!--                    </label>-->
+<!--                </div>-->

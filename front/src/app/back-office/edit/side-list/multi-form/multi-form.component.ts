@@ -97,7 +97,7 @@ export class MultiFormComponent implements OnInit {
             // }));
             this.user.skills.push(new Skill({
                 name: this.multiForm.get('title').value,
-                logo: this.selectedLogo.name,
+                logo: this.multiForm.get('logo').value,
                 level: 3,
                 user: this.user.id,
             }));
@@ -128,6 +128,7 @@ export class MultiFormComponent implements OnInit {
             console.log('Trying to send skill : ', this.multiForm.get('logo').value)
             console.log(this.multiForm.value)
             this.userService.updateUser(this.user).subscribe();
+            document.getElementsByClassName('icon-checked')
             // this.router.navigateByUrl('')
         } else {
             console.log('form invalide')

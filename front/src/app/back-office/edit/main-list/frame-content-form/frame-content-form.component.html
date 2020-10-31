@@ -1,34 +1,38 @@
-<div class="frame-content-form">
+<div class="frame-content-form" [formGroup]="frameContentForm">
     <div class="Titre">
         <label class="center-block center">
-<!--            TODO : Ajouter des noms par défaut-->
-            <input class="form-control" type="text" value="Education"
+            <!--            TODO : Ajouter des noms par défaut-->
+            <input class="form-control" type="text" value="{{title}}"
                    formControlName="title">
+            <img rel="icon" class="icon" src="../../../../../assets/drag-flick.svg"/>
         </label>
     </div>
-    <label class="Logo image-upload-container btn btn-bwm">
-        <div class="custom-file">
-            <input type="file" accept="image/*" class="custom-file-input"
-                   id="customFileLang" lang="fr" #imageInput (change)="processFile(imageInput)">
-            <label class="custom-file-label" for="customFileLang">Selectionner une image</label>
-        </div>
-    </label>
-<!--    <div class="Logo">-->
-<!--        <label class="center-block">-->
-<!--            <input class="form-control" type="text" placeholder="EPF.png"-->
-<!--                   formControlName="logo" #logo>-->
-<!--        </label>-->
-<!--    </div>-->
+    <div class="Logo">
+        <label class="center-block">
+            <input class="form-control" type="text" placeholder="EPF.png"
+                   formControlName="logo" #logo id="logo" name="logo">
+        </label>
+    </div>
 </div>
 
 <div class="item-content" cdkDropList (cdkDropListDropped)="drop($event)">
-    <div id="contentInside" *ngFor="let container of fontentForm; let i = index" cdkDrag>
-        <ng-template [ngIf]="fontentForm.length != 0">
+    <div class="contentInside" *ngFor="let container of contentForm; let i = index">
+        <ng-template [ngIf]="contentForm.length != 0">
             <mat-divider class="p-3"></mat-divider>
         </ng-template>
-        <app-frame-item-form></app-frame-item-form>
+        <div class="droppable-perso" cdkDrag>
+            <app-frame-item-form></app-frame-item-form>
+        </div>
     </div>
     <button class="btn btn-primary" (click)='addContentForm()'>Add</button>
-    <button class="btn btn-primary" (click)='save()'>Save</button>
+    <button class="btn btn-primary save" (click)='save()'>Save</button>
 </div>
 
+
+<!--    <label class="Logo image-upload-container btn btn-bwm">-->
+<!--        <div class="custom-file">-->
+<!--            <input type="file" accept="image/*" class="custom-file-input"-->
+<!--                   id="customFileLang" lang="fr" #imageInput (change)="processFile(imageInput)">-->
+<!--            <label class="custom-file-label" for="customFileLang">Selectionner une image</label>-->
+<!--        </div>-->
+<!--    </label>-->

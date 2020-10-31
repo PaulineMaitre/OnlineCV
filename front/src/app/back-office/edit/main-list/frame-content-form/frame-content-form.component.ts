@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../../../services/user.service';
+import {Network} from '../../../../models/Network';
+import {Skill} from '../../../../models/Skill';
+import {Language} from '../../../../models/Language';
+import {FrameContent} from '../../../../models/FrameContent';
+import {FrameItem} from '../../../../models/FrameItem';
+import {User} from '../../../../models/User';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-frame-content-form',
@@ -9,52 +16,67 @@ import {UserService} from '../../../../services/user.service';
 })
 
 export class FrameContentFormComponent implements OnInit {
+  user: User;
   frameContentForm: FormGroup;
-  fontentForm = [
+  contentForm = [
     'Episode I - The Phantom Menace',
     // 'Episode II - Attack of the Clones',
     // 'Episode III - Revenge of the Sith',
   ];
-  selectedFile: ImageSnippet;
 
+  constructor(private fb: FormBuilder, private userService: UserService) {}
 
-  constructor(private fb: FormBuilder, private userService: UserService) {
+  @Input() title: string;
+
+  ngOnInit(): void {
+    this.getUser();
+    setTimeout(() => {}, 2000);
     this.createFrameContentForm();
   }
-  ngOnInit(): void {
-  }
+
   createFrameContentForm() {
     this.frameContentForm = this.fb.group({
-      title: ['', Validators.required],
-      logo: ['', Validators.required],
+      title: [this.title],
+      logo: [''],
     });
   }
 
-  processFile(imageInput: any) {
-    console.log('processing file')
-    // const file: File = imageInput.files[0];
-    // const reader = new FileReader();
-    //
-    // reader.addEventListener('load', (event: any) => {
-    //
-    //   this.selectedFile = new ImageSnippet(event.target.result, file);
-    //
-    //   this.imageService.uploadImage(this.selectedFile.file).subscribe(
-    //       (res) => {
-    //
-    //       },
-    //       (err) => {
-    //
-    //       })
-    // });
-    //
-    // reader.readAsDataURL(file);
+  getUser(): void {
+    this.userService.getUserById(1).subscribe(data => {
+      this.user = data;
+    });
   }
-  save() {
-    console.log('Function save activated')
+
+  save(): void {
+    if (this.frameContentForm.valid) {
+      this.user.frame.push(new FrameContent({
+            title: this.frameContentForm.get('title').value,
+            order: 1,
+            logo: this.frameContentForm.get('logo').value,
+            frameItem: [new FrameItem({
+              title:'item name',
+              period: 'Du 3 au 7 janvier',
+              location: 'Paris',
+              order: 2,
+              logo: '',
+              content:'content of the item',
+              frame: 1,
+            })],
+            user: this.user.id,
+          }
+      ));
+      console.log('Trying to send : ', this.frameContentForm.value)
+      this.userService.updateUser(this.user).subscribe();
+    } else {
+      console.log('form invalide')
+    }
   }
 
   addContentForm() {
-    this.fontentForm.push(null);
+    this.contentForm.push(null);
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.contentForm, event.previousIndex, event.currentIndex);
   }
 }

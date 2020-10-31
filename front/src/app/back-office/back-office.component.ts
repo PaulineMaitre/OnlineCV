@@ -38,7 +38,6 @@ export class BackOfficeComponent implements OnInit {
             inDate: [''],
             inAddress: ['', [Validators.required]],
             inBio: [''],
-
         });
     }
 
