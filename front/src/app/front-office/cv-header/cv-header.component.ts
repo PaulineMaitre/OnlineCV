@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UserService} from '../../services/user.service';
 import {User} from '../../models/User';
 
 @Component({
@@ -13,6 +12,9 @@ export class CvHeaderComponent implements OnInit {
   @Input() user: User;
 
   ngOnInit(): void {
+  }
+  clickEvent(): void {
+    console.log('HELLO');
   }
 
 }
