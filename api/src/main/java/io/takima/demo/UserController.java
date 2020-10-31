@@ -1,6 +1,7 @@
 package io.takima.demo;
 
 import io.takima.demo.config.EmailConfig;
+import io.takima.demo.config.Mail;
 import io.takima.demo.dao.UserDAO;
 import io.takima.demo.models.User;
 import org.springframework.mail.SimpleMailMessage;
@@ -20,10 +21,12 @@ public class UserController {
     private final UserDAO userDAO;
     private final EmailConfig emailConfig;
 
+    private final Mail mailConfig;
 
-    public UserController(UserDAO userDAO, EmailConfig emailConfig) {
+    public UserController(UserDAO userDAO, EmailConfig emailConfig, Mail mailConfig) {
         this.userDAO = userDAO;
         this.emailConfig = emailConfig;
+        this.mailConfig = mailConfig;
     }
 
     @GetMapping()
@@ -57,19 +60,15 @@ public class UserController {
         this.userDAO.deleteById(id);
     }
 
-    @GetMapping("/mail")
-    public String setMailSender() {
-        // change get to put
-        // @RequestBody String content,String contact
-        String contact = "raphael.dellaseta@epfedu.fr";
-        String content = "Bonjour j'ai vu votre CV sur CV builder, il est vraiment impressionant, ça vous dit un stage chez Takima ?";
+    @PutMapping("/mail")
+    public String setMailSender(@RequestBody Mail mail) {
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(Objects.requireNonNull(emailConfig.getUsername()));
-        message.setTo(Objects.requireNonNull("pauline.maitre@epfedu.fr"));
+        message.setTo(Objects.requireNonNull("raphael.dellaseta@epfedu.fr"));
 
-        message.setSubject("Nouveau message OnlineCV de "+contact);
-        message.setText("Le client : \n"+contact+"\n\n Vous a laissé le message suivant : \n"+content );
+        message.setSubject("Nouveau message OnlineCV de "+mail.contact);
+        message.setText("Le client : \n"+mail.contact+"\n\n Vous a laissé le message suivant : \n\n"+mail.content );
 
 
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
