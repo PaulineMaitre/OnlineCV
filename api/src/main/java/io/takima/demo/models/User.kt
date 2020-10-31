@@ -24,7 +24,11 @@ data class User(
 
         @Column(name = "languages")
         @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL])
-        var languages: List<Languages>?,
+        var languages: List<Language>?,
+
+        @Column(name = "hobbies")
+        @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL])
+        var hobbies: List<Hobby>?,
 
         @Column(name = "skills")
         @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL])
@@ -33,5 +37,5 @@ data class User(
         @Column(name = "frame_content")
         @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL]) //.ALL ==> .DELETE ? TODO : Rechercher doc !
         var frame: List<FrameContent>?) {
-    constructor() : this(null,null, null, null, null,null,null,null,null,null,null, null, null)
+    constructor() : this(null,null, null, null, null,null,null,null,null,null,null, null, null, null)
 }

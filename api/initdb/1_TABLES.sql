@@ -25,14 +25,25 @@ create table socials
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
 
-create table languages
+create table language
 (
     id             bigint auto_increment,
-    constraint languages_pk
+    constraint language_pk
         primary key (id),
     language_name  TEXT   not null,
     language_level TEXT,
     language_flag  TEXT,
+    user_id        bigint,
+    FOREIGN KEY (user_id) REFERENCES users (id)
+);
+create table hobby
+(
+    id             bigint auto_increment,
+    constraint hobby_pk
+        primary key (id),
+    hobby_name  TEXT,
+    hobby_logo TEXT,
+    hobby_description  TEXT,
     user_id        bigint,
     FOREIGN KEY (user_id) REFERENCES users (id)
 );

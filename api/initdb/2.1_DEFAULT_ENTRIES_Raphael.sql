@@ -23,10 +23,15 @@ INSERT INTO defaultdb.socials (id, social_name, social_link, social_logo, user_i
 VALUES (3, 'Github','https://github.com/Raphael-D-S', '../assets/logo_github.png', 1);
 
 
-INSERT INTO defaultdb.languages (id, language_name, language_flag,language_level, user_id)
-VALUES (1, 'Français', '../assets/french_flag.png', 'Langue maternelle', 1);
-INSERT INTO defaultdb.languages (id, language_name, language_flag,language_level, user_id)
+INSERT INTO defaultdb.language (id, language_name, language_flag,language_level, user_id)
+VALUES (1, 'Français', '../assets/french_flag.png', 'Native speaker', 1);
+INSERT INTO defaultdb.language (id, language_name, language_flag,language_level, user_id)
 VALUES (2, 'Anglais', '../assets/english_flag.png', 'B2', 1);
+
+INSERT INTO defaultdb.hobby (id, hobby_name, user_id)
+VALUES (1, 'Football', 1);
+INSERT INTO defaultdb.hobby (id, hobby_name, user_id)
+VALUES (2, 'AWS', 1);
 
 INSERT INTO defaultdb.frame_content (id, frame_title, frame_logo_url, user_id)
 VALUES (1, 'Education','https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages4.fanpop.com%2Fimage%2Fphotos%2F19500000%2FEPF-Logo-elite-penguin-force-19521086-144-158.jpg&f=1&nofb=1', 1);

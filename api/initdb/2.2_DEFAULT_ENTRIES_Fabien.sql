@@ -23,9 +23,9 @@ INSERT INTO defaultdb.socials (id, social_name, social_link, social_logo, user_i
 VALUES (6, 'Github', 'https://github.com/Chamalomg', '../assets/logo_github.png', 2);
 
 
-INSERT INTO defaultdb.languages (id, language_name, language_flag,language_level, user_id)
-VALUES (3, 'Français', '../assets/french_flag.png', 'Langue maternelle', 2);
-INSERT INTO defaultdb.languages (id, language_name, language_flag,language_level, user_id)
+INSERT INTO defaultdb.language (id, language_name, language_flag,language_level, user_id)
+VALUES (3, 'Français', '../assets/french_flag.png', 'Native speaker', 2);
+INSERT INTO defaultdb.language (id, language_name, language_flag,language_level, user_id)
 VALUES (4, 'Anglais', '../assets/english_flag.png', 'B2', 2);
 
 INSERT INTO defaultdb.frame_content (id, frame_title, frame_logo_url, user_id)
