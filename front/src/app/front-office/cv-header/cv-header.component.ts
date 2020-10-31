@@ -15,6 +15,7 @@ export class CvHeaderComponent implements OnInit {
   }
   clickEvent(): void {
     console.log('HELLO');
+    console.log(this.user);
   }
 
 }
