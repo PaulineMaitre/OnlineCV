@@ -1,7 +1,10 @@
-<h3 class="badge col-md-4 col-lg-4">Skills</h3>
+<h3 *ngIf="skills" class="badge col-md-4 col-lg-4">
+    <img class="titleIcon space" src='./assets/skills.png' alt="frame icon">
+    Skills
+</h3>
 <div class="row" *ngFor="let skill of skills">
-    <div class="col-md-1 col-sm-6"><img class="icon" src={{skill.logo}}></div>
-    <div class="col-md-3 col-sm-6"><p class="space">{{skill.name}}</p></div>
+    <div class="col-md-1 col-sm-6"><img class="icon space" src={{skill.logo}}></div>
+    <div class="col-md-3 col-sm-6"><p>{{skill.name}}</p></div>
 
     <div class="col-md-5 col-sm-12">
         <div class="progress">

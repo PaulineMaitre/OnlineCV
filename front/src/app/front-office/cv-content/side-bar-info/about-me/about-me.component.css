@@ -3,3 +3,10 @@
     color: white;
     background-color: #A34553;
 }
+.titleIcon {
+    width: 1em;
+    height: 1em;
+}
+.space {
+    margin-right: 15px;
+}

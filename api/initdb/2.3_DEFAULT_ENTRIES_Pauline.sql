@@ -14,13 +14,15 @@ INSERT INTO defaultdb.skill (id, skill_name, skill_logo_link, skill_level, user_
 VALUES (15, 'Java', '../assets/logo_java.png', 4, 3);
 
 INSERT INTO defaultdb.socials (id, social_name, social_link, social_logo, user_id)
-VALUES (7, 'LinkedIn','https://www.linkedin.com/in/paulinemaitre/', '../assets/logo_linkedin.png', 3);
+VALUES (7, 'LinkedIn', 'https://www.linkedin.com/in/paulinemaitre/', '../assets/logo_linkedin.png', 3);
 INSERT INTO defaultdb.socials (id, social_name, social_link, social_logo, user_id)
-VALUES (8, 'Github','https://www.github.com/PaulineMaitre', '../assets/logo_github.png', 3);
+VALUES (8, 'Github', 'https://www.github.com/PaulineMaitre', '../assets/logo_github.png', 3);
 INSERT INTO defaultdb.socials (id, social_name, social_link, social_logo, user_id)
-VALUES (9, 'GitLab','https://gitlab.com/PaulineMaitre', '../assets/logo_gitlab.png', 3);
+VALUES (9, 'GitLab', 'https://gitlab.com/PaulineMaitre', '../assets/logo_gitlab.png', 3);
 INSERT INTO defaultdb.socials (id, social_name, social_link, social_logo, user_id)
-VALUES (10, 'Instagram','https://www.instagram.com/_pauline_m_', '../assets/logo_instagram.png', 3);
+VALUES (10, 'Instagram', 'https://www.instagram.com/_pauline_m_', '../assets/logo_instagram.png', 3);
+INSERT INTO defaultdb.socials (id, social_name, social_link, social_logo, user_id)
+VALUES (11, 'Discord', 'https://discord.com/channels/@Pauline#6669', '../assets/logo_discord.png', 3);
 
 INSERT INTO defaultdb.language (id, language_name, language_flag, language_level, user_id)
 VALUES (5, 'French', '../assets/french_flag.png', 'Native speaker', 3);
@@ -30,9 +32,9 @@ INSERT INTO defaultdb.language (id, language_name, language_flag, language_level
 VALUES (7, 'Spanish','./assets/spanish_flag.png', 'B2', 3);
 
 INSERT INTO defaultdb.hobby (id, hobby_name, hobby_logo, user_id)
-VALUES (5, 'Horseriding','./assets/horseriding.png', 3);
+VALUES (5, 'Horseriding', './assets/horseriding.png', 3);
 INSERT INTO defaultdb.hobby (id, hobby_name, hobby_logo, user_id)
-VALUES (6, 'Swimming','./assets/swimming.png', 3);
+VALUES (6, 'Swimming', './assets/swimming.png', 3);
 
 INSERT INTO defaultdb.frame_content (id, frame_title, frame_logo_url, frame_order, user_id)
 VALUES (5, 'Education','../assets/diploma.png', 1, 3);
