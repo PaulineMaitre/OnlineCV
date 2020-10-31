@@ -1,13 +1,33 @@
 <div class="center">
-    <h3 class="badge">Ajoutez des NOM</h3>
+    <h3 class="badge">Ajoutez des {{name}}</h3>
 </div>
 
+<div class="content">
+    <div id="contentInside" *ngFor="let container of containers; let i = index">
+        <div class="frame-content-form">
+            <form [formGroup]="multiForm" novalidate class="form-group">
+                <div class="Name">
+                    <label class="center-block center">
+                        <!--            TODO : Ajouter des noms par défaut-->
+                        <input class="form-control" type="text" placeholder="Git"
+                               formControlName="title">
+                    </label>
+                </div>
+                <div class="Logo">
+                    <label class="center-block center">
+                        <!--            TODO : Ajouter des noms par défaut-->
+                        <div class="custom-file">
+                            <input type="file" accept="image/*" class="custom-file-input"
+                                   id="customFile" lang="fr" #imageInput (change)="onFileChanged($event)">
+                            <label class="custom-file-label" for="customFile">Selectionner une image</label>
+                        </div>
+                    </label>
+                </div>
+            </form>
+        </div>
 
-<div class="content" cdkDropList (cdkDropListDropped)="drop($event)">
-    <div id="contentInside" *ngFor="let container of containers; let i = index" cdkDrag>
-        {{container}}, index = {{i}}
-        <!--        {{container.indexOf(container)}}-->
     </div>
-    <button class="btn btn-primary" (click)='add()'>Add</button>
+    <button class="btn btn-primary" (click)='add()'>+</button>
+    <button class="btn btn-primary" (click)='updateUserFromForm()'>save form</button>
 </div>
 

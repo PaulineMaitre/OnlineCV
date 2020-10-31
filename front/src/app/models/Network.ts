@@ -3,8 +3,8 @@ import {defaultsDeep} from 'lodash';
 export class Network {
     id: number;
     name: string;
-    link: string;
     logo: string;
+    link: string;
     user: number;
 
     constructor(network? : Partial<Network>) {

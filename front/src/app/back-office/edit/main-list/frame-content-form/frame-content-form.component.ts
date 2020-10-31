@@ -10,7 +10,7 @@ import {UserService} from '../../../../services/user.service';
 
 export class FrameContentFormComponent implements OnInit {
   frameContentForm: FormGroup;
-  containers = [
+  fontentForm = [
     'Episode I - The Phantom Menace',
     // 'Episode II - Attack of the Clones',
     // 'Episode III - Revenge of the Sith',
@@ -54,7 +54,7 @@ export class FrameContentFormComponent implements OnInit {
     console.log('Function save activated')
   }
 
-  add() {
-    this.containers.push(null);
+  addContentForm() {
+    this.fontentForm.push(null);
   }
 }
