@@ -5,11 +5,6 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {timeout} from 'rxjs/operators';
 import {User} from '../models/User';
-import {Network} from '../models/Network';
-import {Skill} from '../models/Skill';
-import {FrameContent} from '../models/FrameContent';
-import {FrameItem} from '../models/FrameItem';
-import {Language} from '../models/Language';
 import {Mail} from '../models/Mail';
 
 @Injectable({

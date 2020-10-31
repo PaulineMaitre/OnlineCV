@@ -15,7 +15,7 @@ import java.util.Properties;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
 
     private final UserDAO userDAO;
@@ -67,7 +67,7 @@ public class UserController {
         message.setFrom(Objects.requireNonNull(emailConfig.getUsername()));
         message.setTo(Objects.requireNonNull("raphael.dellaseta@epfedu.fr"));
 
-        message.setSubject("Nouveau message OnlineCV de "+mail.contact);
+        message.setSubject("Nouveau message OnlineCV de " + mail.contact);
         message.setText("Le client : \n"+mail.contact+"\n\n Vous a laissé le message suivant : \n\n"+mail.content );
 
 
