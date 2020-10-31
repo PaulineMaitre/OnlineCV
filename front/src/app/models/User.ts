@@ -2,6 +2,7 @@ import {FrameContent} from './FrameContent';
 import {Network} from './Network';
 import {Skill} from './Skill';
 import {Language} from './Language';
+import {Hobby} from './Hobby';
 import {defaultsDeep} from 'lodash';
 
 export class User {
@@ -17,6 +18,7 @@ export class User {
   socialLink?: Network[];
   skills: Skill[];
   languages: Language[];
+  hobbies?: Hobby[]
   frame?: FrameContent[];
 
   constructor(user? : Partial<User>) {

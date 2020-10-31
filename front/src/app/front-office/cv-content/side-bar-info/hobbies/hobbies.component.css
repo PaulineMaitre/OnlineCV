@@ -5,13 +5,12 @@
 .space {
     margin-left: 15px;
 }
-.progress-bar {
-    -webkit-transition: width 2.5s ease;
-    transition: width .2s ease;
-}
 .badge {
     font-size: 1em;
     color: white;
     background-color: #A34553;
     margin-top: 3%;
+}
+.separator {
+    margin-bottom: 3%;
 }

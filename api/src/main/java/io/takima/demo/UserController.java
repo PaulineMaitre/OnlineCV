@@ -26,14 +26,6 @@ public class UserController {
         this.emailConfig = emailConfig;
     }
 
-    /*@GetMapping()
-    public List<User> getUsers() {
-        Iterable<User> it = this.userDAO.findAll();
-        List<User> users = new ArrayList<>();
-        it.forEach(e -> users.add(e));
-
-        return users;
-    }*/
     @GetMapping()
     public List<User> getUsers() {
         Iterable<User> it = this.userDAO.findAll();
@@ -45,8 +37,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     public User getUserById(@PathVariable Long id) {
-        User user = userDAO.findById(id).get();
-        return user;
+        return userDAO.findById(id).get();
     }
 
     @PutMapping()

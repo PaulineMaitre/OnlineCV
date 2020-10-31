@@ -17,6 +17,7 @@ export class FrontOfficeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserId()
+    console.log(this.user);
   }
 
   getUserId(): void {

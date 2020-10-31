@@ -26,6 +26,7 @@ import {FrameItemFormComponent} from './back-office/edit/main-list/frame-content
 import {MatDividerModule} from '@angular/material/divider';
 import { HomeComponent } from './home/home.component';
 import { HomeHeaderComponent } from './home/home-header/home-header.component';
+import { HobbiesComponent } from './front-office/cv-content/side-bar-info/hobbies/hobbies.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { HomeHeaderComponent } from './home/home-header/home-header.component';
     FrameItemFormComponent,
     HomeComponent,
     HomeHeaderComponent,
+    HobbiesComponent,
   ],
     imports: [
         BrowserModule,

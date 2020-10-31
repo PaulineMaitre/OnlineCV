@@ -1,0 +1,10 @@
+<h3 *ngIf="hobbies" class="badge col-md-4 col-lg-4">Hobbies</h3>
+<div class="separator">
+    <div class="row" *ngFor="let hobby of hobbies">
+        <div *ngIf="hobby.logo" class="col-md-1 col-sm-6"><img class="icon" src={{hobby.logo}}></div>
+        <div *ngIf="hobby.name" class="col-md-11 col-sm-6"><p class="space">{{hobby.name}}</p></div>
+        <div *ngIf="hobby.description" class="col-md-12 col-sm-12">
+            <p>{{hobby.description}}</p>
+        </div>
+    </div>
+</div>

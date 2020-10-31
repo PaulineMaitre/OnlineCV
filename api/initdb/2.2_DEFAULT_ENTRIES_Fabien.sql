@@ -23,15 +23,20 @@ INSERT INTO defaultdb.socials (id, social_name, social_link, social_logo, user_i
 VALUES (6, 'Github', 'https://github.com/Chamalomg', '../assets/logo_github.png', 2);
 
 
-INSERT INTO defaultdb.languages (id, language_name, language_flag,language_level, user_id)
-VALUES (3, 'Français', '../assets/french_flag.png', 'Langue maternelle', 2);
-INSERT INTO defaultdb.languages (id, language_name, language_flag,language_level, user_id)
+INSERT INTO defaultdb.language (id, language_name, language_flag,language_level, user_id)
+VALUES (3, 'Français', '../assets/french_flag.png', 'Native speaker', 2);
+INSERT INTO defaultdb.language (id, language_name, language_flag,language_level, user_id)
 VALUES (4, 'Anglais', '../assets/english_flag.png', 'B2', 2);
+
+INSERT INTO defaultdb.hobby (id, hobby_name, user_id)
+VALUES (3, 'La quiche aux poireaux croquants', 2);
+INSERT INTO defaultdb.hobby (id, hobby_name, user_id)
+VALUES (4, 'Angular ma vie', 2);
 
 INSERT INTO defaultdb.frame_content (id, frame_title, frame_logo_url, user_id)
 VALUES (3, 'Education','https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages4.fanpop.com%2Fimage%2Fphotos%2F19500000%2FEPF-Logo-elite-penguin-force-19521086-144-158.jpg&f=1&nofb=1', 2);
 INSERT INTO defaultdb.frame_content (id, frame_title, frame_logo_url, user_id)
-VALUES (4, 'Professional experience','https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages4.fanpop.com%2Fimage%2Fphotos%2F19500000%2FEPF-Logo-elite-penguin-force-19521086-144-158.jpg&f=1&nofb=1', 2);
+VALUES (4, 'Experience','https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages4.fanpop.com%2Fimage%2Fphotos%2F19500000%2FEPF-Logo-elite-penguin-force-19521086-144-158.jpg&f=1&nofb=1', 2);
 
 INSERT INTO defaultdb.content_item (id, item_title, item_logo_url, item_period, item_content, frame_content_id)
 VALUES (5, 'EPF', '../assets/logo_epf.png', '2016-2021 : ',
