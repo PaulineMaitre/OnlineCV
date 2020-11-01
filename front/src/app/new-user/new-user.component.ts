@@ -22,8 +22,6 @@ export class NewUserComponent implements OnInit {
   }
 
   createForm() : void {
-    // Mettre des validators ?
-    // .fb.group = new FormGroup
     this.userForm = this.fb.group({
       inFirstname: ['Jean', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
       inLastname: ['DUPONT', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
