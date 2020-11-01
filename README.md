@@ -100,4 +100,4 @@ Still Blocked ? [Check the dedicated Readme](/front/README.md "Database and Dock
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](/license.md)
