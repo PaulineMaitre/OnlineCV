@@ -36,13 +36,13 @@ The user can perform different actions on the website. They are defined below bu
 These pictures represent the different layouts of the web app:
 
 - HomePage
-![CV builder Homepage](/front/assets/cv_home.png "CV builder Homepage")
+![CV builder Homepage](/front/src/assets/cv_home.png "CV builder Homepage")
 
 - User Resume
-![CV builder user resume](/front/assets/cv_sample.png "CV builder resume")
+![CV builder user resume](/front/src/assets/cv_sample.png "CV builder resume")
 
 - Edit Resume Section
-![CV builder edit resume](/front/assets/editresume.png "CV builder edit resume")
+![CV builder edit resume](/front/src/assets/editresume.png "CV builder edit resume")
 
 ## Install and launch project
 
