@@ -15,18 +15,19 @@ export class SkillsComponent implements OnInit {
   }
 
   @Input() skills: Skill[];
-  @Input() test: number;
-  @Input() test1: number;
 
   ngOnInit(): void {
-    this.fillProgressBar(2000, 0)
+    for(let i = 0; i < this.skills.length; i++) {
+      this.fillProgressBar(1000, i)
+    }
   }
 
   fillProgressBar(time: number, idSkill: number): void {
-    const duration = time/this.skillLevelToPercent(this.skills[idSkill].level);
-    for (let i = 0; i < this.skillLevelToPercent(this.skills[idSkill].level); i++) {
+    const level = this.skillLevelToPercent(this.skills[idSkill].level)
+    const duration = time/level;
+    for (let i = 0; i < level; i++) {
       setTimeout(() => {
-        this.test = this.skillLevelToPercent(this.skills[idSkill].level) * i/this.skillLevelToPercent(this.skills[idSkill].level)
+        this.skills[idSkill].level = level * i/level;
       }, duration*i);
     }
   }
