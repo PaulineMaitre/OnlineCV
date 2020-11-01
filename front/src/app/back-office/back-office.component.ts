@@ -26,21 +26,19 @@ export class BackOfficeComponent implements OnInit {
 
     ngOnInit(): void {
         this.getUserId();
-        setTimeout(() => {}, 2000);
-        this.createForm();
+        setTimeout(() => {this.createForm();}, 500);
     }
 
     createForm() : void {
         // Mettre des validators ?
-        // .fb.group = new FormGroup
         this.userForm = this.fb.group({
-            inFirstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
-            inLastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
-            inMail: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-            inPhone: ['', [Validators.required, Validators.pattern('^[0-9 %+]+')]],
-            inDate: [''],
-            inAddress: ['', [Validators.required]],
-            inBio: [''],
+            inFirstname: [this.user.firstName, [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+            inLastname: [this.user.lastName, [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+            inMail: [this.user.email, [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+            inPhone: [this.user.phoneNumber, [Validators.required, Validators.pattern('^[0-9 %+]+')]],
+            inDate: [this.formatBirthDate(this.user.birthDate)],
+            inAddress: [this.user.address, [Validators.required]],
+            inBio: [this.user.bio],
         });
     }
 
@@ -48,6 +46,11 @@ export class BackOfficeComponent implements OnInit {
         this.userService.getUserById(1).subscribe(data => {
             this.user = data;
         });
+    }
+
+    formatBirthDate(birthDate: Date): string {
+        const date = new Date(birthDate);
+        return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
     }
 
     getUserId(): void {
@@ -108,6 +111,7 @@ export class BackOfficeComponent implements OnInit {
         } else {
             console.log('form invalide')
             console.log('Curretly on user : ' + this.user.id)
+            console.log(this.user.email)
         }
     }
 }

@@ -25,6 +25,14 @@
     margin-bottom: 1em!important;
 }
 
+.contentInside > app-frame-content-form {
+    width: 100%;
+}
+
 content > * {
     width: 100%;
+}
+
+.pad-down {
+    margin-bottom: 0.5em;
 }

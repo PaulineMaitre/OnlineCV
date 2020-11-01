@@ -35,3 +35,11 @@
     width: 2em;
     cursor: grabbing!important;
 }
+
+.pad-down {
+    margin-bottom: 0.5em;
+}
+
+.pad-r {
+    margin-right: 0.5em;
+}

@@ -21,3 +21,7 @@
 .center {
     text-align: center;
 }
+
+.pad-down {
+    margin-bottom: 0.5em;
+}
