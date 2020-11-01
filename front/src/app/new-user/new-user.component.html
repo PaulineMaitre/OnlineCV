@@ -4,27 +4,27 @@
             <div class="inFirstname form-group">
                 <p>Prénom* :<br>
                     <label class="center-block">
-                        <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
+                        <!--If form is selected once and left empty with errors : add alert class alert-danger to the input element-->
                         <input class="form-control"
                                [ngClass]="{'alert alert-danger' : (userForm.get('inFirstname').errors && (userForm.get('inFirstname').touched || userForm.get('inFirstname').dirty))}"
                                type="text" placeholder="Jean"
                                formControlName="inFirstname" #inFirstname>
                         <span class="help-block" *ngIf="((userForm.get('inFirstname').touched || userForm.get('inFirstname').dirty) && userForm.get('inFirstname').errors)">
                             <span class="error" *ngIf="userForm.get('inFirstname').errors.required">
-                                Prénom obligatoire
+                                First name is Mandatory
                             </span>
                             <span class="error" *ngIf="userForm.get('inFirstname').errors.minlength ||
                                 userForm.get('inFirstname').errors.maxlength">
-                                Doit contenir entre <br>2 et 25 caractères
+                                Must contain between <br>2 and 25 characters
                             </span>
                         </span>
                     </label>
                 </p>
             </div>
             <div class="inLastname form-group">
-                <p>Nom* :<br>
+                <p>Last name* :<br>
                     <label class="center-block">
-                        <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
+                        <!--If form is selected once and left empty with errors : add alert class alert-danger to the input element-->
                         <input class="form-control"
                                [ngClass]="{'alert alert-danger' : (userForm.get('inLastname').errors && (userForm.get('inLastname').touched || userForm.get('inLastname').dirty))}"
                                type="text" placeholder="DUPONT"
@@ -32,11 +32,11 @@
 
                         <span class="help-block" *ngIf="((userForm.get('inLastname').touched || userForm.get('inLastname').dirty) && userForm.get('inLastname').errors)">
                             <span class="error" *ngIf="userForm.get('inLastname').errors.required">
-                                Nom obligatoire
+                                Last name is Mandaroty
                             </span>
                             <span class="error" *ngIf="userForm.get('inLastname').errors.minlength ||
                                 userForm.get('inLastname').errors.maxlength">
-                                Doit contenir entre <br>2 et 25 caractères
+                                Must contain between <br>2 and 25 characters
                             </span>
                         </span>
                     </label>
@@ -44,38 +44,38 @@
             </div>
 
             <div class="inMail form-group">
-                <p>Mail* :<br>
+                <p>Email* :<br>
                     <label class="center-block">
-                        <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
+                        <!--If form is selected once and left empty with errors : add alert class alert-danger to the input element-->
                         <input class="form-control" name="email" ngModel [email]="true"
                                [ngClass]="{'alert alert-danger' : (userForm.get('inMail').errors && (userForm.get('inMail').touched || userForm.get('inMail').dirty))}"
                                type="email" placeholder="Your current email address"
                                formControlName="inMail" #inMail>
                         <span class="help-block" *ngIf="((userForm.get('inMail').touched || userForm.get('inMail').dirty) && userForm.get('inMail').errors)">
                             <span class="error" *ngIf="userForm.get('inMail').errors.required">
-                                Mail obligatoire
+                                Email is Mandaroty
                             </span>
                             <span class="error" *ngIf="userForm.get('inMail').errors.pattern">
-                                Ceci n'est pas un mail
+                                Please enter a valid Email
                             </span>
                         </span>
                     </label>
                 </p>
             </div>
             <div class="inPhone form-group">
-                <p>Numéro de téléphone* :<br>
+                <p>Phone Number* :<br>
                     <label class="center-block">
-                        <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
+                        <!--If form is selected once and left empty with errors : add alert class alert-danger to the input element-->
                         <input class="form-control"
                                [ngClass]="{'alert alert-danger' : (userForm.get('inPhone').errors && (userForm.get('inPhone').touched || userForm.get('inPhone').dirty))}"
                                type="text" placeholder="06 45 28 46 45"
                                formControlName="inPhone" #inPhone>
                         <span class="help-block" *ngIf="((userForm.get('inPhone').touched || userForm.get('inPhone').dirty) && userForm.get('inPhone').errors)">
                             <span class="error" *ngIf="userForm.get('inPhone').errors.required">
-                                Numéro de téléphone obligatoire
+                                Phone Number is Mandaroty
                             </span>
                             <span class="error" *ngIf="userForm.get('inPhone').errors.pattern">
-                                Ne doit contenir que des chiffres
+                                Only numbers are allowed
                             </span>
                         </span>
                     </label>
@@ -83,14 +83,14 @@
             </div>
             <div class="inBio">
                 <p>
-                    <label class="center-block">Décrivez vous en quelques phrases :<br>
+                    <label class="center-block">Describe yourself in few words :<br>
                         <textarea class="form-control" type="text" formControlName="inBio" #inBio cols="40" rows="5"></textarea>
                         <!--                    <input class="form-control" type="text" formControlName="inBio" #inBio>-->
                     </label>
                 </p>
             </div>
             <div class="inDate">
-                <p>Date de naissance :<br>
+                <p>Birth Date :<br>
                     <label class="center-block">
                         <input class="form-control" type="string" placeholder="19/08/1998"
                                formControlName="inDate" #inDate>
@@ -98,7 +98,7 @@
                 </p>
             </div>
             <div class="inAddress">
-                <p>Adresse :<br>
+                <p>Address :<br>
                     <label class="center-block">
                         <input class="form-control" type="string" placeholder="Paris"
                                formControlName="inAddress" #inAddress>
@@ -106,16 +106,16 @@
                 </p>
             </div>
             <div class="inPicture">
-                <p>Image :<br>
+                <p>Profile Picture Link :<br>
                     <label class="center-block">
                         <input class="form-control" type="string" placeholder="Paris"
-                               formControlName="inAddress" #inAddress>
+                               formControlName="inPicture" #inPicture>
                     </label>
                 </p>
             </div>
         </form>
 
         <button type="button" class="btn btn-primary" (click)="createUser()">
-            Créer un CV !</button><br><br>
+            Create you resume !</button><br><br>
     </div>
 </div>
