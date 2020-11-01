@@ -11,6 +11,8 @@
             <a href="/{{user.id}}#contactForm" class="btn btn-light">Contact Me</a>
             <button (click)="downloadResumePDF(user.firstName, user.lastName)" class="btn btn-light material-icons">get_app<span class="download">PDF</span></button>
             <button (click)="downloadResumeJSON(user.firstName, user.lastName)" class="btn btn-light material-icons">get_app<span class="download">JSON</span></button>
+            <a routerLink="/back/edit/{{user.id}}" class="btn btn-light">Edit</a>
+            <a routerLink="/" class="btn btn-light">Home</a>
         </div>
         <div *ngIf="user.socialLink" class="row">
             <a *ngFor="let socialNetwork of user.socialLink" href={{socialNetwork.link}}>

@@ -15,7 +15,7 @@ import java.util.Properties;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 public class UserController {
 
     private final UserDAO userDAO;
@@ -73,6 +73,7 @@ public class UserController {
 
     @PostMapping()
     public User addUser(@RequestBody User user) {
+
         return this.userDAO.save(user);
     }
 
