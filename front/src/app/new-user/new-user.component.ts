@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {User} from '../models/User';
 import {UserService} from '../services/user.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-new-user',
@@ -13,7 +14,8 @@ export class NewUserComponent implements OnInit {
   userForm: FormGroup;
   user: User;
 
-  constructor(private fb: FormBuilder, private userService: UserService) { }
+  constructor(private fb: FormBuilder, private userService: UserService,
+              private router: Router,private route: ActivatedRoute,) { }
 
   ngOnInit() {
     this.createForm();
@@ -37,7 +39,8 @@ export class NewUserComponent implements OnInit {
   createUser(): void {
       if (this.userForm.valid){
         this.user = {
-          id: 0, languages: [], skills: [],
+          id: 0,
+          languages: [], skills: [],
           firstName:this.userForm.get('inFirstname').value,
           lastName: this.userForm.get('inLastname').value,
           email: this.userForm.get('inMail').value,
@@ -47,10 +50,10 @@ export class NewUserComponent implements OnInit {
           address: this.userForm.get('inAddress').value,
           bio: this.userForm.get('inBio').value
         };
-        console.log('user send : ')
+        console.log('user send : ');
         this.userService.createUser(this.user).subscribe();
+        this.router.navigateByUrl('');
       }
-
   }
   get infirstName() {
     return this.userForm.get('infirstName');
