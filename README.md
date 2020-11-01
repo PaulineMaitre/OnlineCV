@@ -33,7 +33,7 @@ The user can perform different actions on the website. They are defined below bu
 
 ## Website Screenshots
 
-These pictures represent the different layouts of the webapp:
+These pictures represent the different layouts of the web app:
 
 - HomePage
 ![CV builder Homepage](/readmeContents/image.jpg "CV builder Homepage")
@@ -46,7 +46,7 @@ These pictures represent the different layouts of the webapp:
 
 ## Install and launch project
 
-In order to launch the project properly, you should follow the these steps. They should also be able to help you in case of unknown error.
+To launch the project properly, you should follow these steps. They should also be able to help you in case of an unknown error.
 
 #### Docker
 Launch the docker terminal and run the following command to create the database container
@@ -57,23 +57,23 @@ docker run --name mariadb --rm -e MYSQL_ROOT_PASSWORD=toor -e MYSQL_DATABASE=def
 Still Blocked ? [Check the dedicated Readme](/api/README.md "Database and Docker ReadMe")
 #### Back (API)
 
-Open the project in IntelliJ IDEA or your favorite IDEA
+Open the project in IntelliJ IDEA or your favorite IDEA.
 
 - Initiate the database according to docker instance IP address
 The IP address in src/main/application.properties should be like :  
 ````
 spring.datasource.url=jdbc:mariadb://DOCKER-INSTANCE-IP:3306/defaultdb
 ````
-- Add the database in IntelliJ and run the sql queries in the initdb folder :
-    - first : 1_TABLES.sql
-    - second : All the default entries
-    (this should create the table and add the first profiles to the data base)
-- Run the Application.java file, doing this you should be able to see the localhost retuning 'it works !' [API localhost](http://localhost:8080)
+- Add the database in IntelliJ and run the SQL queries in the initdb folder :
+    - first: 1_TABLES.sql
+    - second: All the default entries
+    (this should create the table and add the first profiles to the database)
+- Run the Application.java file. Doing this, you should be able to see the localhost retuning 'it works !' [API localhost](http://localhost:8080)
 
 Still Blocked ? [Check the dedicated Readme](/api/README.md "Database and Docker ReadMe")
 ### Front (Angular)
 
-Open the project in IntelliJ IDEA or your favorite IDEA
+Open the project in IntelliJ IDEA or your favorite IDEA.
  
 - Make sure to have nodeJS and npm installed on your device
 - Run the following commands to install the project
