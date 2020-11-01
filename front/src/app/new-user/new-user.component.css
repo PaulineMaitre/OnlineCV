@@ -1,0 +1,27 @@
+.content {
+    margin: auto;
+    text-align: center;
+    /*display: flex;*/
+    /*text-align: center;*/
+}
+
+.card {
+    padding: 1em 0 1em 0;
+    width: 40em;
+    display: inline-block;
+    background-color: #757575;
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+            "firstName lastName"
+            "email phoneNumber"
+            "picture Bio"
+            "Address Bio"
+            "           ";
+}

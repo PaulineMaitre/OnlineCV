@@ -1,0 +1,68 @@
+<form [formGroup]="userForm" class="content card grid-container">
+    <label class="firstName">
+        FirstName
+        <br>
+        <input formControlName="infirstName" placeholder="firstName"/>
+        <span *ngIf="infirstName.invalid && infirstName.touched">
+         Your FirstName does not look right
+        </span>
+    </label>
+    <label class="lastName">
+        LastName
+        <br>
+        <input formControlName="inlastName" placeholder="lastName"/>
+        <span *ngIf="inlastName.invalid && inlastName.touched">
+         Your Name does not look right
+        </span>
+    </label>
+    <label class="email">
+        Email
+        <br>
+        <input formControlName="inemail" placeholder="email"/>
+        <span *ngIf="inemail.invalid && inemail.touched">
+         Your email does not look right
+        </span>
+    </label>
+    <label class="phoneNumber">
+        Phone Number
+        <br>
+        <input formControlName="inphoneNumber" placeholder="phoneNumber"/>
+        <span *ngIf="inphoneNumber.invalid && inphoneNumber.touched">
+         Your phoneNumber does not look right
+        </span>
+    </label>
+    <label>
+        Picture URL
+        <br>
+        <input formControlName="inpicture" placeholder="picture"/>
+        <span *ngIf="inpicture.invalid && inpicture.touched">
+         Your picture link does not look right
+        </span>
+    </label>
+    <label>
+        Birthdate
+        <br>
+        <input formControlName="inbirthDate" placeholder="birthDate"/>
+        <span *ngIf="inbirthDate.invalid && inbirthDate.touched">
+         Your birthDate does not look right
+        </span>
+    </label>
+    <label>
+        Address
+        <br>
+        <input formControlName="inaddress" placeholder="address"/>
+        <span *ngIf="inaddress.invalid && inaddress.touched">
+         Your address does not look right
+        </span>
+    </label>
+    <label>
+        Bio/ Catch phrase
+        <br>
+        <textarea formControlName="inbio" rows="5" placeholder="Important Things about you">
+        </textarea>
+        <span *ngIf="inbio.invalid && inbio.touched">
+         Your description does not look right
+        </span>
+    </label>
+    <button [disabled]="userForm.invalid" (click)="createUser()">Create New User</button>
+</form>

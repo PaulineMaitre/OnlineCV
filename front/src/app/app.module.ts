@@ -6,7 +6,6 @@ import { HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FrontOfficeComponent} from './front-office/front-office.component';
 import {BackOfficeComponent} from './back-office/back-office.component';
-import {NavComponent} from './nav/nav.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatSliderModule} from '@angular/material/slider';
 import { MainListComponent } from './back-office/edit/main-list/main-list.component';
@@ -32,6 +31,13 @@ import { OrderModule } from 'ngx-order-pipe';
 
 import { MultiFormComponent } from './back-office/edit/side-list/multi-form/multi-form.component';
 import { SideFormComponent } from './back-office/edit/side-list/multi-form/side-form/side-form.component';
+import { NewUserComponent } from './new-user/new-user.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -39,7 +45,6 @@ import { SideFormComponent } from './back-office/edit/side-list/multi-form/side-
     FrontOfficeComponent,
     BackOfficeComponent,
     MainListComponent,
-    NavComponent,
     MainListComponent,
     SideListComponent,
     EditComponent,
@@ -59,6 +64,7 @@ import { SideFormComponent } from './back-office/edit/side-list/multi-form/side-
     HobbiesComponent,
     MultiFormComponent,
     SideFormComponent,
+    NewUserComponent,
   ],
     imports: [
         BrowserModule,
@@ -69,7 +75,13 @@ import { SideFormComponent } from './back-office/edit/side-list/multi-form/side-
         MatSliderModule,
         FormsModule,
         MatDividerModule,
-        OrderModule
+        OrderModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatButtonModule,
+        MatCheckboxModule,
+        MatChipsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
