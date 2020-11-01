@@ -94,10 +94,23 @@ Still Blocked ? [Check the dedicated Readme](/front/README.md "Database and Dock
 
 #### See A Resume
 
+At the home page click on a name to visualise its resume. You will be able to :
+
+- see the resume content
+- export resume PDF
+- export resume json
+- contact by email the targeted profile (Please referer to the credentials sent by mail or ask us again)
+
 #### Add A Resume
+
+On the home page click on the``Create your own resume`` picture.
+You will be able to give your information and create your personal resume.
+Once saved you will be able to edit the resume to add more elements.
 
 #### Edit A Resume
 
+In order to edit a user, go on the home page and click on the yellow edit button next to your user.
+You will be redirected to the editing page where you will be able to add remove or modify all the contents.
 ## License
 
 [MIT](/license.md)
