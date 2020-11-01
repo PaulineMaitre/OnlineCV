@@ -32,6 +32,7 @@ export class FrameContentFormComponent implements OnInit {
   ngOnInit(): void {
     this.createFrameContentForm();
   }
+
   createFrameContentForm() {
     this.frameContentForm = this.fb.group({
       title: ['', Validators.required],
@@ -75,13 +76,10 @@ export class FrameContentFormComponent implements OnInit {
       }));
       i += 1
     }
-    console.log(frame);
     if (this.frameContentForm.valid) {
-
-      console.log(frame);
       this.user.frame.push(new FrameContent({
             title: this.frameContentForm.get('title').value,
-            order: this.index,
+            order: this.index + 1,
             logo: this.frameContentForm.get('logo').value,
             frameItem: frame,
           }
@@ -90,7 +88,6 @@ export class FrameContentFormComponent implements OnInit {
       this.userService.updateUser(this.user).subscribe();
     } else {
       console.log('form invalide');
-      console.log(this.frameContentForm.value);
     }
   }
 

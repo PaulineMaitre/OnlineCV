@@ -2,7 +2,7 @@
     <div class="card">
         <form [formGroup]="userForm" novalidate class="form-group grid-container">
             <div class="firstName form-group">
-                <p>Prénom* :<br>
+                <p>Firstname* :<br>
                     <label class="center-block">
                         <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
                         <input class="form-control"
@@ -11,18 +11,18 @@
                                formControlName="inFirstname" #inFirstname>
                         <span class="help-block" *ngIf="((userForm.get('inFirstname').touched || userForm.get('inFirstname').dirty) && userForm.get('inFirstname').errors)">
                             <span class="error" *ngIf="userForm.get('inFirstname').errors.required">
-                                Prénom obligatoire
+                                Firstname is mandatory
                             </span>
                             <span class="error" *ngIf="userForm.get('inFirstname').errors.minlength ||
                                 userForm.get('inFirstname').errors.maxlength">
-                                Doit contenir entre <br>2 et 25 caractères
+                                Must contain between <br>2 and 25 characters
                             </span>
                         </span>
                     </label>
                 </p>
             </div>
             <div class="lastName form-group">
-                <p>Nom* :<br>
+                <p>Lastname* :<br>
                     <label class="center-block">
                         <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
                         <input class="form-control"
@@ -32,11 +32,11 @@
 
                         <span class="help-block" *ngIf="((userForm.get('inLastname').touched || userForm.get('inLastname').dirty) && userForm.get('inLastname').errors)">
                             <span class="error" *ngIf="userForm.get('inLastname').errors.required">
-                                Nom obligatoire
+                                Lastname is mandatory
                             </span>
                             <span class="error" *ngIf="userForm.get('inLastname').errors.minlength ||
                                 userForm.get('inLastname').errors.maxlength">
-                                Doit contenir entre <br>2 et 25 caractères
+                                Must contain between <br>2 and 25 characters
                             </span>
                         </span>
                     </label>
@@ -53,17 +53,17 @@
                                formControlName="inMail" [value]="user.email">
                         <span class="help-block" *ngIf="((userForm.get('inMail').touched || userForm.get('inMail').dirty) && userForm.get('inMail').errors)">
                             <span class="error" *ngIf="userForm.get('inMail').errors.required">
-                                Mail obligatoire
+                                Mail is mandatory
                             </span>
                             <span class="error" *ngIf="userForm.get('inMail').errors.pattern">
-                                Ceci n'est pas un mail
+                                This is not a mail
                             </span>
                         </span>
                     </label>
                 </p>
             </div>
             <div class="Tel form-group">
-                <p>Numéro de téléphone* :<br>
+                <p>Phone* :<br>
                     <label class="center-block">
                         <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
                         <input class="form-control"
@@ -72,10 +72,10 @@
                                formControlName="inPhone" #inPhone>
                         <span class="help-block" *ngIf="((userForm.get('inPhone').touched || userForm.get('inPhone').dirty) && userForm.get('inPhone').errors)">
                             <span class="error" *ngIf="userForm.get('inPhone').errors.required">
-                                Numéro de téléphone obligatoire
+                                Phonenumber is mandatory
                             </span>
                             <span class="error" *ngIf="userForm.get('inPhone').errors.pattern">
-                                Ne doit contenir que des chiffres
+                                Have you ever seen a phone<br> number whit chars in it ?
                             </span>
                         </span>
                     </label>
@@ -83,14 +83,14 @@
             </div>
             <div class="Bio">
                 <p>
-                    <label class="center-block">Décrivez vous en quelques phrases :<br>
+                    <label class="center-block">What do you want to tell the recruiters ? <br>
                         <textarea class="form-control" type="text" formControlName="inBio" #inBio cols="40" rows="5"></textarea>
                         <!--                    <input class="form-control" type="text" formControlName="inBio" #inBio>-->
                     </label>
                 </p>
             </div>
             <div class="birthdate">
-                <p>Date de naissance :<br>
+                <p>Birtdate :<br>
                     <label class="center-block">
                         <input class="form-control" type="string" placeholder="19/08/1998"
                                formControlName="inDate" #inDate>
@@ -98,7 +98,7 @@
                 </p>
             </div>
             <div class="Address">
-                <p>Adresse :<br>
+                <p>address :<br>
                     <label class="center-block">
                         <input class="form-control" type="string" placeholder="Paris"
                                formControlName="inAddress" #inAddress>
@@ -108,7 +108,7 @@
         </form>
 
         <button type="button" class="btn btn-primary" (click)="updateUserFromForm()">
-            Créer un CV !
+            Create resume !
         </button><br><br>
 
         <button type="button" class="btn btn-primary" (click)="updateUserFromForm()">Test formulaire</button>
