@@ -47,8 +47,8 @@ export class UserService {
     deleteUser(id: number): Observable<any> {
         return this.http.delete(`${this.url}/users/${id}`).pipe(timeout(10000));
     }
-    sendMail(sender: string, senderContent:string){
-        this.mail={contact:sender,content:senderContent};
+    sendMail(sender: string, senderContent:string,userSendTo:string){
+        this.mail={contact:sender,content:senderContent,sendTo:userSendTo};
         return this.http.put(`${this.url}/users/mail`, this.mail).pipe(tap(_ => timeout(1000)));
     }
 

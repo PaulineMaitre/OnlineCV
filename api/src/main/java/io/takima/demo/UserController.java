@@ -65,7 +65,7 @@ public class UserController {
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(Objects.requireNonNull(emailConfig.getUsername()));
-        message.setTo(Objects.requireNonNull("raphael.dellaseta@epfedu.fr"));
+        message.setTo(Objects.requireNonNull(mail.sendTo));
 
         message.setSubject("Nouveau message OnlineCV de " + mail.contact);
         message.setText("Le client : \n"+mail.contact+"\n\n Vous a laissé le message suivant : \n\n"+mail.content );
