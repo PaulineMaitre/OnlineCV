@@ -165,7 +165,7 @@ INSERT INTO defaultdb.frame_content (id, frame_title, frame_logo_url, frame_orde
 VALUES (7, 'Projects','../assets/handshake.png', 3, 3);
 
 INSERT INTO defaultdb.content_item (id, item_title, item_logo_url, item_period, item_order, item_location, item_content, frame_content_id)
-VALUES (9, 'EPF Ecole d\ingénieurs', '../assets/logo_epf.png', 'Since september 2016', 1, 'Sceaux - France',
+VALUES (9, 'EPF Ecole d\'ingénieurs', '../assets/logo_epf.png', 'Since september 2016', 1, 'Sceaux - France',
         'Majoring in Engineering and Digital Technologies', 5);
 INSERT INTO defaultdb.content_item (id, item_title, item_logo_url, item_period, item_order, item_location, item_content, frame_content_id)
 VALUES (10, 'Universidad Pontificia Comillas', './assets/logo_comillas.png', 'September to December 2019', 2, 'Madrid - Spain',
