@@ -1,8 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {User} from '../../../../models/User';
 import {Skill} from '../../../../models/Skill';
-import {of} from 'rxjs';
-import {delay} from 'rxjs/operators';
 
 @Component({
   selector: 'app-skills',

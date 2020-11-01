@@ -7,7 +7,7 @@ export class FrameContent {
     order: number;
     logo?: string;
     frameItem: FrameItem[];
-    user:number;
+    user: number;
 
     constructor(frameContent? : Partial<FrameContent>) {
         defaultsDeep(this, frameContent);

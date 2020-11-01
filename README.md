@@ -36,7 +36,7 @@ The user can perform different actions on the website. They are defined below bu
 These pictures represent the different layouts of the web app:
 
 - HomePage
-![CV builder Homepage](/readmeContents/homepage.jpg "CV builder Homepage")
+![CV builder Homepage](/readmeContents/cv_home.jpg "CV builder Homepage")
 
 - User Resume
 ![CV builder user resume](/readmeContents/cv_sample.PNG "CV builder resume")
