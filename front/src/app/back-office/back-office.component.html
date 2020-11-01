@@ -47,10 +47,10 @@
                 <p>Mail* :<br>
                     <label class="center-block">
                         <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
-                        <input class="form-control" name="email" ngModel [email]="true"
+                        <input class="form-control" ngModel
                                [ngClass]="{'alert alert-danger' : (userForm.get('inMail').errors && (userForm.get('inMail').touched || userForm.get('inMail').dirty))}"
                                type="email" placeholder="Your current email address"
-                               formControlName="inMail" #inMail>
+                               formControlName="inMail" [value]="user.email">
                         <span class="help-block" *ngIf="((userForm.get('inMail').touched || userForm.get('inMail').dirty) && userForm.get('inMail').errors)">
                             <span class="error" *ngIf="userForm.get('inMail').errors.required">
                                 Mail obligatoire

@@ -18,3 +18,9 @@ a:hover {
     font-family: 'Bebas Neue', cursive;
     color: #a45f69;
 }
+
+.icon {
+    height: 1em;
+    filter: invert(72%) sepia(45%) saturate(1054%) hue-rotate(354deg) brightness(105%) contrast(101%);
+}
+a { color: white; }

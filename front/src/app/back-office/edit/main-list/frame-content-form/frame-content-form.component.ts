@@ -27,6 +27,7 @@ export class FrameContentFormComponent implements OnInit {
 
   // @Input() title: string;
   @Input() user: User;
+  @Input() index: number;
 
   ngOnInit(): void {
     this.createFrameContentForm();
@@ -58,14 +59,6 @@ export class FrameContentFormComponent implements OnInit {
     this.frameItemForm.removeAt(i)
   }
 
-
-
-  // getUser(): void {
-  //   this.userService.getUserById(1).subscribe(data => {
-  //     this.user = data;
-  //   });
-  // }
-
   save(): void {
     const frame: FrameItem[] = [];
     let i = 1;
@@ -75,7 +68,7 @@ export class FrameContentFormComponent implements OnInit {
         title: form.titleItem,
         period: form.period,
         location: form.location,
-        order: i,
+        order: 1,
         logo: form.logoItem,
         content:form.content,
         frame: 1,
@@ -83,13 +76,12 @@ export class FrameContentFormComponent implements OnInit {
       i += 1
     }
     console.log(frame);
-
     if (this.frameContentForm.valid) {
 
       console.log(frame);
       this.user.frame.push(new FrameContent({
             title: this.frameContentForm.get('title').value,
-            order: 1,
+            order: this.index,
             logo: this.frameContentForm.get('logo').value,
             frameItem: frame,
           }
@@ -98,6 +90,7 @@ export class FrameContentFormComponent implements OnInit {
       this.userService.updateUser(this.user).subscribe();
     } else {
       console.log('form invalide');
+      console.log(this.frameContentForm.value);
     }
   }
 
