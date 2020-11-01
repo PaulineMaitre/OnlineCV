@@ -21,7 +21,6 @@ import { CvContentComponent } from './front-office/cv-content/cv-content.compone
 import { SideBarInfoComponent } from './front-office/cv-content/side-bar-info/side-bar-info.component';
 import { ContactMeComponent } from './front-office/contact-me/contact-me.component';
 import {FrameContentFormComponent} from './back-office/edit/main-list/frame-content-form/frame-content-form.component';
-import {FrameItemFormComponent} from './back-office/edit/main-list/frame-content-form/frame-item-form/frame-item-form.component';
 
 import {MatDividerModule} from '@angular/material/divider';
 import { HomeComponent } from './home/home.component';
@@ -58,7 +57,6 @@ import {MatChipsModule} from '@angular/material/chips';
     SideBarInfoComponent,
     ContactMeComponent,
     FrameContentFormComponent,
-    FrameItemFormComponent,
     HomeComponent,
     HomeHeaderComponent,
     HobbiesComponent,
