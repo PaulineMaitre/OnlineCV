@@ -44,8 +44,8 @@
     margin-right: 0.5em;
 }
 .btn {
-    font-size: x-large;
-    font-family: 'Permanent Marker', cursive;
-    background-color: #A34553;
-    color: #323232;
+    font-size: large;
+    font-family: 'Fira Sans', cursive;
+    background-color: #323232;
+    color: white;
 }
