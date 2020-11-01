@@ -8,16 +8,11 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 })
 export class MainListComponent implements OnInit {
 
-  containers = [
-    'Episode I - The Phantom Menace',
+  FrameTitle = [
+    'Formation',
+    'Expériences professionnelles',
+    'Projets',
   ];
-
-  toAdd = [    'Episode IV - A New Hope',
-    'Episode V - The Empire Strikes Back',
-    'Episode VI - Return of the Jedi',
-    'Episode VII - The Force Awakens',
-    'Episode VIII - The Last Jedi',
-    'Episode IX – The Rise of Skywalker']
 
 // frPropo = FrameContent(Experience,[Frameitem('EPF'),Frameitem('Lycée'),Frameitem())
 // frPropo = FrameContent(Formation,[Frameitem('EPF'),Frameitem('Lycée'),Frameitem())
@@ -28,11 +23,11 @@ export class MainListComponent implements OnInit {
   ngOnInit() { }
 
   add() {
-    this.containers.push(this.toAdd[1]);
+    this.FrameTitle.push('Projets');
   }
 
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.containers, event.previousIndex, event.currentIndex);
+    moveItemInArray(this.FrameTitle, event.previousIndex, event.currentIndex);
   }
 }
 

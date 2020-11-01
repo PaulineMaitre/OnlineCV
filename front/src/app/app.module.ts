@@ -23,11 +23,15 @@ import { SideBarInfoComponent } from './front-office/cv-content/side-bar-info/si
 import { ContactMeComponent } from './front-office/contact-me/contact-me.component';
 import {FrameContentFormComponent} from './back-office/edit/main-list/frame-content-form/frame-content-form.component';
 import {FrameItemFormComponent} from './back-office/edit/main-list/frame-content-form/frame-item-form/frame-item-form.component';
+
 import {MatDividerModule} from '@angular/material/divider';
 import { HomeComponent } from './home/home.component';
 import { HomeHeaderComponent } from './home/home-header/home-header.component';
 import { HobbiesComponent } from './front-office/cv-content/side-bar-info/hobbies/hobbies.component';
 import { OrderModule } from 'ngx-order-pipe';
+
+import { MultiFormComponent } from './back-office/edit/side-list/multi-form/multi-form.component';
+import { SideFormComponent } from './back-office/edit/side-list/multi-form/side-form/side-form.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +57,9 @@ import { OrderModule } from 'ngx-order-pipe';
     HomeComponent,
     HomeHeaderComponent,
     HobbiesComponent,
+    MultiFormComponent,
+    SideFormComponent,
+    
   ],
     imports: [
         BrowserModule,

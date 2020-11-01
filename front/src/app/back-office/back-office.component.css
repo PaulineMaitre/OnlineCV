@@ -6,6 +6,7 @@
 }
 
 .card {
+    padding: 1em 0 1em 0;
     width: 40em;
     display: inline-block;
     background-color: #757575;
@@ -16,13 +17,13 @@
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
             "firstName lastName"
             "Mail Tel"
-            "Social Skill"
-            "Hobbie ."
+            "birthdate Address"
+            /*"Hobbie ."*/
             "Bio Bio";
 }
 .firstName { grid-area: firstName; }
@@ -30,6 +31,20 @@
 .Mail { grid-area: Mail; }
 .Tel { grid-area: Tel; }
 .Bio { grid-area: Bio; }
-.Hobbie { grid-area: Hobbie; }
-.Social { grid-area: Social; }
-.Skill { grid-area: Skill; }
+.birthdate { grid-area: birthdate; }
+.Address { grid-area: Address; }
+/*.Skill { grid-area: Skill; }*/
+
+.alert {
+    padding: .375rem .75rem!important;
+    /*background-color: red;*/
+}
+
+.error {
+    font-size: smaller;
+}
+
+
+.custom-file {
+    text-align: initial;
+}

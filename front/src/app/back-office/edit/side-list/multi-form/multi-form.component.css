@@ -1,0 +1,50 @@
+.content{
+    width:80%;
+    max-width: 80%;
+    border: solid 0.05em #ccc;
+    min-height: 60px;
+    display: block;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 5px;
+}
+#contentInside{
+    padding: 0.3em;
+    border-bottom: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    box-sizing: border-box;
+    cursor: move;
+    background: #e5b46b;
+    font-size: 14px;
+}
+
+.badge {
+    font-size: 1em;
+    color: white;
+    background-color: #A34553;
+}
+
+.center {
+    text-align: center;
+}
+
+.save {
+    margin-left: 1em;
+}
+
+.icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 2em;
+    width: 2em;
+}
+
+.none {
+    display: none;
+}
+
+.content {
+    position: relative;
+}

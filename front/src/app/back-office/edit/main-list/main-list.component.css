@@ -7,17 +7,26 @@
     background: white;
     border-radius: 4px;
     overflow: hidden;
+    padding: 5px;
 }
-#contentInside{
-    padding: 20px 10px;
-    border-bottom: solid 1px #ccc;
+.contentInside{
+    /*padding: 20px 10px;*/
+    /*border-bottom: solid 1px #ccc;*/
     color: rgba(0, 0, 0, 0.87);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    cursor: move;
     background: white;
-    font-size: 14px;
+    cursor: default;
+    /*font-size: 14px;*/
+}
+
+.pad-bot-list > * {
+    margin-bottom: 1em!important;
+}
+
+content > * {
+    width: 100%;
 }

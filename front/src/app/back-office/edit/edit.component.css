@@ -1,8 +1,9 @@
 .grid-container {
+    padding: 1em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 0.9fr 1.2fr 0.9fr;
-    gap: 0px 0px;
+    gap: 10px 10px;
     grid-template-areas:
             "Sidebar Main Main Main"
             "Sidebar Main Main Main"
@@ -10,3 +11,13 @@
 }
 .Sidebar { grid-area: Sidebar; }
 .Main { grid-area: Main; }
+
+.badge {
+    font-size: 1em;
+    color: white;
+    background-color: #A34553;
+}
+
+.center {
+    text-align: center;
+}
