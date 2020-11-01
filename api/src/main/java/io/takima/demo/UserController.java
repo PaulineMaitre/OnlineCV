@@ -71,9 +71,8 @@ public class UserController {
         }
     }
 
-    @PostMapping()
+    @PostMapping("/create")
     public User addUser(@RequestBody User user) {
-
         return this.userDAO.save(user);
     }
 
