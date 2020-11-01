@@ -1,4 +1,4 @@
 .idea
-
+node_modules
 api/src/main/ressouces/application.properties
 .node_modules
