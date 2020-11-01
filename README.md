@@ -36,13 +36,13 @@ The user can perform different actions on the website. They are defined below bu
 These pictures represent the different layouts of the web app:
 
 - HomePage
-![CV builder Homepage](/readmeContents/image.jpg "CV builder Homepage")
+![CV builder Homepage](/readmeContents/homepage.jpg "CV builder Homepage")
 
 - User Resume
-![CV builder user resume](/front/src/assets/cv_sample.PNG "CV builder resume")
+![CV builder user resume](/readmeContents/cv_sample.PNG "CV builder resume")
 
 - Edit Resume Section
-![CV builder edit resume](/readmeContents/image.jpg "CV builder edit resume")
+![CV builder edit resume](/readmeContents/editresume.jpg "CV builder edit resume")
 
 ## Install and launch project
 
@@ -66,7 +66,7 @@ spring.datasource.url=jdbc:mariadb://DOCKER-INSTANCE-IP:3306/defaultdb
 ````
 - Add the database in IntelliJ and run the SQL queries in the initdb folder :
     - first: 1_TABLES.sql
-    - second: All the default entries
+    - second: 2_DEFAULT_Entries.sql
     (this should create the table and add the first profiles to the database)
 - Run the Application.java file. Doing this, you should be able to see the localhost retuning 'it works !' [API localhost](http://localhost:8080)
 
