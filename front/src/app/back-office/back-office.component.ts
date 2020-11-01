@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {User} from '../models/User';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../services/user.service';
@@ -7,7 +7,7 @@ import {Network} from '../models/Network';
 import {FrameContent} from '../models/FrameContent';
 import {FrameItem} from '../models/FrameItem';
 import {Language} from '../models/Language';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
     selector: 'app-back-office',
@@ -18,11 +18,14 @@ export class BackOfficeComponent implements OnInit {
 
     userForm: FormGroup;
     user: User;
+    @Input() userId: number;
 
-    constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {}
+    constructor(private fb: FormBuilder,
+                private userService: UserService,
+                private router: Router,private route: ActivatedRoute,) {}
 
     ngOnInit(): void {
-        this.getUser();
+        this.getUserId();
         setTimeout(() => {}, 2000);
         this.createForm();
     }
@@ -43,6 +46,13 @@ export class BackOfficeComponent implements OnInit {
 
     getUser(): void {
         this.userService.getUserById(1).subscribe(data => {
+            this.user = data;
+        });
+    }
+
+    getUserId(): void {
+        this.userId = +this.route.snapshot.paramMap.get('id');
+        this.userService.getUserById(this.userId).subscribe(data => {
             this.user = data;
         });
     }
@@ -94,9 +104,10 @@ export class BackOfficeComponent implements OnInit {
             ));
             console.log('Trying to send : ', this.user)
             this.userService.updateUser(this.user).subscribe();
-            this.router.navigateByUrl('/back/edit')
+            this.router.navigateByUrl('/back/edit/' + this.user.id.toString())
         } else {
             console.log('form invalide')
+            console.log('Curretly on user : ' + this.user.id)
         }
     }
 }

@@ -10,8 +10,8 @@ import {HomeComponent} from './home/home.component';
 
 // TODO : Ajouter les routes Front/autre
 const routes: Routes = [
-  {path: 'back', component: BackOfficeComponent},
-  {path: 'back/edit', component: EditComponent},
+  {path: 'back/:id', component: BackOfficeComponent},
+  {path: 'back/edit/:id', component: EditComponent},
   {path: '', component: HomeComponent},
   {path: ':id', component: FrontOfficeComponent},
 ];

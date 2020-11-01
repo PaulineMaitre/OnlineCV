@@ -17,7 +17,7 @@ import {formatNumber} from '@angular/common';
     styleUrls: ['./multi-form.component.css', '../../.././back-office.component.css']
 })
 export class MultiFormComponent implements OnInit {
-    user: User;
+
     selectedLogo: File = null;
     multiForm: FormGroup;
     containers = [
@@ -40,6 +40,7 @@ export class MultiFormComponent implements OnInit {
         elements:[string],
         type:string,
     };
+    @Input() user: User;
 
     constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
         this.getUser();
@@ -65,12 +66,13 @@ export class MultiFormComponent implements OnInit {
         else{
             alert('Fichiers acceptés : jpg, jpeg, png');
         }
-        this.selectedLogo = event.target.files[0]
-        console.log(this.selectedLogo)
+        this.selectedLogo = event.target.files[0];
+        console.log(this.selectedLogo);
     }
 
     add() : void {
         this.containers.push(this.toAdd[1]);
+        console.log('Curretly on user : ' + this.user.id);
     }
 
     drop(event: CdkDragDrop<string[]>) : void {
@@ -97,8 +99,8 @@ export class MultiFormComponent implements OnInit {
                     // this.router.navigateByUrl('')
                 } else {
                     alert('form invalide');
-                    console.log(this.multiForm.get('name').value)
-                    console.log(this.multiForm.value)
+                    console.log(this.multiForm.get('name').value);
+                    console.log(this.multiForm.value);
                 }
                 break;
             case 'socialLink':
@@ -108,8 +110,8 @@ export class MultiFormComponent implements OnInit {
                         logo: this.multiForm.get('logo').value,
                         link: this.multiForm.get('link').value,
                     }));
-                    console.log(this.multiForm.get('name').value)
-                    console.log(this.multiForm.value)
+                    console.log(this.multiForm.get('name').value);
+                    console.log(this.multiForm.value);
                     this.userService.updateUser(this.user).subscribe();
                 } else {
                     alert('form invalide');
@@ -122,8 +124,8 @@ export class MultiFormComponent implements OnInit {
                         logo: this.multiForm.get('logo').value,
                         level: this.multiForm.get('level').value,
                     }));
-                    console.log(this.multiForm.get('name').value)
-                    console.log(this.multiForm.value)
+                    console.log(this.multiForm.get('name').value);
+                    console.log(this.multiForm.value);
                     this.userService.updateUser(this.user).subscribe();
                 } else {
                     alert('form invalide');

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import {User} from '../../../models/User';
 
 @Component({
   selector: 'app-list-frame-content',
@@ -13,10 +14,7 @@ export class MainListComponent implements OnInit {
     'Expériences professionnelles',
     'Projets',
   ];
-
-// frPropo = FrameContent(Experience,[Frameitem('EPF'),Frameitem('Lycée'),Frameitem())
-// frPropo = FrameContent(Formation,[Frameitem('EPF'),Frameitem('Lycée'),Frameitem())
-// frPropo = FrameContent(Projets,[Frameitem('EPF'),Frameitem('Lycée'),Frameitem())
+  @Input() user: User;
 
   constructor() { }
 
