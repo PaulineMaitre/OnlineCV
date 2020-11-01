@@ -9,6 +9,10 @@
     - [Back (API)](#back-api)
     - [Front (Angular)](#front-angular)
 - [Features](#features)
+    - [See a Resume](#see-a-resume)
+    - [Add A Resume](#add-a-resume)
+    - [Edit A Resume](#edit-a-resume)
+- [License](#license)
 
 ## Group members
 
@@ -29,7 +33,7 @@ The user can perform different actions on the website. They are defined below bu
 
 ## Website Screenshots
 
-Theses pictures repressents the differents layouts of the webapp:
+These pictures represent the different layouts of the webapp:
 
 - HomePage
 ![CV builder Homepage](/readmeContents/image.jpg "CV builder Homepage")
@@ -69,8 +73,30 @@ spring.datasource.url=jdbc:mariadb://DOCKER-INSTANCE-IP:3306/defaultdb
 Still Blocked ? [Check the dedicated Readme](/api/README.md "Database and Docker ReadMe")
 ### Front (Angular)
 
+Open the project in IntelliJ IDEA or your favorite IDEA
+ 
+- Make sure to have nodeJS and npm installed on your device
+- Run the following commands to install the project
+````
+npm install -g npm@latest
+npm install
+````
+- Launch the project :
+ Either run the command in the terminal or use the IntelliJ play button.
+ ````
+ ng serve
+ ````
+
+- You should be able to see the localhost retuning the CV Builder Website [API localhost](http://localhost:4200)
+
+Still Blocked ? [Check the dedicated Readme](/front/README.md "Database and Docker ReadMe")
 ## Features
-====
+
+#### See A Resume
+
+#### Add A Resume
+
+#### Edit A Resume
 
 ## License
 
