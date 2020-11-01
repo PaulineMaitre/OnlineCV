@@ -42,29 +42,6 @@ export class FrameContentFormComponent implements OnInit {
   get frameItemForm() {
     return this.frameContentForm.get('frameItem') as FormArray
   }
-  //
-  // get title() {
-  //   return this.frameItemForm.get('title');
-  // }
-  // get logoItem() {
-  //   return this.frameContentForm.get('frameItem').get('logoItem');
-  // }
-  // get titleItem() {
-  //   return this.frameContentForm.get('frameItem').get('titleItem');
-  // }
-  // get period() {
-  //   return this.frameContentForm.get('frameItem').get('period');
-  // }
-  // get location() {
-  //   return this.frameContentForm.get('frameItem').get('location');
-  // }
-  // get logo() {
-  //   return this.frameContentForm.get('frameItem').get('logo');
-  // }
-  // get content() {
-  //   return this.frameContentForm.get('frameItem').get('content');
-  // }
-
 
   addFrameItem () {
     const frame = this.fb.group({
@@ -73,7 +50,7 @@ export class FrameContentFormComponent implements OnInit {
       location: ['', Validators.required],
       logoItem: ['', Validators.required],
       content: ['', Validators.required],
-        })
+        });
     this.frameItemForm.push(frame)
   }
 
@@ -90,27 +67,37 @@ export class FrameContentFormComponent implements OnInit {
   // }
 
   save(): void {
+    const frame: FrameItem[] = [];
+    let i = 1;
+    for (const form of this.frameItemForm.value) {
+      console.log(form);
+      frame.push(new FrameItem({
+        title: form.titleItem,
+        period: form.period,
+        location: form.location,
+        order: i,
+        logo: form.logoItem,
+        content:form.content,
+        frame: 1,
+      }));
+      i += 1
+    }
+    console.log(frame);
+
     if (this.frameContentForm.valid) {
+
+      console.log(frame);
       this.user.frame.push(new FrameContent({
             title: this.frameContentForm.get('title').value,
             order: 1,
             logo: this.frameContentForm.get('logo').value,
-            frameItem: [new FrameItem({
-              title:'item name',
-              period: 'Du 3 au 7 janvier',
-              location: 'Paris',
-              order: 2,
-              logo: '',
-              content:'content of the item',
-              frame: 1,
-            })],
-            user: this.user.id,
+            frameItem: frame,
           }
       ));
-      console.log('Trying to send : ', this.frameContentForm.value)
+      console.log('Trying to send : ', this.frameContentForm.value);
       this.userService.updateUser(this.user).subscribe();
     } else {
-      console.log('form invalide')
+      console.log('form invalide');
     }
   }
 
