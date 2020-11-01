@@ -11,8 +11,8 @@ export class MainListComponent implements OnInit {
 
   FrameTitle = [
     'Formation',
-    'Expériences professionnelles',
-    'Projets',
+    // 'Expériences professionnelles',
+    // 'Projets',
   ];
   @Input() user: User;
 

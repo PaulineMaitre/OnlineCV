@@ -12,10 +12,10 @@
 #contentInside{
     padding: 0.3em;
     border-bottom: solid 1px #ccc;
-    color: rgba(0, 0, 0, 0.87);
+    /*color: rgba(0, 0, 0, 0.87);*/
     box-sizing: border-box;
     cursor: move;
-    background: #e5b46b;
+    /*background: #e5b46b;*/
     font-size: 14px;
 }
 
