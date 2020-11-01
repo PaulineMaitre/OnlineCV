@@ -53,7 +53,7 @@ export class BackOfficeComponent implements OnInit {
             this.user.lastName = this.userForm.get('inLastname').value;
             this.user.birthDate = this.userForm.get('inDate').value;
             this.user.phoneNumber = this.userForm.get('inPhone').value;
-            this.user.logo = 'Raphael';
+            this.user.picture = 'Raphael';
             this.user.address = this.userForm.get('inAddress').value;
             this.user.bio = this.userForm.get('inBio').value;
             this.user.email = this.userForm.get('inMail').value;

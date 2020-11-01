@@ -54,7 +54,7 @@ public class UserController {
             assert socialsList != null;
             socialsList.forEach(social -> social.setUser(user));
 
-            List<Languages> languagesList = user.getLanguages();
+            List<Language> languagesList = user.getLanguages();
             assert languagesList != null;
             languagesList.forEach(language -> language.setUser(user));
 
