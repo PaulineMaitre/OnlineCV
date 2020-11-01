@@ -2,7 +2,7 @@
 
     <div *ngFor="let contents of contentBlock">
         <div [className]="contents.names">
-            <app-multi-form [content]="contents"></app-multi-form>
+            <app-multi-form [content]="contents" [user]="user"></app-multi-form>
         </div>
     </div>
 </div>

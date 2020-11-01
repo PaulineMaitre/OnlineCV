@@ -16,7 +16,7 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 })
 
 export class FrameContentFormComponent implements OnInit {
-  user: User;
+  // user: User;
   frameContentForm: FormGroup;
   contentForm = [
     'Episode I - The Phantom Menace',
@@ -27,10 +27,11 @@ export class FrameContentFormComponent implements OnInit {
   constructor(private fb: FormBuilder, private userService: UserService) {}
 
   @Input() title: string;
+  @Input() user: User;
 
   ngOnInit(): void {
-    this.getUser();
-    setTimeout(() => {}, 2000);
+    // this.getUser();
+    // setTimeout(() => {}, 2000);
     this.createFrameContentForm();
   }
 
@@ -41,11 +42,11 @@ export class FrameContentFormComponent implements OnInit {
     });
   }
 
-  getUser(): void {
-    this.userService.getUserById(1).subscribe(data => {
-      this.user = data;
-    });
-  }
+  // getUser(): void {
+  //   this.userService.getUserById(1).subscribe(data => {
+  //     this.user = data;
+  //   });
+  // }
 
   save(): void {
     if (this.frameContentForm.valid) {

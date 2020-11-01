@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {Network} from '../../../models/Network';
 import {Skill} from '../../../models/Skill';
+import {User} from '../../../models/User';
 
 @Component({
   selector: 'app-list-frame-content-side',
@@ -13,8 +14,8 @@ export class SideListComponent implements OnInit {
   contentBlock = [
     {name: 'Réseaux sociaux', elements: ['name','logo','link',], type:'socialLink'},
     {name: 'Langues', elements: ['name','logo','level',],type:'languages'},
-    {name: 'Compétences',elements: ['name','logo','level',],type:'skills'}
-  ]
+    {name: 'Compétences',elements: ['name','logo','level',],type:'skills'},
+  ];
   containers = [
     'Episode I - The Phantom Menace',
   ];
@@ -26,19 +27,21 @@ export class SideListComponent implements OnInit {
     'Episode VI - Return of the Jedi',
     'Episode VII - The Force Awakens',
     'Episode VIII - The Last Jedi',
-    'Episode IX – The Rise of Skywalker']
+    'Episode IX – The Rise of Skywalker'];
 
-  @Input()
-  names: string;
-  fields: [string];
-  type: string;
+  // @Input()
+  // names: string;
+  // fields: [string];
+  // type: string;
+  @Input() user: User;
 
-  constructor() { }
+  constructor() {  }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   add() {
-    this.containers.push(this.toAdd[1]);
+    // this.containers.push(this.toAdd[1]);
+    console.log(this.user)
   }
 
   drop(event: CdkDragDrop<string[]>) {
