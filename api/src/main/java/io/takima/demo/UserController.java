@@ -2,11 +2,12 @@ package io.takima.demo;
 
 import io.takima.demo.config.EmailConfig;
 import io.takima.demo.dao.UserDAO;
-import io.takima.demo.models.User;
+import io.takima.demo.models.*;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Properties;
 
@@ -41,7 +42,28 @@ public class UserController {
 
     @PutMapping()
     public void updateUser(@RequestBody User user) {
-        if (userDAO.existsById(user.getId())) {
+        if (userDAO.existsById(Objects.requireNonNull(user.getId()))) {
+            List<Skill> skillList = user.getSkills();
+            assert skillList != null;
+            skillList.forEach(skill -> skill.setUser(user));
+
+            List<Socials> socialsList = user.getSocialLink();
+            assert socialsList != null;
+            socialsList.forEach(social -> social.setUser(user));
+
+            List<Languages> languagesList = user.getLanguages();
+            assert languagesList != null;
+            languagesList.forEach(language -> language.setUser(user));
+
+            List<FrameContent> frameContentList = user.getFrame();
+            assert frameContentList != null;
+            frameContentList.forEach(frameContent -> {
+                frameContent.setUser(user);
+                if (frameContent.getFrameItem() != null){
+                    List<ContentItem> contentItemList = frameContent.getFrameItem();
+                    contentItemList.forEach(contentItem -> contentItem.setFrameContent(frameContent));
+                }
+            });
             this.userDAO.save(user);
         }
     }

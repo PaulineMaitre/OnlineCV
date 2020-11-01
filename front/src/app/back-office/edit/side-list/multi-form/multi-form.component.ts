@@ -9,6 +9,7 @@ import {FrameItem} from '../../../../models/FrameItem';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../../../services/user.service';
 import {Router} from '@angular/router';
+import {formatNumber} from '@angular/common';
 
 @Component({
     selector: 'app-multi-form',
@@ -43,17 +44,19 @@ export class MultiFormComponent implements OnInit {
     constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
         this.getUser();
         setTimeout(() => {}, 2000);
-      //  this.createMultiForm()
+        this.createMultiForm()
     }
 
     ngOnInit() { }
 
-    /*createMultiForm() {
+    createMultiForm() {
         this.multiForm = this.fb.group({
-            name: [''],
+            name: ['', Validators.required],
             logo: [''],
+            level:[''],
+            link:['']
         });
-    }*/
+    }
     onFileChanged(event) {
         const ext = event.target.files[0].name.match(/\.(.+)$/)[1];
         if(ext.toLocaleLowerCase() ==='jpg' || ext.toLocaleLowerCase() ==='jpeg' || ext.toLocaleLowerCase() ==='png'){
@@ -68,7 +71,6 @@ export class MultiFormComponent implements OnInit {
 
     add() : void {
         this.containers.push(this.toAdd[1]);
-        console.log(this.user.lastName)
     }
 
     drop(event: CdkDragDrop<string[]>) : void {
@@ -81,62 +83,52 @@ export class MultiFormComponent implements OnInit {
         });
     }
 
-    updateUserFromForm(): void {
-      //  if (this.multiForm.valid) {
-            // this.user.firstName = this.user;
-            // this.user.lastName = this.multiForm.get('inLastname').value;
-            // this.user.birthDate = this.multiForm.get('inDate').value;
-            // this.user.phoneNumber = this.multiForm.get('inPhone').value;
-            // this.user.logo = 'Raphael';
-            // this.user.address = this.multiForm.get('inAddress').value;
-            // this.user.bio = this.multiForm.get('inBio').value;
-            // this.user.email = this.multiForm.get('inMail').value;
-            // TODO : Ajouter la liste d'objet : socialLink = LISTE
-            // this.user.socialLink.push(new Network({
-            //     name: 'toto',
-            //     link: '',
-            //     logo: '',
-            //     user: this.user.id,
-            // }));
-            this.user.skills.push(new Skill({
-                name: this.multiForm.get('title').value,
-                logo: this.multiForm.get('logo').value,
-                level: 3,
-                user: this.user.id,
-            }));
-            // this.user.languages.push(new Language({
-            //     name: 'Franglais',
-            //     logo: '',
-            //     level: 'Toeic 925 en 2020',
-            //     user: this.user.id,
-            // }));
-            // this.user.frame.push(new FrameContent({
-            //         title: '',
-            //         order: 1,
-            //         logo:'',
-            //         frameItem: [new FrameItem({
-            //             title:'item name',
-            //             period: 'Du 3 au 7 janvier',
-            //             location: 'Paris',
-            //             order: 2,
-            //             logo: '',
-            //             content:'content of the item',
-            //             frame: 1,
-            //         })],
-            //         user: this.user.id,
-            //     }
-            // ));
-            console.log('Trying to send : ', this.user)
-           // console.log('Trying to send skill : ', this.multiForm.get('title').value)
-           // console.log('Trying to send skill : ', this.multiForm.get('logo').value)
-           // console.log(this.multiForm.value)
-            this.userService.updateUser(this.user).subscribe();
-            document.getElementsByClassName('icon-checked')
-            // this.router.navigateByUrl('')
-       /* } else {
-            console.log('form invalide')
-            console.log(this.multiForm.get('title').value)
-            console.log(this.multiForm.value)
-        }*/
+    updateUserFromForm(type:string): void {
+        switch (type) {
+            case 'skills':
+                if (this.multiForm.valid) {
+                    this.user.skills.push(new Skill({
+                        name: this.multiForm.get('name').value,
+                        logo: this.multiForm.get('logo').value,
+                        level: this.multiForm.get('level').value,
+                    }));
+                    this.userService.updateUser(this.user).subscribe();
+                    // document.getElementsByClassName('icon-checked');
+                    // this.router.navigateByUrl('')
+                } else {
+                    alert('form invalide');
+                    console.log(this.multiForm.get('name').value)
+                    console.log(this.multiForm.value)
+                }
+                break;
+            case 'socialLink':
+                if (this.multiForm.valid) {
+                    this.user.socialLink.push(new Network({
+                        name: this.multiForm.get('name').value,
+                        logo: this.multiForm.get('logo').value,
+                        link: this.multiForm.get('link').value,
+                    }));
+                    console.log(this.multiForm.get('name').value)
+                    console.log(this.multiForm.value)
+                    this.userService.updateUser(this.user).subscribe();
+                } else {
+                    alert('form invalide');
+                }
+                break;
+            case 'languages':
+                if (this.multiForm.valid) {
+                    this.user.languages.push(new Language({
+                        name: this.multiForm.get('name').value,
+                        logo: this.multiForm.get('logo').value,
+                        level: this.multiForm.get('level').value,
+                    }));
+                    console.log(this.multiForm.get('name').value)
+                    console.log(this.multiForm.value)
+                    this.userService.updateUser(this.user).subscribe();
+                } else {
+                    alert('form invalide');
+                }
+                break;
+        }
     }
 }

@@ -5,14 +5,14 @@
 <div class="content">
     <div id="contentInside" *ngFor="let container of containers; let i = index">
         {{content.name}} n° {{i+1}}
-        <div class="frame-content-form" *ngFor="let element of content.elements">
-            <form novalidate class="form-group">
+        <form [formGroup]="multiForm" novalidate class="form-group">
+            <div class="frame-content-form" *ngFor="let element of content.elements">
                 <div [className]="element">
-                    <input class="form-control" type="text" [placeholder]="element">
+                    <input class="form-control" type="text" [placeholder]="element" [formControlName]="element">
                 </div>
-            </form>
-        </div>
+            </div>
+            <button class="btn btn-primary" style="margin: 0.25em" (click)='updateUserFromForm(content.type)'>save form</button>
+        </form>
     </div>
     <button class="btn btn-primary" style="margin: 0.25em" (click)='add()'>Add</button>
-    <button class="btn btn-primary" style="margin: 0.25em" (click)='updateUserFromForm()'>save form</button>
 </div>
