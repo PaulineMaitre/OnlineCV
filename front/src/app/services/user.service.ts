@@ -41,7 +41,7 @@ export class UserService {
     }
 
     createUser(user: User): Observable<any> {
-        return this.http.post(`${this.url}/users/create`, user).pipe(tap(_ => timeout(1000)));
+        return this.http.post<any>(`${this.url}/users/create`, user).pipe(timeout(1000));
     }
 
     deleteUser(id: number): Observable<any> {

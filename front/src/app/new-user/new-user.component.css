@@ -19,9 +19,17 @@
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
-            "firstName lastName"
-            "email phoneNumber"
-            "picture Bio"
-            "Address Bio"
-            "           ";
+            "inFirstname inLastname"
+            "inMail inPhone"
+            "inPicture inDate"
+            "inAddress inBio";
 }
+
+.inFirstname { grid-area: inFirstname; }
+.inLastname { grid-area: inLastname; }
+.inMail { grid-area: inMail; }
+.inPhone { grid-area: inPhone; }
+.inBio { grid-area: inBio; }
+.inDate { grid-area: inDate; }
+.inAddress { grid-area: inAddress; }
+.inPicture { grid-area: inPicture; }

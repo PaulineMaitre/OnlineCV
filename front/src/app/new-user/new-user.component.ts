@@ -16,31 +16,38 @@ export class NewUserComponent implements OnInit {
   constructor(private fb: FormBuilder, private userService: UserService) { }
 
   ngOnInit() {
+    this.createForm();
+  }
+
+  createForm() : void {
+    // Mettre des validators ?
+    // .fb.group = new FormGroup
     this.userForm = this.fb.group({
-      infirstName:['',[Validators.required,Validators.minLength(2), Validators.maxLength(25)]],
-      inlastName:['',[Validators.required,Validators.minLength(2), Validators.maxLength(25)]],
-      inemail: ['',[Validators.required, Validators.email,Validators.minLength(5), Validators.maxLength(50)]],
-      inphoneNumber:['',[Validators.required, Validators.pattern('^[0-9 %+]+')]],
-      inpicture:['',[Validators.required]],
-      inbirthDate:['',[Validators.required]],
-      inaddress: ['',[Validators.required]],
-      inbio: ['',[Validators.required]],
-    })
+      inFirstname: ['Jean', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+      inLastname: ['DUPONT', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+      inMail: ['jean.dupont@du', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      inPhone: ['07', [Validators.required, Validators.pattern('^[0-9 %+]+')]],
+      inPicture:['toto.jpeg',[Validators.required]],
+      inDate: ['12/07/1983'],
+      inAddress: ['Paris', [Validators.required]],
+      inBio: ['Bonjour, je suis M.Dupont, un nouvel arrivant dans la BDD !'],
+    });
   }
 
   createUser(): void {
       if (this.userForm.valid){
         this.user = {
           id: 0, languages: [], skills: [],
-          firstName:this.userForm.get('infirstName').value,
-          lastName: this.userForm.get('inlastName').value,
-          email: this.userForm.get('inemail').value,
-          phoneNumber: this.userForm.get('inphoneNumber').value,
-          picture: this.userForm.get('inpicture').value,
-          address: this.userForm.get('inaddress').value,
-          bio: this.userForm.get('inbio').value
+          firstName:this.userForm.get('inFirstname').value,
+          lastName: this.userForm.get('inLastname').value,
+          email: this.userForm.get('inMail').value,
+          phoneNumber: this.userForm.get('inPhone').value,
+          picture: this.userForm.get('inPicture').value,
+          birthDate: new Date('2019-05-27'),
+          address: this.userForm.get('inAddress').value,
+          bio: this.userForm.get('inBio').value
         };
-
+        console.log('user send : ')
         this.userService.createUser(this.user).subscribe();
       }
 
