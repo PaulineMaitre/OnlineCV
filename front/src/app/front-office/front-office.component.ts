@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class FrontOfficeComponent implements OnInit {
 
   constructor(private userService: UserService,
-              private route: ActivatedRoute,) { }
+              private route: ActivatedRoute) { }
   @Input() userId: number;
   user: User;
 
