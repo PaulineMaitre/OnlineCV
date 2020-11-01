@@ -6,4 +6,6 @@ import org.springframework.stereotype.Component
 class Mail {
     lateinit var content: String
     lateinit var contact: String
+    lateinit var sendTo: String
+
 }
