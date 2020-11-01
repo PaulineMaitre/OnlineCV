@@ -8,11 +8,11 @@
     </div>
     <div class="col-sm-1 col-md-3 col-lg-3">
         <div class="row">
-            <a href="/{{user.id}}#contactForm" class="btn btn-light">Contact Me</a>
-            <button (click)="downloadResumePDF(user.firstName, user.lastName)" class="btn btn-light material-icons">get_app<span class="download">PDF</span></button>
-            <button (click)="downloadResumeJSON(user.firstName, user.lastName)" class="btn btn-light material-icons">get_app<span class="download">JSON</span></button>
-            <a routerLink="/back/edit/{{user.id}}" class="btn btn-light">Edit</a>
-            <a routerLink="/" class="btn btn-light">Home</a>
+            <a href="/{{user.id}}#contactForm" class="btn btn-light material-icons" title="Contact Me">email</a>
+            <button (click)="downloadResumePDF(user.firstName, user.lastName)" class="btn btn-light material-icons" title="Download PDF Resume">get_app<span class="download">PDF</span></button>
+            <button (click)="downloadResumeJSON(user.firstName, user.lastName)" class="btn btn-light material-icons" title="Download JSON Resume">get_app<span class="download">JSON</span></button>
+            <a routerLink="/back/edit/{{user.id}}" class="btn btn-light material-icons" title="Edit Resume">create</a>
+            <a routerLink="/" class="btn btn-light material-icons" title="Home Page">home</a>
         </div>
         <div *ngIf="user.socialLink" class="row">
             <a *ngFor="let socialNetwork of user.socialLink" href={{socialNetwork.link}}>
