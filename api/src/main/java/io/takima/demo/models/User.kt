@@ -35,7 +35,7 @@ data class User(
         var skills: List<Skill>?,
 
         @Column(name = "frame_content")
-        @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL]) //.ALL ==> .DELETE ? TODO : Rechercher doc !
+        @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL])
         var frame: List<FrameContent>?) {
     constructor() : this(null,null, null, null, null,null,null,null,null,null,null, null, null, null)
 }
