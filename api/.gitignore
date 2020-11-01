@@ -1,5 +1,5 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
-
+api/main/ressouces/application.properties
 # compiled output
 target
 dist
