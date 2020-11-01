@@ -59,7 +59,6 @@ import { SideFormComponent } from './back-office/edit/side-list/multi-form/side-
     HobbiesComponent,
     MultiFormComponent,
     SideFormComponent,
-    
   ],
     imports: [
         BrowserModule,

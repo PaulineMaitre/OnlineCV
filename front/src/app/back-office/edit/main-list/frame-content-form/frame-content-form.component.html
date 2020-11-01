@@ -21,7 +21,7 @@
             <mat-divider class="p-3"></mat-divider>
         </ng-template>
         <div class="droppable-perso" cdkDrag>
-            <app-frame-item-form></app-frame-item-form>
+            <app-frame-item-form [user]="user"></app-frame-item-form>
         </div>
     </div>
     <button class="btn btn-primary" (click)='addContentForm()'>Add</button>

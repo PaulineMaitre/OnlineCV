@@ -23,6 +23,7 @@ export class MultiFormComponent implements OnInit {
     containers = [
         'Episode I - The Phantom Menace',
     ];
+    // user: User;
 
     toAdd = [
         'Episode II - Attack of the Clones',
@@ -43,8 +44,8 @@ export class MultiFormComponent implements OnInit {
     @Input() user: User;
 
     constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
-        this.getUser();
-        setTimeout(() => {}, 2000);
+        // this.getUser();
+        // setTimeout(() => {}, 2000);
         this.createMultiForm()
     }
 
@@ -58,32 +59,33 @@ export class MultiFormComponent implements OnInit {
             link:['']
         });
     }
-    onFileChanged(event) {
-        const ext = event.target.files[0].name.match(/\.(.+)$/)[1];
-        if(ext.toLocaleLowerCase() ==='jpg' || ext.toLocaleLowerCase() ==='jpeg' || ext.toLocaleLowerCase() ==='png'){
-            this.selectedLogo = event.target.files[0]
-        }
-        else{
-            alert('Fichiers acceptés : jpg, jpeg, png');
-        }
-        this.selectedLogo = event.target.files[0];
-        console.log(this.selectedLogo);
-    }
+
+    // onFileChanged(event) {
+    //     const ext = event.target.files[0].name.match(/\.(.+)$/)[1];
+    //     if(ext.toLocaleLowerCase() ==='jpg' || ext.toLocaleLowerCase() ==='jpeg' || ext.toLocaleLowerCase() ==='png'){
+    //         this.selectedLogo = event.target.files[0]
+    //     }
+    //     else{
+    //         alert('Fichiers acceptés : jpg, jpeg, png');
+    //     }
+    //     this.selectedLogo = event.target.files[0];
+    //     console.log(this.selectedLogo);
+    // }
 
     add() : void {
         this.containers.push(this.toAdd[1]);
-        console.log('Curretly on user : ' + this.user.id);
+        console.log('Curretly on user : ' + this.user.id + ' ça marche !');
     }
 
     drop(event: CdkDragDrop<string[]>) : void {
         moveItemInArray(this.containers, event.previousIndex, event.currentIndex);
     }
-
-    getUser(): void {
-        this.userService.getUserById(4).subscribe(data => {
-            this.user = data;
-        });
-    }
+    // Plus besoin, passé en input
+    // getUser(): void {
+    //     this.userService.getUserById(4).subscribe(data => {
+    //         this.user = data;
+    //     });
+    // }
 
     updateUserFromForm(type:string): void {
         switch (type) {

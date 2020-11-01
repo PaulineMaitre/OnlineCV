@@ -14,7 +14,7 @@ export class SideListComponent implements OnInit {
   contentBlock = [
     {name: 'Réseaux sociaux', elements: ['name','logo','link',], type:'socialLink'},
     {name: 'Langues', elements: ['name','logo','level',],type:'languages'},
-    {name: 'Compétences',elements: ['name','logo','level',],type:'skills'}
+    {name: 'Compétences',elements: ['name','logo','level',],type:'skills'},
   ];
   containers = [
     'Episode I - The Phantom Menace',
@@ -29,20 +29,19 @@ export class SideListComponent implements OnInit {
     'Episode VIII - The Last Jedi',
     'Episode IX – The Rise of Skywalker'];
 
-  @Input()
-  names: string;
-  fields: [string];
-  type: string;
-  user: User;
+  // @Input()
+  // names: string;
+  // fields: [string];
+  // type: string;
+  @Input() user: User;
 
-  constructor() { }
+  constructor() {  }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   add() {
-    this.containers.push(this.toAdd[1]);
-    console.log('Curretly on user : ' + this.user.id);
-    console.log('Curretly on user : ');
+    // this.containers.push(this.toAdd[1]);
+    console.log(this.user)
   }
 
   drop(event: CdkDragDrop<string[]>) {
