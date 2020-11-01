@@ -1,6 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {User} from '../../../../models/User';
-import {FrameItem} from '../../../../models/FrameItem';
 import {FrameContent} from '../../../../models/FrameContent';
 
 @Component({

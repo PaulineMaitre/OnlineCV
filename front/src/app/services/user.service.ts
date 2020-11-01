@@ -5,11 +5,6 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {timeout} from 'rxjs/operators';
 import {User} from '../models/User';
-import {Network} from '../models/Network';
-import {Skill} from '../models/Skill';
-import {FrameContent} from '../models/FrameContent';
-import {FrameItem} from '../models/FrameItem';
-import {Language} from '../models/Language';
 import {Mail} from '../models/Mail';
 
 @Injectable({
@@ -46,14 +41,14 @@ export class UserService {
     }
 
     createUser(user: User): Observable<any> {
-        return this.http.post(`${this.url}/users/create`, user).pipe(tap(_ => timeout(1000)));
+        return this.http.post<any>(`${this.url}/users/create`, user).pipe(timeout(1000));
     }
 
     deleteUser(id: number): Observable<any> {
         return this.http.delete(`${this.url}/users/${id}`).pipe(timeout(10000));
     }
-    sendMail(sender: string, senderContent:string){
-        this.mail={contact:sender,content:senderContent};
+    sendMail(sender: string, senderContent:string,userSendTo:string){
+        this.mail={contact:sender,content:senderContent,sendTo:userSendTo};
         return this.http.put(`${this.url}/users/mail`, this.mail).pipe(tap(_ => timeout(1000)));
     }
 

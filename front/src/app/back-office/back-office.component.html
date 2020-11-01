@@ -1,35 +1,83 @@
 <div class="content" *ngIf="user">
     <div class="card">
         <form [formGroup]="userForm" novalidate class="form-group grid-container">
-            <div class="firstName">
-                <p>Prénom :<br>
+            <div class="firstName form-group">
+                <p>Prénom* :<br>
                     <label class="center-block">
-                        <input class="form-control" type="text" placeholder="Jean"
+                        <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
+                        <input class="form-control"
+                               [ngClass]="{'alert alert-danger' : (userForm.get('inFirstname').errors && (userForm.get('inFirstname').touched || userForm.get('inFirstname').dirty))}"
+                               type="text" placeholder="Jean"
                                formControlName="inFirstname" #inFirstname>
+                        <span class="help-block" *ngIf="((userForm.get('inFirstname').touched || userForm.get('inFirstname').dirty) && userForm.get('inFirstname').errors)">
+                            <span class="error" *ngIf="userForm.get('inFirstname').errors.required">
+                                Prénom obligatoire
+                            </span>
+                            <span class="error" *ngIf="userForm.get('inFirstname').errors.minlength ||
+                                userForm.get('inFirstname').errors.maxlength">
+                                Doit contenir entre <br>2 et 25 caractères
+                            </span>
+                        </span>
                     </label>
                 </p>
             </div>
-            <div class="lastName">
-                <p>Nom :<br>
+            <div class="lastName form-group">
+                <p>Nom* :<br>
                     <label class="center-block">
-                        <input class="form-control" type="text" placeholder="DUPONT"
-                               formControlName="inLastname">
+                        <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
+                        <input class="form-control"
+                               [ngClass]="{'alert alert-danger' : (userForm.get('inLastname').errors && (userForm.get('inLastname').touched || userForm.get('inLastname').dirty))}"
+                               type="text" placeholder="DUPONT"
+                               formControlName="inLastname" #inLastname>
+
+                        <span class="help-block" *ngIf="((userForm.get('inLastname').touched || userForm.get('inLastname').dirty) && userForm.get('inLastname').errors)">
+                            <span class="error" *ngIf="userForm.get('inLastname').errors.required">
+                                Nom obligatoire
+                            </span>
+                            <span class="error" *ngIf="userForm.get('inLastname').errors.minlength ||
+                                userForm.get('inLastname').errors.maxlength">
+                                Doit contenir entre <br>2 et 25 caractères
+                            </span>
+                        </span>
                     </label>
                 </p>
             </div>
-            <div class="Mail">
-                <p>Mail :<br>
+
+            <div class="Mail form-group">
+                <p>Mail* :<br>
                     <label class="center-block">
-                        <input class="form-control" type="email" placeholder="Your current email address"
+                        <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
+                        <input class="form-control" name="email" ngModel [email]="true"
+                               [ngClass]="{'alert alert-danger' : (userForm.get('inMail').errors && (userForm.get('inMail').touched || userForm.get('inMail').dirty))}"
+                               type="email" placeholder="Your current email address"
                                formControlName="inMail" #inMail>
+                        <span class="help-block" *ngIf="((userForm.get('inMail').touched || userForm.get('inMail').dirty) && userForm.get('inMail').errors)">
+                            <span class="error" *ngIf="userForm.get('inMail').errors.required">
+                                Mail obligatoire
+                            </span>
+                            <span class="error" *ngIf="userForm.get('inMail').errors.pattern">
+                                Ceci n'est pas un mail
+                            </span>
+                        </span>
                     </label>
                 </p>
             </div>
-            <div class="Tel">
-                <p>Numéro de téléphone :<br>
+            <div class="Tel form-group">
+                <p>Numéro de téléphone* :<br>
                     <label class="center-block">
-                        <input class="form-control" type="tel" placeholder="06 45 28 46 45"
-                               formControlName="inphone" #inphone>
+                        <!--Si le form est clické une fois et laissé avec des erreurs : ajoute la classe alert alert-danger à l'input-->
+                        <input class="form-control"
+                               [ngClass]="{'alert alert-danger' : (userForm.get('inPhone').errors && (userForm.get('inPhone').touched || userForm.get('inPhone').dirty))}"
+                               type="text" placeholder="06 45 28 46 45"
+                               formControlName="inPhone" #inPhone>
+                        <span class="help-block" *ngIf="((userForm.get('inPhone').touched || userForm.get('inPhone').dirty) && userForm.get('inPhone').errors)">
+                            <span class="error" *ngIf="userForm.get('inPhone').errors.required">
+                                Numéro de téléphone obligatoire
+                            </span>
+                            <span class="error" *ngIf="userForm.get('inPhone').errors.pattern">
+                                Ne doit contenir que des chiffres
+                            </span>
+                        </span>
                     </label>
                 </p>
             </div>
@@ -41,61 +89,28 @@
                     </label>
                 </p>
             </div>
-            <div class="Hobbie">
-                <p>Ajout d'un Hobbie :<br>
+            <div class="birthdate">
+                <p>Date de naissance :<br>
                     <label class="center-block">
-                        <input class="form-control" type="text" placeholder="Tennis !"
-                               formControlName="inHobbies" #inHobbies>
+                        <input class="form-control" type="string" placeholder="19/08/1998"
+                               formControlName="inDate" #inDate>
                     </label>
                 </p>
             </div>
-            <div class="Social">
-                <p>Ajout d'un lien vers un réseau :<br>
+            <div class="Address">
+                <p>Adresse :<br>
                     <label class="center-block">
-                        <input class="form-control" type="text" placeholder="URL de profil"
-                               formControlName="inSocial" #inSocial>
-                    </label>
-                </p>
-
-            </div>
-            <div class="Skill">
-                <p>Ajout d'une compétence :<br>
-                    <label class="center-block">
-                        <input class="form-control" type="text" placeholder="Angular !"
-                               formControlName="inSkills" #inSkills>
+                        <input class="form-control" type="string" placeholder="Paris"
+                               formControlName="inAddress" #inAddress>
                     </label>
                 </p>
             </div>
         </form>
 
-        <button type="button" class="btn btn-primary" routerLink="/back/edit">Créer un CV !</button>
+        <button type="button" class="btn btn-primary" (click)="updateUserFromForm()">
+            Créer un CV !
+        </button><br><br>
 
-
-        <!--            <p>Debug HTML :</p>-->
-        <p>Form value: {{ userForm.value | json }}</p>
-        <p>Form status: {{ userForm.status | json }}</p>
-        <span>{{ user.lastName }}</span><br><br>
         <button type="button" class="btn btn-primary" (click)="updateUserFromForm()">Test formulaire</button>
     </div>
 </div>
-
-
-
-
-
-
-
-<!--    <mat-form-field appearance="legacy">-->
-<!--        <mat-label>Legacy form field</mat-label>-->
-<!--        <input matInput placeholder="Placeholder">-->
-<!--        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
-<!--        <mat-hint>Hint</mat-hint>-->
-<!--    </mat-form-field>-->
-
-
-<!--            <tr>-->
-<!--                <ul><input formControlName="inLastname" placeholder="name"/></ul>-->
-<!--                <ul>{{ user.lastName }}</ul>-->
-<!--                <ul>{{ user.skills[1].name }}</ul>-->
-<!--                <ul><button (click)="updateUserFromForm()">Update User</button></ul>-->
-<!--            </tr>-->

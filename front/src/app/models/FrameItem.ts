@@ -1,10 +1,11 @@
 import {defaultsDeep} from 'lodash';
+import {Validators} from "@angular/forms";
 
 export class FrameItem {
     id: number;
     title: string;
     period: string;
-    location: string;
+    location?: string;
     order: number;
     logo: string;
     content: string;

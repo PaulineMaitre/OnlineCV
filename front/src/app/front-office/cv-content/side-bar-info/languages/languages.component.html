@@ -1,8 +1,13 @@
-<h3 class="badge col-md-4 col-lg-4">Languages</h3>
+<h3 *ngIf="languages" class="badge col-md-4 col-lg-4">
+  <img class="titleIcon space" src='./assets/languages.png' alt="language icon">
+  Languages
+</h3>
 <div class="row" *ngFor="let language of languages">
-    <div *ngIf="language.logo" class="col-md-1 col-sm-6"><img class="icon" src={{language.logo}} alt="language logo"></div>
-    <div class="col-md-3 col-sm-6"><p class="space">{{language.name}}</p></div>
-    <div *ngIf="language.level" class="col-md-5 col-sm-12">
-        <p>{{language.level}}</p>
-    </div>
+  <div *ngIf="language.logo" class="col-md-1 col-sm-6"><img class="icon space" src={{language.logo}} alt="language logo"></div>
+  <div class="col-md-3 col-sm-6">
+    <p>{{language.name}}</p>
+  </div>
+  <div *ngIf="language.level" class="col-md-5 col-sm-12">
+    <p>{{language.level}}</p>
+  </div>
 </div>

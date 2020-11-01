@@ -1,7 +1,10 @@
-<h3 class="badge col-md-4 col-lg-4">About Me</h3>
+<h3 class="badge col-md-4 col-lg-4">
+    <img class="titleIcon space" src='./assets/info.png' alt="info icon">
+    About Me
+</h3>
 <p><span *ngIf="user.address">{{user.address}}<br></span>
     {{user.email}}<br>
     {{user.phoneNumber}}<br>
-    <span *ngIf="user.birthDate">{{formatBirthDate(user.birthDate)}}</span>
+    <span *ngIf="user.birthDate">{{user.birthDate | date: "dd/MM/yyyy"}}</span>
 </p>
 

@@ -3,7 +3,7 @@ package io.takima.demo;
 import io.takima.demo.config.EmailConfig;
 import io.takima.demo.config.Mail;
 import io.takima.demo.dao.UserDAO;
-import io.takima.demo.models.User;
+import io.takima.demo.models.*;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.web.bind.annotation.*;
@@ -45,13 +45,35 @@ public class UserController {
 
     @PutMapping()
     public void updateUser(@RequestBody User user) {
-        if (userDAO.existsById(user.getId())) {
+        if (userDAO.existsById(Objects.requireNonNull(user.getId()))) {
+            List<Skill> skillList = user.getSkills();
+            assert skillList != null;
+            skillList.forEach(skill -> skill.setUser(user));
+
+            List<Socials> socialsList = user.getSocialLink();
+            assert socialsList != null;
+            socialsList.forEach(social -> social.setUser(user));
+
+            List<Language> languagesList = user.getLanguages();
+            assert languagesList != null;
+            languagesList.forEach(language -> language.setUser(user));
+
+            List<FrameContent> frameContentList = user.getFrame();
+            assert frameContentList != null;
+            frameContentList.forEach(frameContent -> {
+                frameContent.setUser(user);
+                if (frameContent.getFrameItem() != null){
+                    List<ContentItem> contentItemList = frameContent.getFrameItem();
+                    contentItemList.forEach(contentItem -> contentItem.setFrameContent(frameContent));
+                }
+            });
             this.userDAO.save(user);
         }
     }
 
-    @PostMapping()
+    @PostMapping("/create")
     public User addUser(@RequestBody User user) {
+
         return this.userDAO.save(user);
     }
 
@@ -65,9 +87,9 @@ public class UserController {
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(Objects.requireNonNull(emailConfig.getUsername()));
-        message.setTo(Objects.requireNonNull("raphael.dellaseta@epfedu.fr"));
+        message.setTo(Objects.requireNonNull(mail.sendTo));
 
-        message.setSubject("Nouveau message OnlineCV de "+mail.contact);
+        message.setSubject("Nouveau message OnlineCV de " + mail.contact);
         message.setText("Le client : \n"+mail.contact+"\n\n Vous a laissé le message suivant : \n\n"+mail.content );
 
 

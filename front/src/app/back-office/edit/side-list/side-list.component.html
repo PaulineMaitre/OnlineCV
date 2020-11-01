@@ -1,8 +1,8 @@
-<div class="" cdkDropList (cdkDropListDropped)="drop($event)">
-    <div id="contentInside" *ngFor="let container of containers; let i = index" cdkDrag>
-        {{container}}, index = {{i}}
-        <!--        {{container.indexOf(container)}}-->
-    </div>
-    <button class="btn btn-primary" (click)='add()'>Add</button>
-</div>
+<div class="pad-bot-list" forEach>
 
+    <div *ngFor="let contents of contentBlock">
+        <div [className]="contents.names">
+            <app-multi-form [content]="contents" [user]="user"></app-multi-form>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {User} from '../../models/User';
 import {of} from 'rxjs';
+import {UserService} from '../../services/user.service';
+import {ActivatedRoute} from '@angular/router';
 
 declare var require: any
 const FileSaver = require('file-saver');
@@ -12,8 +14,11 @@ const FileSaver = require('file-saver');
 })
 export class CvHeaderComponent implements OnInit {
 
-  constructor() { }
-  @Input() user: User;
+  constructor(private userService: UserService,
+              private route: ActivatedRoute) { }
+  @Input() userId: number;
+  user: User;
+
   private setting = {
     element: {
       dynamicDownload: null as HTMLElement
@@ -21,6 +26,14 @@ export class CvHeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getUserId()
+  }
+
+  getUserId(): void {
+    this.userId = +this.route.snapshot.paramMap.get('id');
+    this.userService.getUserById(this.userId).subscribe(data => {
+      this.user = data;
+    });
   }
   downloadResumePDF(firstName: string, lastName: string): void {
     const urlPdf = '../../../assets/CV_' + firstName + '_' + lastName+ '.pdf';

@@ -1,3 +1,37 @@
 .item-content {
     padding-left: 1.5em;
 }
+
+.custom-file-input {
+    cursor: pointer;
+}
+
+.custom-file {
+    text-align: initial;
+}
+
+/*.item-content {*/
+/*    background-color: white;*/
+/*    border: red 5px;*/
+/*}*/
+
+.droppable-perso {
+    background-color: white;
+}
+
+.save {
+    margin-left: 1em;
+}
+
+.frame-content-form {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 2em;
+    width: 2em;
+    cursor: grabbing!important;
+}

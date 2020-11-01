@@ -2,8 +2,12 @@
     width: 2em;
     height: 2em;
 }
+.titleIcon {
+    width: 1em;
+    height: 1em;
+}
 .space {
-    margin-left: 15px;
+    margin-right: 15px;
 }
 .progress-bar {
     -webkit-transition: width 2.5s ease;

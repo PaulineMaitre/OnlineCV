@@ -1,7 +1,7 @@
-<div *ngFor="let frameContent of frame" class="separator">
+<div *ngFor="let frameContent of frame | orderBy: 'order'" class="separator">
     <h3 class="badge col-md-3 col-lg-3">
-        <img class="titleIcon bdr" src={{frameContent.logo}} alt="frame icon">
-        <span class="space">{{frameContent.title}}</span>
+        <img class="titleIcon space" src={{frameContent.logo}} alt="frame icon">
+        <span>{{frameContent.title}}</span>
     </h3>
     <app-frame-item [content]="frameContent"></app-frame-item>
 </div>

@@ -6,7 +6,6 @@ import { HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FrontOfficeComponent} from './front-office/front-office.component';
 import {BackOfficeComponent} from './back-office/back-office.component';
-import {NavComponent} from './nav/nav.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatSliderModule} from '@angular/material/slider';
 import { MainListComponent } from './back-office/edit/main-list/main-list.component';
@@ -23,10 +22,22 @@ import { SideBarInfoComponent } from './front-office/cv-content/side-bar-info/si
 import { ContactMeComponent } from './front-office/contact-me/contact-me.component';
 import {FrameContentFormComponent} from './back-office/edit/main-list/frame-content-form/frame-content-form.component';
 import {FrameItemFormComponent} from './back-office/edit/main-list/frame-content-form/frame-item-form/frame-item-form.component';
+
 import {MatDividerModule} from '@angular/material/divider';
 import { HomeComponent } from './home/home.component';
 import { HomeHeaderComponent } from './home/home-header/home-header.component';
 import { HobbiesComponent } from './front-office/cv-content/side-bar-info/hobbies/hobbies.component';
+import { OrderModule } from 'ngx-order-pipe';
+
+import { MultiFormComponent } from './back-office/edit/side-list/multi-form/multi-form.component';
+import { SideFormComponent } from './back-office/edit/side-list/multi-form/side-form/side-form.component';
+import { NewUserComponent } from './new-user/new-user.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -34,7 +45,6 @@ import { HobbiesComponent } from './front-office/cv-content/side-bar-info/hobbie
     FrontOfficeComponent,
     BackOfficeComponent,
     MainListComponent,
-    NavComponent,
     MainListComponent,
     SideListComponent,
     EditComponent,
@@ -52,6 +62,9 @@ import { HobbiesComponent } from './front-office/cv-content/side-bar-info/hobbie
     HomeComponent,
     HomeHeaderComponent,
     HobbiesComponent,
+    MultiFormComponent,
+    SideFormComponent,
+    NewUserComponent,
   ],
     imports: [
         BrowserModule,
@@ -61,7 +74,14 @@ import { HobbiesComponent } from './front-office/cv-content/side-bar-info/hobbie
         ReactiveFormsModule,
         MatSliderModule,
         FormsModule,
-        MatDividerModule
+        MatDividerModule,
+        OrderModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatButtonModule,
+        MatCheckboxModule,
+        MatChipsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

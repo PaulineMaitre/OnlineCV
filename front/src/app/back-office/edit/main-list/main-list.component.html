@@ -1,6 +1,7 @@
-<div class="content" cdkDropList (cdkDropListDropped)="drop($event)">
-    <div id="contentInside" *ngFor="let container of containers; let i = index" cdkDrag>
-        <app-frame-content-form></app-frame-content-form>
+<div class="pad-bot-list" cdkDropList (cdkDropListDropped)="drop($event)">
+    <div class="contentInside content pad-bot-list" *ngFor="let container of FrameTitle; let i = index" cdkDrag>
+        <app-frame-content-form [user]="user"></app-frame-content-form>
+<!--        / [title]="container"-->
 <!--        {{container.indexOf(container)}}-->
     </div>
     <button class="btn btn-primary" (click)='add()'>Ajouter une nouvelle partie</button>

@@ -11,13 +11,12 @@ import { ActivatedRoute } from '@angular/router';
 export class FrontOfficeComponent implements OnInit {
 
   constructor(private userService: UserService,
-              private route: ActivatedRoute,) { }
+              private route: ActivatedRoute) { }
   @Input() userId: number;
   user: User;
 
   ngOnInit(): void {
     this.getUserId()
-    console.log(this.user);
   }
 
   getUserId(): void {
