@@ -36,3 +36,9 @@ content > * {
 .pad-down {
     margin-bottom: 0.5em;
 }
+.btn {
+    font-size: x-large;
+    font-family: 'Permanent Marker', cursive;
+    background-color: #A34553;
+    color: #323232;
+}
